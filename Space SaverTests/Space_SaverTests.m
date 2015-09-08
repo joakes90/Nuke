@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AppsController.h"
 
 @interface Space_SaverTests : XCTestCase
 
@@ -36,4 +37,7 @@
     }];
 }
 
+- (void)testAppsControllerIsReturningApps {
+    NSLog(@"%@", [[AppsController sharedInstance] findAllApplications]);
+}
 @end

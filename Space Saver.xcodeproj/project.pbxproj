@@ -14,6 +14,8 @@
 		D04CD76E1B9E7A210047220E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04CD76C1B9E7A210047220E /* Main.storyboard */; };
 		D04CD7791B9E7A220047220E /* Space_SaverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7781B9E7A220047220E /* Space_SaverTests.m */; };
 		D04CD7841B9E7A220047220E /* Space_SaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7831B9E7A220047220E /* Space_SaverUITests.m */; };
+		D04CD7941B9E915C0047220E /* AppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7931B9E915C0047220E /* AppsController.m */; settings = {ASSET_TAGS = (); }; };
+		D04CD7991B9E9EFD0047220E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7981B9E9EFD0047220E /* Application.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		D04CD77F1B9E7A220047220E /* Space SaverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space SaverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04CD7831B9E7A220047220E /* Space_SaverUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_SaverUITests.m; sourceTree = "<group>"; };
 		D04CD7851B9E7A220047220E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D04CD7921B9E915C0047220E /* AppsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsController.h; sourceTree = "<group>"; };
+		D04CD7931B9E915C0047220E /* AppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsController.m; sourceTree = "<group>"; };
+		D04CD7971B9E9EFD0047220E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		D04CD7981B9E9EFD0047220E /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		D04CD7601B9E7A210047220E /* Space Saver */ = {
 			isa = PBXGroup;
 			children = (
+				D04CD7961B9E9ECD0047220E /* Model Classes */,
+				D04CD7911B9E91310047220E /* Controller Classes */,
 				D04CD7611B9E7A210047220E /* AppDelegate.h */,
 				D04CD7621B9E7A210047220E /* AppDelegate.m */,
 				D04CD7671B9E7A210047220E /* ViewController.h */,
@@ -135,6 +143,24 @@
 				D04CD7851B9E7A220047220E /* Info.plist */,
 			);
 			path = "Space SaverUITests";
+			sourceTree = "<group>";
+		};
+		D04CD7911B9E91310047220E /* Controller Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D04CD7921B9E915C0047220E /* AppsController.h */,
+				D04CD7931B9E915C0047220E /* AppsController.m */,
+			);
+			name = "Controller Classes";
+			sourceTree = "<group>";
+		};
+		D04CD7961B9E9ECD0047220E /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D04CD7971B9E9EFD0047220E /* Application.h */,
+				D04CD7981B9E9EFD0047220E /* Application.m */,
+			);
+			name = "Model Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +295,8 @@
 				D04CD7691B9E7A210047220E /* ViewController.m in Sources */,
 				D04CD7661B9E7A210047220E /* main.m in Sources */,
 				D04CD7631B9E7A210047220E /* AppDelegate.m in Sources */,
+				D04CD7991B9E9EFD0047220E /* Application.m in Sources */,
+				D04CD7941B9E915C0047220E /* AppsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +429,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Space Saver/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oklasoft.Space-Saver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -413,6 +442,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Space Saver/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oklasoft.Space-Saver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

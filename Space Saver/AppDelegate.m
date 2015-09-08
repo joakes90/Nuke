@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AppsController.h"
+#import "Application.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +18,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    [AppsController sharedInstance];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
