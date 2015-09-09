@@ -18,6 +18,7 @@
 		D04CD7991B9E9EFD0047220E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7981B9E9EFD0047220E /* Application.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E541B9F3D4500FC9D13 /* ApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E581B9F43B900FC9D13 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB5E571B9F43B900FC9D13 /* constants.m */; settings = {ASSET_TAGS = (); }; };
+		D0BB5E5E1B9FC14700FC9D13 /* blacklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCell.m; sourceTree = "<group>"; };
 		D0BB5E561B9F43B900FC9D13 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		D0BB5E571B9F43B900FC9D13 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
+		D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = blacklist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +121,9 @@
 				D04CD76A1B9E7A210047220E /* Assets.xcassets */,
 				D04CD76C1B9E7A210047220E /* Main.storyboard */,
 				D04CD76F1B9E7A210047220E /* Info.plist */,
-				D04CD7641B9E7A210047220E /* Supporting Files */,
 				D0BB5E561B9F43B900FC9D13 /* constants.h */,
 				D0BB5E571B9F43B900FC9D13 /* constants.m */,
+				D04CD7641B9E7A210047220E /* Supporting Files */,
 			);
 			path = "Space Saver";
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 		D04CD7641B9E7A210047220E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */,
 				D04CD7651B9E7A210047220E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -286,6 +289,7 @@
 			files = (
 				D04CD76B1B9E7A210047220E /* Assets.xcassets in Resources */,
 				D04CD76E1B9E7A210047220E /* Main.storyboard in Resources */,
+				D0BB5E5E1B9FC14700FC9D13 /* blacklist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,30 +33,55 @@ static NSString *const kApplicationPath = @"/Applications/";
 
 
 - (void)findAllApplications {
-    _apps = [[NSMutableArray alloc] init];
-    NSArray *applications = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:kApplicationPath error:nil];
-    for (NSString *name in applications) {
-        if ([name containsString:@".app"]) {
-            NSString *appPath = [kApplicationPath stringByAppendingString:name];
-            NSString *infoPlistPath = [appPath stringByAppendingString:@"/Contents/info.plist"];
+    dispatch_queue_t populationQ;
+    populationQ = dispatch_queue_create("com.oklasoft.Space-Saver", nil);
+    dispatch_async(populationQ, ^{
+
+        _apps = [[NSMutableArray alloc] init];
+        NSArray *applications = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:kApplicationPath error:nil];
+        for (NSString *name in applications) {
+
+            if ([name containsString:@".app"] && ![self appIsBlackListed:name]) {
+                NSString *appPath = [kApplicationPath stringByAppendingString:name];
+                NSString *infoPlistPath = [appPath stringByAppendingString:@"/Contents/info.plist"];
             
-            NSDictionary *dictionaryForPlist = [[NSDictionary alloc] initWithContentsOfFile:infoPlistPath];
-            NSString *bundelID = dictionaryForPlist[@"CFBundleIdentifier"];
+                NSDictionary *dictionaryForPlist = [[NSDictionary alloc] initWithContentsOfFile:infoPlistPath];
+                NSString *bundelID = dictionaryForPlist[@"CFBundleIdentifier"];
             
-            NSString *iconPath = [appPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"CFBundleIconFile"]]];
-            if (![iconPath containsString:@".icns"]) {
-                iconPath = [iconPath stringByAppendingString:@".icns"];
+                NSString *iconPath = [appPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"CFBundleIconFile"]]];
+                if (![iconPath containsString:@".icns"]) {
+                    iconPath = [iconPath stringByAppendingString:@".icns"];
+                }
+                NSImage *iconImage = [[NSImage alloc] initWithContentsOfFile:iconPath];
+            
+            
+                long long size = [self folderSize:appPath];
+                Application *basicApplication = [Application applicationWithName:name Path:appPath BundelIdentifier:bundelID icon:iconImage AndSize:size];
+                [self.apps addObject:basicApplication];
+            } else if (![self appIsBlackListed:name]) {
+                for (NSString *dirAppName in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[kApplicationPath stringByAppendingString:name] error:nil]) {
+                    if ([dirAppName containsString:@".app"] && ![self appIsBlackListed:name]){
+                        NSString *appPath = [kApplicationPath stringByAppendingString:[NSString stringWithFormat:@"%@/%@",name, dirAppName]];
+                        NSString *infoPlistPath = [appPath stringByAppendingString:@"/Contents/info.plist"];
+                        NSDictionary *dictionaryForPlist = [[NSDictionary alloc] initWithContentsOfFile:infoPlistPath];
+                        NSString *bundelID = dictionaryForPlist[@"CFBundleIdentifier"];
+                        NSString *iconPath = [appPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"CFBundleIconFile"]]];
+                        if (![iconPath containsString:@".icns"]) {
+                            iconPath = [iconPath stringByAppendingString:@".icns"];
+                        }
+                        NSImage *iconImage = [[NSImage alloc] initWithContentsOfFile:iconPath];
+                        long long size = [self folderSize:appPath];
+                        Application *basicApplication = [Application applicationWithName:dirAppName Path:appPath BundelIdentifier:bundelID icon:iconImage AndSize:size];
+                        [self.apps addObject:basicApplication];
+
+                    }
+                }
             }
-            NSImage *iconImage = [[NSImage alloc] initWithContentsOfFile:iconPath];
-            
-            
-            long long size = [self folderSize:appPath];
-            NSLog(@"%@ %lld", name, size);
-            Application *basicApplication = [Application applicationWithName:name Path:appPath BundelIdentifier:bundelID icon:iconImage AndSize:size];
-            [self.apps addObject:basicApplication];
         }
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
+        });
+    });
 }
 
 - (unsigned long long int)folderSize:(NSString *)folderPath {
@@ -70,6 +95,17 @@ static NSString *const kApplicationPath = @"/Applications/";
         fileSize += [fileDictionary fileSize];
     }
     return [[NSNumber numberWithLongLong:fileSize] floatValue];
+}
+
+- (BOOL)appIsBlackListed:(NSString *)appName {
+    BOOL blackListed = NO;
+    NSArray *blackListedApps = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"blacklist" ofType:@"plist"]];
+    for (NSString *name in blackListedApps) {
+        if ([appName isEqualToString:name]) {
+            blackListed = YES;
+        }
+    }
+    return blackListed;
 }
 
 @end

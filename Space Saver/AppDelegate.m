@@ -16,9 +16,13 @@
 
 @implementation AppDelegate
 
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     [AppsController sharedInstance];
+
+    
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

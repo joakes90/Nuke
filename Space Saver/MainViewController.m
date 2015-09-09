@@ -15,6 +15,8 @@
 @interface MainViewController() <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong) IBOutlet NSTableView *tableView;
+@property (strong) IBOutlet NSProgressIndicator *spinner;
+@property (strong) IBOutlet NSView *populationView;
 
 @end
 
@@ -23,7 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kUpdatedAppsArrayNotification object:nil];
-}
+    [self.spinner startAnimation:nil];
+    }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
@@ -51,5 +54,6 @@
 
 - (void) updateTable {
     [self.tableView reloadData];
+    [self.populationView removeFromSuperview];
 }
 @end

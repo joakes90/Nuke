@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Utilities</string>
+	<string>.localized</string>
+	<string>.finf</string>
+	<string>.DS_Store</string>
+	<string>App Store.app</string>
+	<string>Automator.app</string>
+	<string>Calculator.app</string>
+	<string>Calendar.app</string>
+	<string>Chess.app</string>
+	<string>Contacts.app</string>
+	<string>Dashboard.app</string>
+	<string>Dictionary.app</string>
+	<string>DVD Player.app</string>
+	<string>FaceTime.app</string>
+	<string>Font Book.app</string>
+	<string>Game Center.app</string>
+	<string>iBooks.app</string>
+	<string>Image Capture.app</string>
+	<string>iTunes.app</string>
+	<string>Launchpad.app</string>
+	<string>Mail.app</string>
+	<string>Maps.app</string>
+	<string>Messages.app</string>
+	<string>Mission Control.app</string>
+	<string>Notes.app</string>
+	<string>Photo Booth.app</string>
+	<string>Preview.app</string>
+	<string>QuickTime Player.app</string>
+	<string>Reminders.app</string>
+	<string>Safari.app</string>
+	<string>Stickies.app</string>
+	<string>System Preferences.app</string>
+	<string>TextEdit.app</string>
+	<string>Time Machine.app</string>
+	<string>Activity Monitor.app</string>
+	<string>Adobe Flash Player Install Manager.app</string>
+	<string>AirPort Utility.app</string>
+	<string>Audio MIDI Setup.app</string>
+	<string>Bluetooth File Exchange.app</string>
+	<string>Boot Camp Assistant.app</string>
+	<string>ColorSync Utility.app</string>
+	<string>Console.app</string>
+	<string>Digital Color Meter.app</string>
+	<string>Disk Utility.app</string>
+	<string>Feedback Assistant.app</string>
+	<string>Grab.app</string>
+	<string>Grapher.app</string>
+	<string>Keychain Access.app</string>
+	<string>Migration Assistant.app</string>
+	<string>Script Editor.app</string>
+	<string>System Information.app</string>
+	<string>Terminal.app</string>
+	<string>VoiceOver Utility.app</string>
+	<string>X11.app</string>
+</array>
+</plist>
