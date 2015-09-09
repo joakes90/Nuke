@@ -16,10 +16,8 @@
 
 @property (strong, nonatomic) NSString *bundelIdentifier;
 
-@property (assign, nonatomic) float size;
-
 @property (strong, nonatomic) NSImage *icon;
 
-+ (id) applicationWithName:(NSString *)name Path:(NSString *)path BundelIdentifier:(NSString *)bundelIdentifier icon:(NSImage *)icon AndSize:(float)size;
++ (id) applicationWithName:(NSString *)name Path:(NSString *)path BundelIdentifier:(NSString *)bundelIdentifier Andicon:(NSImage *)icon;
 
 @end

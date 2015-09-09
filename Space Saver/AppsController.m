@@ -54,9 +54,7 @@ static NSString *const kApplicationPath = @"/Applications/";
                 }
                 NSImage *iconImage = [[NSImage alloc] initWithContentsOfFile:iconPath];
             
-            
-                long long size = [self folderSize:appPath];
-                Application *basicApplication = [Application applicationWithName:name Path:appPath BundelIdentifier:bundelID icon:iconImage AndSize:size];
+                Application *basicApplication = [Application applicationWithName:name Path:appPath BundelIdentifier:bundelID Andicon:iconImage];
                 [self.apps addObject:basicApplication];
             } else if (![self appIsBlackListed:name]) {
                 for (NSString *dirAppName in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[kApplicationPath stringByAppendingString:name] error:nil]) {
@@ -70,8 +68,7 @@ static NSString *const kApplicationPath = @"/Applications/";
                             iconPath = [iconPath stringByAppendingString:@".icns"];
                         }
                         NSImage *iconImage = [[NSImage alloc] initWithContentsOfFile:iconPath];
-                        long long size = [self folderSize:appPath];
-                        Application *basicApplication = [Application applicationWithName:dirAppName Path:appPath BundelIdentifier:bundelID icon:iconImage AndSize:size];
+                        Application *basicApplication = [Application applicationWithName:dirAppName Path:appPath BundelIdentifier:bundelID Andicon:iconImage];
                         [self.apps addObject:basicApplication];
 
                     }
@@ -82,19 +79,6 @@ static NSString *const kApplicationPath = @"/Applications/";
             [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
         });
     });
-}
-
-- (unsigned long long int)folderSize:(NSString *)folderPath {
-    NSArray *filesArray = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:folderPath error:nil];
-    NSEnumerator *filesEnumerator = [filesArray objectEnumerator];
-    NSString *fileName;
-    unsigned long long int fileSize = 0;
-    
-    while (fileName = [filesEnumerator nextObject]) {
-        NSDictionary *fileDictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:folderPath error:nil];
-        fileSize += [fileDictionary fileSize];
-    }
-    return [[NSNumber numberWithLongLong:fileSize] floatValue];
 }
 
 - (BOOL)appIsBlackListed:(NSString *)appName {

@@ -34,6 +34,8 @@
     // Update the view, if already loaded.
 }
 
+//table view delegate methods
+
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [[AppsController sharedInstance].apps count];
 }
@@ -46,6 +48,10 @@
         return cell;
     }
         return nil;
+}
+
+-(void)tableViewSelectionIsChanging:(NSNotification *)notification {
+    [self.tableView deselectAll:self];
 }
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {

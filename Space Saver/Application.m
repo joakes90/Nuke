@@ -10,12 +10,11 @@
 
 @implementation Application
 
-+ (id) applicationWithName:(NSString *)name Path:(NSString *)path BundelIdentifier:(NSString *)bundelIdentifier icon:(NSImage *)icon AndSize:(float)size {
++ (id) applicationWithName:(NSString *)name Path:(NSString *)path BundelIdentifier:(NSString *)bundelIdentifier Andicon:(NSImage *)icon {
     Application *application = [[Application alloc] init];
     application.name = name;
     application.path = path;
     application.bundelIdentifier = bundelIdentifier;
-    application.size = size;
     application.icon = icon;
     
     return application;
