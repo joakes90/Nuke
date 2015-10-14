@@ -7,10 +7,12 @@
 //
 
 #import "MainViewController.h"
+#import "DeleteViewController.h"
 #import "ApplicationCell.h"
 #import "AppsController.h"
 #import "Application.h"
 #import "constants.h"
+#import <Quartz/Quartz.h>
 
 @interface MainViewController() <NSTableViewDataSource, NSTableViewDelegate>
 
@@ -66,7 +68,15 @@
 
 // detail view delegate methods
 -(void)removeButtonPushed{
-    NSLog(@"pushed");
+    CAKeyframeAnimation *slide = [CAKeyframeAnimation animation];
+    slide.keyPath = @"position.x";
+    slide.values = @[@0, [NSNumber numberWithDouble:(0 - self.view.frame.size.width)]];
+    slide.keyTimes = @[@0, @1];
+    slide.duration = 0.5;
+    slide.additive = NO;
+    
+    [self.tableView.layer addAnimation:slide forKey:@"slide"];
+    
 }
 
 @end
