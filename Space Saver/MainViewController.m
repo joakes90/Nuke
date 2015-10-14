@@ -51,7 +51,8 @@
 }
 
 -(void)tableViewSelectionIsChanging:(NSNotification *)notification {
-    [self.tableView deselectAll:self];
+//    [self.tableView deselectAll:self];
+    [self performSegueWithIdentifier:@"deleteViewController" sender:self];
 }
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
@@ -62,4 +63,10 @@
     [self.tableView reloadData];
     [self.populationView removeFromSuperview];
 }
+
+// detail view delegate methods
+-(void)removeButtonPushed{
+    NSLog(@"pushed");
+}
+
 @end

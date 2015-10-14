@@ -16,6 +16,7 @@
 		D04CD7841B9E7A220047220E /* Space_SaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7831B9E7A220047220E /* Space_SaverUITests.m */; };
 		D04CD7941B9E915C0047220E /* AppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7931B9E915C0047220E /* AppsController.m */; settings = {ASSET_TAGS = (); }; };
 		D04CD7991B9E9EFD0047220E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7981B9E9EFD0047220E /* Application.m */; settings = {ASSET_TAGS = (); }; };
+		D05F3C021BCCC5EC00C4CB69 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05F3C011BCCC5EC00C4CB69 /* WindowController.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E541B9F3D4500FC9D13 /* ApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E581B9F43B900FC9D13 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB5E571B9F43B900FC9D13 /* constants.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E5E1B9FC14700FC9D13 /* blacklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */; settings = {ASSET_TAGS = (); }; };
@@ -58,6 +59,8 @@
 		D04CD7931B9E915C0047220E /* AppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsController.m; sourceTree = "<group>"; };
 		D04CD7971B9E9EFD0047220E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		D04CD7981B9E9EFD0047220E /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		D05F3C001BCCC5EC00C4CB69 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		D05F3C011BCCC5EC00C4CB69 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		D0BB5E521B9F3D4500FC9D13 /* ApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCell.h; sourceTree = "<group>"; };
 		D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCell.m; sourceTree = "<group>"; };
 		D0BB5E561B9F43B900FC9D13 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
@@ -168,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				D04CD7971B9E9EFD0047220E /* Application.h */,
-				D04CD7981B9E9EFD0047220E /* Application.m */,
 			);
 			name = "Model Classes";
 			sourceTree = "<group>";
@@ -180,6 +182,9 @@
 				D04CD7681B9E7A210047220E /* MainViewController.m */,
 				D0BB5E521B9F3D4500FC9D13 /* ApplicationCell.h */,
 				D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */,
+				D04CD7981B9E9EFD0047220E /* Application.m */,
+				D05F3C001BCCC5EC00C4CB69 /* WindowController.h */,
+				D05F3C011BCCC5EC00C4CB69 /* WindowController.m */,
 			);
 			name = "View Classes";
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BB5E541B9F3D4500FC9D13 /* ApplicationCell.m in Sources */,
+				D05F3C021BCCC5EC00C4CB69 /* WindowController.m in Sources */,
 				D04CD7691B9E7A210047220E /* MainViewController.m in Sources */,
 				D04CD7661B9E7A210047220E /* main.m in Sources */,
 				D0BB5E581B9F43B900FC9D13 /* constants.m in Sources */,

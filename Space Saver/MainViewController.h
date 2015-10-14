@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "WindowController.h"
 
-@interface MainViewController : NSViewController
+@interface MainViewController : NSViewController<DetailViewDelegate>
 
 
 @end
