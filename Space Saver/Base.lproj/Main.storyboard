@@ -822,11 +822,45 @@
                         <outlet property="populationView" destination="JpN-TL-HAH" id="Cc0-yv-i7f"/>
                         <outlet property="spinner" destination="T38-g1-37M" id="JLn-Cb-LeH"/>
                         <outlet property="tableView" destination="Rug-wt-hVY" id="xOk-mV-5B9"/>
+                        <segue destination="RCA-A9-x6e" kind="sheet" identifier="verifyDeletion" id="EmN-sJ-5h2"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="537.5" y="936"/>
+        </scene>
+        <!--Delete View Controller-->
+        <scene sceneID="Sf5-Id-zC7">
+            <objects>
+                <viewController showSeguePresentationStyle="single" id="RCA-A9-x6e" customClass="DeleteViewController" sceneMemberID="viewController">
+                    <view key="view" id="D7i-Qy-sMr">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tps-wL-NVK">
+                                <rect key="frame" x="81" y="263" width="289" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="9vj-b4-oc2"/>
+                                    <constraint firstAttribute="width" constant="285" id="eeo-yf-BkI"/>
+                                </constraints>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Remove these items with {AppName?}" id="RfN-AO-NHy">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="tps-wL-NVK" firstAttribute="top" secondItem="D7i-Qy-sMr" secondAttribute="top" constant="20" id="0Kq-Y0-G2o"/>
+                            <constraint firstItem="tps-wL-NVK" firstAttribute="centerX" secondItem="D7i-Qy-sMr" secondAttribute="centerX" id="w9w-DX-fHQ"/>
+                        </constraints>
+                        <animations/>
+                    </view>
+                </viewController>
+                <customObject id="yUc-Qx-e8s" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="936"/>
         </scene>
     </scenes>
 </document>

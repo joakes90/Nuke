@@ -68,14 +68,21 @@
 
 // detail view delegate methods
 -(void)removeButtonPushed{
-    CAKeyframeAnimation *slide = [CAKeyframeAnimation animation];
-    slide.keyPath = @"position.x";
-    slide.values = @[@0, [NSNumber numberWithDouble:(0 - self.view.frame.size.width)]];
-    slide.keyTimes = @[@0, @1];
-    slide.duration = 0.5;
-    slide.additive = NO;
-    
-    [self.tableView.layer addAnimation:slide forKey:@"slide"];
+    long selectedRow = self.tableView.selectedRow;
+    if ( selectedRow >= 0) {
+        [self performSegueWithIdentifier:@"verifyDeletion" sender:self];
+        //potential animation for removving item
+//        [self.tableView deselectAll:nil];
+//        
+//        CAKeyframeAnimation *slide = [CAKeyframeAnimation animation];
+//        slide.keyPath = @"position.x";
+//        slide.values = @[@0, [NSNumber numberWithDouble:(0 - (self.view.frame.size.width + 15))]];
+//        slide.keyTimes = @[@0, @1];
+//        slide.duration = 0.5;
+//        slide.additive = YES;
+//        
+//        [self.tableView.layer addAnimation:slide forKey:@"slide"];
+    }
     
 }
 
