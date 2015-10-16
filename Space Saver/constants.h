@@ -11,5 +11,10 @@
 @interface constants : NSObject
 
 extern NSString *const kUpdatedAppsArrayNotification;
+extern NSString *const kUserPrefs;
+
+@property (strong, nonatomic) NSString *kUserPrefsPath;
+
++ (instancetype) sharedInstance;
 
 @end

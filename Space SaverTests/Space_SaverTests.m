@@ -37,7 +37,8 @@
     }];
 }
 
-- (void)testAppsControllerIsReturningApps {
-    NSLog(@"%@", [[AppsController sharedInstance] findAllApplications]);
+- (void)testAppsAreFindingUserPrefs {
+    [[AppsController sharedInstance] findAllApplications];
+    [[AppsController sharedInstance].apps[0] returnComponetsForApplication];
 }
 @end

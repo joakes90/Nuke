@@ -18,6 +18,12 @@
 
 @property (strong, nonatomic) NSImage *icon;
 
+@property (strong, nonatomic) NSDictionary *appComponets;
+
 + (id) applicationWithName:(NSString *)name Path:(NSString *)path BundelIdentifier:(NSString *)bundelIdentifier Andicon:(NSImage *)icon;
+
+- (NSDictionary *) returnComponetsForApplication;
+
+- (void) setComponetsForApplication;
 
 @end

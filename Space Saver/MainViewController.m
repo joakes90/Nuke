@@ -86,4 +86,14 @@
     
 }
 
+-(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"verifyDeletion"]) {
+        Application *app = [AppsController sharedInstance].apps[[self.tableView selectedRow]];
+        //testing only do remove
+        NSDictionary *comps = [app returnComponetsForApplication];
+        NSLog(@"%@", comps);
+        //end test
+    }
+}
+
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01B0AAA1BD0877800FC7B0A /* ComponetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D01B0AA91BD0877800FC7B0A /* ComponetsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		D04CD7631B9E7A210047220E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7621B9E7A210047220E /* AppDelegate.m */; };
 		D04CD7661B9E7A210047220E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7651B9E7A210047220E /* main.m */; };
 		D04CD7691B9E7A210047220E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7681B9E7A210047220E /* MainViewController.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D01B0AA81BD0877800FC7B0A /* ComponetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponetsTableViewCell.h; sourceTree = "<group>"; };
+		D01B0AA91BD0877800FC7B0A /* ComponetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponetsTableViewCell.m; sourceTree = "<group>"; };
 		D04CD75E1B9E7A210047220E /* Space Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04CD7611B9E7A210047220E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D04CD7621B9E7A210047220E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -178,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				D04CD7971B9E9EFD0047220E /* Application.h */,
+				D04CD7981B9E9EFD0047220E /* Application.m */,
 			);
 			name = "Model Classes";
 			sourceTree = "<group>";
@@ -189,11 +193,12 @@
 				D04CD7681B9E7A210047220E /* MainViewController.m */,
 				D0BB5E521B9F3D4500FC9D13 /* ApplicationCell.h */,
 				D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */,
-				D04CD7981B9E9EFD0047220E /* Application.m */,
 				D05F3C001BCCC5EC00C4CB69 /* WindowController.h */,
 				D05F3C011BCCC5EC00C4CB69 /* WindowController.m */,
 				D05F3C031BCDE89300C4CB69 /* DeleteViewController.h */,
 				D05F3C041BCDE89300C4CB69 /* DeleteViewController.m */,
+				D01B0AA81BD0877800FC7B0A /* ComponetsTableViewCell.h */,
+				D01B0AA91BD0877800FC7B0A /* ComponetsTableViewCell.m */,
 			);
 			name = "View Classes";
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				D05F3C021BCCC5EC00C4CB69 /* WindowController.m in Sources */,
 				D04CD7691B9E7A210047220E /* MainViewController.m in Sources */,
 				D04CD7661B9E7A210047220E /* main.m in Sources */,
+				D01B0AAA1BD0877800FC7B0A /* ComponetsTableViewCell.m in Sources */,
 				D0BB5E581B9F43B900FC9D13 /* constants.m in Sources */,
 				D05F3C051BCDE89300C4CB69 /* DeleteViewController.m in Sources */,
 				D04CD7631B9E7A210047220E /* AppDelegate.m in Sources */,
