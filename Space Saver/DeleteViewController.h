@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Application.h"
 
 @interface DeleteViewController : NSViewController
+
+@property (strong, nonatomic) Application *App;
 
 @end

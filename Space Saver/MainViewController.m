@@ -12,6 +12,7 @@
 #import "AppsController.h"
 #import "Application.h"
 #import "constants.h"
+#import "DeleteViewController.h"
 #import <Quartz/Quartz.h>
 
 @interface MainViewController() <NSTableViewDataSource, NSTableViewDelegate>
@@ -90,8 +91,9 @@
     if ([segue.identifier isEqualToString:@"verifyDeletion"]) {
         Application *app = [AppsController sharedInstance].apps[[self.tableView selectedRow]];
         //testing only do remove
-        NSDictionary *comps = [app returnComponetsForApplication];
-        NSLog(@"%@", comps);
+        [app setComponetsForApplication];
+        DeleteViewController *vc = segue.destinationController;
+        vc.App = app;
         //end test
     }
 }
