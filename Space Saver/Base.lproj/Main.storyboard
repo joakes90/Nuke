@@ -857,7 +857,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="38" rowSizeStyle="automatic" viewBased="YES" id="Ugt-Uw-czF">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="212"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -935,12 +935,38 @@
                                     <animations/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sPg-Ry-mgK">
+                                <rect key="frame" x="356" y="2" width="80" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JSx-tj-oub">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rkc-nP-707">
+                                <rect key="frame" x="275" y="2" width="82" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8DQ-Us-IVc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismisView:" target="RCA-A9-x6e" id="M40-Gf-eJ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="tps-wL-NVK" firstAttribute="top" secondItem="D7i-Qy-sMr" secondAttribute="top" constant="20" id="0Kq-Y0-G2o"/>
+                            <constraint firstItem="sPg-Ry-mgK" firstAttribute="leading" secondItem="rkc-nP-707" secondAttribute="trailing" constant="11" id="B9d-MJ-tHB"/>
                             <constraint firstAttribute="trailing" secondItem="spD-tp-kyg" secondAttribute="trailing" constant="20" id="OMw-kK-4XL"/>
                             <constraint firstItem="spD-tp-kyg" firstAttribute="top" secondItem="tps-wL-NVK" secondAttribute="bottom" constant="8" id="Q1q-vJ-b9X"/>
                             <constraint firstItem="spD-tp-kyg" firstAttribute="leading" secondItem="D7i-Qy-sMr" secondAttribute="leading" constant="20" id="fks-uK-nd2"/>
+                            <constraint firstItem="sPg-Ry-mgK" firstAttribute="top" secondItem="Ugt-Uw-czF" secondAttribute="bottom" constant="12" id="h0a-BD-XYu"/>
+                            <constraint firstItem="rkc-nP-707" firstAttribute="centerY" secondItem="sPg-Ry-mgK" secondAttribute="centerY" id="hTo-Pw-2Iy"/>
+                            <constraint firstAttribute="trailing" secondItem="sPg-Ry-mgK" secondAttribute="trailing" constant="20" id="syM-O5-aO3"/>
                             <constraint firstItem="tps-wL-NVK" firstAttribute="centerX" secondItem="D7i-Qy-sMr" secondAttribute="centerX" id="w9w-DX-fHQ"/>
                             <constraint firstAttribute="bottom" secondItem="spD-tp-kyg" secondAttribute="bottom" constant="41" id="yTd-rA-b3w"/>
                         </constraints>

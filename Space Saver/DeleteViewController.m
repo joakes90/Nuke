@@ -19,5 +19,8 @@
     // Do view setup here.
     
 }
+- (IBAction)dismisView:(id)sender {
+    [self dismissViewController:self];
+}
 
 @end

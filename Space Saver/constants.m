@@ -12,6 +12,14 @@
 
  NSString *const kUpdatedAppsArrayNotification = @"appsArrayUpdated";
  NSString *const kUserPrefs = @"userPrefs";
+ NSString *const kUserCaches = @"userCaches";
+ NSString *const kUserAppSupport = @"userAppSupport";
+ NSString *const kUserAutosave = @"userAutoSave";
+ NSString *const kMisc = @"misc";
+ NSString *const kContainers = @"container";
+ NSString *const kUserLaunchAgents = @"userLaunchAgents";
+ NSString *const kSaveState = @"saveStates";
+ NSString *const kRootPrefs = @"rootPrefs";
 
 + (instancetype) sharedInstance {
     static constants *sharedInstance = nil;
@@ -19,6 +27,13 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[constants alloc] init];
         sharedInstance.kUserPrefsPath = [@"~/Library/Preferences/" stringByExpandingTildeInPath];
+        sharedInstance.kUserCachesPath = [@"~/Library/Caches/" stringByExpandingTildeInPath];
+        sharedInstance.kUserAppSupportPath = [@"~/Library/Application Support" stringByExpandingTildeInPath];
+        sharedInstance.KUserAutoSavePath = [@"~/Library/Autosave Information" stringByExpandingTildeInPath];
+        sharedInstance.kMiscPath = [@"~/Library/" stringByExpandingTildeInPath];
+        sharedInstance.kContainersPath = [@"~/Library/Containers" stringByExpandingTildeInPath];
+        sharedInstance.kSaveStatePath = [@"~/Library/Saved Application State" stringByExpandingTildeInPath];
+        sharedInstance.kRootPrefsPath = @"/Library/Preferences";
     });
     return sharedInstance;
 }

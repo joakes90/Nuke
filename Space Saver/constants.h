@@ -12,8 +12,22 @@
 
 extern NSString *const kUpdatedAppsArrayNotification;
 extern NSString *const kUserPrefs;
+extern NSString *const kUserCaches;
+extern NSString *const kUserAppSupport;
+extern NSString *const kUserAutosave;
+extern NSString *const kMisc;
+extern NSString *const kContainers;
+extern NSString *const kSaveState;
+extern NSString *const kRootPrefs;
 
 @property (strong, nonatomic) NSString *kUserPrefsPath;
+@property (strong, nonatomic) NSString *kUserCachesPath;
+@property (strong, nonatomic) NSString *kUserAppSupportPath;
+@property (strong, nonatomic) NSString *KUserAutoSavePath;
+@property (strong, nonatomic) NSString *kMiscPath;
+@property (strong, nonatomic) NSString *kContainersPath;
+@property (strong, nonatomic) NSString *kSaveStatePath;
+@property (strong, nonatomic) NSString *kRootPrefsPath;
 
 + (instancetype) sharedInstance;
 
