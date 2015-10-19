@@ -10,4 +10,12 @@
 
 @interface ComponetsTableViewCell : NSTableCellView
 
+@property (strong) IBOutlet NSTextField *itemLabel;
+
+@property (strong) IBOutlet NSTextField *typeLabel;
+
+@property (strong) IBOutlet NSImageView *typeImage;
+
+@property (strong) IBOutlet NSButton *removeCheckBox;
+
 @end
