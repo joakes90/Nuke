@@ -9,6 +9,8 @@
 #import "DeleteViewController.h"
 #import "ComponetsTableViewCell.h"
 #import "constants.h"
+#import "DeletionController.h"
+
 @interface DeleteViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong) IBOutlet NSTextField *ViewLabel;
@@ -27,6 +29,16 @@
 - (IBAction)dismisView:(id)sender {
     [self dismissViewController:self];
 }
+
+- (IBAction)deleteApp:(id)sender {
+    DeletionController *deleter = [[DeletionController alloc] init];
+    if ([deleter appIsRunning:self.App]) {
+        // warn user that app is running
+    } else {
+       // remove selected componets
+    }
+}
+
 
 - (NSString *)typeNameForKey:(NSString *)key {
     if ([key isEqualToString:kUserPrefs]) {

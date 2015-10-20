@@ -20,6 +20,7 @@
 		D05F3C021BCCC5EC00C4CB69 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05F3C011BCCC5EC00C4CB69 /* WindowController.m */; settings = {ASSET_TAGS = (); }; };
 		D05F3C051BCDE89300C4CB69 /* DeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05F3C041BCDE89300C4CB69 /* DeleteViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D05F3C071BCDEF2200C4CB69 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F3C061BCDEF2200C4CB69 /* Quartz.framework */; };
+		D08EF6561BD5C92B00E74B39 /* DeletionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08EF6551BD5C92B00E74B39 /* DeletionController.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E541B9F3D4500FC9D13 /* ApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E581B9F43B900FC9D13 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB5E571B9F43B900FC9D13 /* constants.m */; settings = {ASSET_TAGS = (); }; };
 		D0BB5E5E1B9FC14700FC9D13 /* blacklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */; settings = {ASSET_TAGS = (); }; };
@@ -69,6 +70,8 @@
 		D05F3C031BCDE89300C4CB69 /* DeleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteViewController.h; sourceTree = "<group>"; };
 		D05F3C041BCDE89300C4CB69 /* DeleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteViewController.m; sourceTree = "<group>"; };
 		D05F3C061BCDEF2200C4CB69 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		D08EF6541BD5C92B00E74B39 /* DeletionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeletionController.h; sourceTree = "<group>"; };
+		D08EF6551BD5C92B00E74B39 /* DeletionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeletionController.m; sourceTree = "<group>"; };
 		D0BB5E521B9F3D4500FC9D13 /* ApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCell.h; sourceTree = "<group>"; };
 		D0BB5E531B9F3D4500FC9D13 /* ApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCell.m; sourceTree = "<group>"; };
 		D0BB5E561B9F43B900FC9D13 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 			children = (
 				D04CD7921B9E915C0047220E /* AppsController.h */,
 				D04CD7931B9E915C0047220E /* AppsController.m */,
+				D08EF6541BD5C92B00E74B39 /* DeletionController.h */,
+				D08EF6551BD5C92B00E74B39 /* DeletionController.m */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BB5E541B9F3D4500FC9D13 /* ApplicationCell.m in Sources */,
+				D08EF6561BD5C92B00E74B39 /* DeletionController.m in Sources */,
 				D05F3C021BCCC5EC00C4CB69 /* WindowController.m in Sources */,
 				D04CD7691B9E7A210047220E /* MainViewController.m in Sources */,
 				D04CD7661B9E7A210047220E /* main.m in Sources */,
