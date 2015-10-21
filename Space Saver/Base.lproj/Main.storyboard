@@ -838,26 +838,26 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tps-wL-NVK">
-                                <rect key="frame" x="81" y="263" width="289" height="17"/>
+                                <rect key="frame" x="81" y="260" width="289" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="9vj-b4-oc2"/>
+                                    <constraint firstAttribute="height" constant="20" id="9vj-b4-oc2"/>
                                     <constraint firstAttribute="width" constant="285" id="eeo-yf-BkI"/>
                                 </constraints>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Remove these items with {AppName?}" id="RfN-AO-NHy">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Remove these items with {AppName?}" id="RfN-AO-NHy">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spD-tp-kyg">
-                                <rect key="frame" x="20" y="41" width="410" height="214"/>
+                                <rect key="frame" x="20" y="41" width="410" height="211"/>
                                 <clipView key="contentView" id="ada-LN-Fgf">
-                                    <rect key="frame" x="1" y="1" width="408" height="212"/>
+                                    <rect key="frame" x="1" y="1" width="408" height="209"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" viewBased="YES" id="Ugt-Uw-czF">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="209"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                             <size key="intercellSpacing" width="3" height="2"/>

@@ -36,6 +36,13 @@
         // warn user that app is running
     } else {
        // remove selected componets
+        for (NSInteger i; i < [self.tableView numberOfRows]; i++) {
+            ComponetsTableViewCell *cell = [self.tableView viewAtColumn:0 row:i makeIfNecessary:YES];
+            if (cell.removeCheckBox.state == 1){
+                [deleter removeComponetFromMac:cell.componet];
+                //animation to slide away cell
+            }
+        }
     }
 }
 
@@ -91,6 +98,7 @@
     NSString *type = [componets allKeys][0];
     NSString *name = componets[type];
     
+    cell.componet = componets;
     cell.typeLabel.stringValue = [self typeNameForKey:type];
     cell.itemLabel.stringValue = name;
     

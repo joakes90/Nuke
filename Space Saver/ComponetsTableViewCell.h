@@ -10,6 +10,8 @@
 
 @interface ComponetsTableViewCell : NSTableCellView
 
+@property (strong, nonatomic) NSDictionary *componet;
+
 @property (strong) IBOutlet NSTextField *itemLabel;
 
 @property (strong) IBOutlet NSTextField *typeLabel;

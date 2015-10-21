@@ -20,4 +20,8 @@
     }
     return appIsRunning;
 }
+
+- (void) removeComponetFromMac:(NSDictionary *)componets {
+    NSLog(@"%@", componets);
+}
 @end
