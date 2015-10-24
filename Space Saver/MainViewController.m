@@ -13,7 +13,6 @@
 #import "Application.h"
 #import "constants.h"
 #import "DeleteViewController.h"
-#import <Quartz/Quartz.h>
 
 @interface MainViewController() <NSTableViewDataSource, NSTableViewDelegate>
 
@@ -55,7 +54,7 @@
 
 -(void)tableViewSelectionIsChanging:(NSNotification *)notification {
 //    [self.tableView deselectAll:self];
-    [self performSegueWithIdentifier:@"deleteViewController" sender:self];
+//    [self performSegueWithIdentifier:@"deleteViewController" sender:self];
 }
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
@@ -72,17 +71,7 @@
     long selectedRow = self.tableView.selectedRow;
     if ( selectedRow >= 0) {
         [self performSegueWithIdentifier:@"verifyDeletion" sender:self];
-        //potential animation for removving item
-//        [self.tableView deselectAll:nil];
-//        
-//        CAKeyframeAnimation *slide = [CAKeyframeAnimation animation];
-//        slide.keyPath = @"position.x";
-//        slide.values = @[@0, [NSNumber numberWithDouble:(0 - (self.view.frame.size.width + 15))]];
-//        slide.keyTimes = @[@0, @1];
-//        slide.duration = 0.5;
-//        slide.additive = YES;
-//        
-//        [self.tableView.layer addAnimation:slide forKey:@"slide"];
+
     }
     
 }
@@ -90,11 +79,9 @@
 -(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"verifyDeletion"]) {
         Application *app = [AppsController sharedInstance].apps[[self.tableView selectedRow]];
-        //testing only do remove
         [app setComponetsForApplication];
         DeleteViewController *vc = segue.destinationController;
         vc.App = app;
-        //end test
     }
 }
 

@@ -7,13 +7,14 @@
 //
 
 #import "ComponetsTableViewCell.h"
+#import <Quartz/Quartz.h>
 
 @implementation ComponetsTableViewCell
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    // Drawing code here.
+    // Drawing code here
 }
 
 @end

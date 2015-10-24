@@ -10,12 +10,15 @@
 #import "ComponetsTableViewCell.h"
 #import "constants.h"
 #import "DeletionController.h"
+#import <Quartz/Quartz.h>
 
 @interface DeleteViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong) IBOutlet NSTextField *ViewLabel;
 
 @property (strong) IBOutlet NSTableView *tableView;
+
+@property (strong, nonatomic) DeletionController *deleter;
 
 @end
 
@@ -25,24 +28,35 @@
     [super viewDidLoad];
     // Do view setup here.
     self.ViewLabel.stringValue = [NSString stringWithFormat:@"Remove these items with %@?", self.App.name];
+    self.deleter = [[DeletionController alloc] init];
 }
 - (IBAction)dismisView:(id)sender {
     [self dismissViewController:self];
 }
 
 - (IBAction)deleteApp:(id)sender {
-    DeletionController *deleter = [[DeletionController alloc] init];
-    if ([deleter appIsRunning:self.App]) {
+    
+    if ([self.deleter appIsRunning:self.App]) {
         // warn user that app is running
     } else {
        // remove selected componets
-        for (NSInteger i; i < [self.tableView numberOfRows]; i++) {
+        for (NSInteger i = 0; i < [self.tableView numberOfRows]; i++) {
             ComponetsTableViewCell *cell = [self.tableView viewAtColumn:0 row:i makeIfNecessary:YES];
             if (cell.removeCheckBox.state == 1){
-                [deleter removeComponetFromMac:cell.componet];
+                [self.deleter removeComponetFromMac:cell.componet];
+                
                 //animation to slide away cell
+                CAKeyframeAnimation *slide = [CAKeyframeAnimation animation];
+                slide.keyPath = @"position.x";
+                slide.values = @[@0, [NSNumber numberWithDouble:(0 - (self.view.frame.size.width + 15))]];
+                slide.keyTimes = @[@0, @1];
+                slide.duration = 0.5;
+                slide.additive = NO;
+                
+                [cell.layer addAnimation:slide forKey:@"slide"];
             }
         }
+        [self dismissViewController:self];
     }
 }
 
@@ -73,6 +87,10 @@
     return 50.0;
 }
 
+-(BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row {
+    return NO;
+}
+
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     NSArray *keys = [self.App.appComponets allKeys];
     NSInteger numberOfEnteries = 0;
@@ -101,6 +119,7 @@
     cell.componet = componets;
     cell.typeLabel.stringValue = [self typeNameForKey:type];
     cell.itemLabel.stringValue = name;
+    cell.wantsLayer = YES;
     
     return cell;
 }
