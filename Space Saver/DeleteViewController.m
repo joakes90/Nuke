@@ -11,6 +11,7 @@
 #import "constants.h"
 #import "DeletionController.h"
 #import <Quartz/Quartz.h>
+#import "AppRunningViewController.h"
 
 @interface DeleteViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
@@ -38,9 +39,10 @@
     
     if ([self.deleter appIsRunning:self.App]) {
         // warn user that app is running
+        [self performSegueWithIdentifier:@"appRunning" sender:self];
     } else {
        // remove selected componets
-        for (NSInteger i = 0; i < [self.tableView numberOfRows]; i++) {
+        for (NSInteger i = 0 ; i < [self.tableView numberOfRows]; i++) {
             ComponetsTableViewCell *cell = [self.tableView viewAtColumn:0 row:i makeIfNecessary:YES];
             if (cell.removeCheckBox.state == 1){
                 [self.deleter removeComponetFromMac:cell.componet];
@@ -81,6 +83,14 @@
     }
 }
 
+
+-(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"appRunning"]) {
+        AppRunningViewController *vc = segue.destinationController;
+        vc.app = self.App;
+    }
+
+}
 //tableview datasource and delegate methods
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {

@@ -829,6 +829,70 @@
             </objects>
             <point key="canvasLocation" x="537.5" y="936"/>
         </scene>
+        <!--App Running View Controller-->
+        <scene sceneID="fnn-oT-uZQ">
+            <objects>
+                <viewController id="dOU-uB-1EL" customClass="AppRunningViewController" sceneMemberID="viewController">
+                    <view key="view" id="QQU-SD-Ts1">
+                        <rect key="frame" x="0.0" y="0.0" width="459" height="112"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PJV-5G-6V0">
+                                <rect key="frame" x="74" y="58" width="367" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="363" id="HSU-MS-BCb"/>
+                                </constraints>
+                                <animations/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Application {application name} is already running. Please stop this process before trying to uninstall" id="KUQ-36-v9w">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-U9-tLe">
+                                <rect key="frame" x="8" y="45" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="SZd-qT-fu2"/>
+                                    <constraint firstAttribute="height" constant="60" id="UzF-uP-GXq"/>
+                                </constraints>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSAddTemplate" id="LSf-Te-Vho"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PVJ-ej-SXq">
+                                <rect key="frame" x="363" y="0.0" width="82" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="dIJ-Tm-D0y"/>
+                                </constraints>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Ok" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q3j-m2-9v2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ok:" target="dOU-uB-1EL" id="VHj-Hc-h05"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PVJ-ej-SXq" secondAttribute="bottom" constant="7" id="8yO-ds-ytS"/>
+                            <constraint firstItem="cAq-U9-tLe" firstAttribute="top" secondItem="QQU-SD-Ts1" secondAttribute="top" constant="7" id="EJ2-tn-IVM"/>
+                            <constraint firstItem="PJV-5G-6V0" firstAttribute="leading" secondItem="cAq-U9-tLe" secondAttribute="trailing" constant="8" id="FDj-hB-CUt"/>
+                            <constraint firstAttribute="trailing" secondItem="PJV-5G-6V0" secondAttribute="trailing" constant="20" id="SQn-CF-PmH"/>
+                            <constraint firstItem="PJV-5G-6V0" firstAttribute="top" secondItem="QQU-SD-Ts1" secondAttribute="top" constant="20" id="TQ7-8J-UhF"/>
+                            <constraint firstItem="cAq-U9-tLe" firstAttribute="leading" secondItem="QQU-SD-Ts1" secondAttribute="leading" constant="8" id="uk6-zi-A8U"/>
+                            <constraint firstAttribute="trailing" secondItem="PVJ-ej-SXq" secondAttribute="trailing" constant="20" id="vgU-xi-Xwo"/>
+                        </constraints>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="appImage" destination="cAq-U9-tLe" id="R1S-Di-2ee"/>
+                        <outlet property="messageLabel" destination="PJV-5G-6V0" id="8pG-JH-yB2"/>
+                    </connections>
+                </viewController>
+                <customObject id="1tU-yo-whm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257.5" y="1330"/>
+        </scene>
         <!--Delete View Controller-->
         <scene sceneID="Sf5-Id-zC7">
             <objects>
@@ -1004,6 +1068,7 @@ Gw
                     <connections>
                         <outlet property="ViewLabel" destination="tps-wL-NVK" id="ote-ks-HgK"/>
                         <outlet property="tableView" destination="Ugt-Uw-czF" id="nVl-D7-oEh"/>
+                        <segue destination="dOU-uB-1EL" kind="modal" identifier="appRunning" id="JR7-QE-rUJ"/>
                     </connections>
                 </viewController>
                 <customObject id="yUc-Qx-e8s" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1012,6 +1077,7 @@ Gw
         </scene>
     </scenes>
     <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSBonjour" width="32" height="32"/>
     </resources>
 </document>
