@@ -8,8 +8,10 @@
 
 #import "WindowController.h"
 #import "MainViewController.h"
+#import "constants.h"
 
 @interface WindowController ()
+
 
 @end
 
@@ -20,8 +22,16 @@
     MainViewController *vc = (MainViewController *) self.contentViewController;
     self.delegate = vc;
 }
+
+
+
 - (IBAction)removeToolbarItemPressed:(id)sender {
-    [self.delegate removeButtonPushed];
+    [self.delegate removeButtonPushedInMode:kDeleteMode];
 }
+
+- (IBAction)resetToolBarItemPressed:(id)sender {
+    [self.delegate removeButtonPushedInMode:kResetMode];
+}
+
 
 @end

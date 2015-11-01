@@ -7,6 +7,7 @@
 //
 
 #import "DeletionController.h"
+#import "constants.h"
 
 @implementation DeletionController
 
@@ -22,6 +23,43 @@
 }
 
 - (void) removeComponetFromMac:(NSDictionary *)componets {
-    NSLog(@"%@", componets);
+    NSString *key = [componets allKeys][0];
+    NSString *path;
+    if ([key isEqualToString:kUserPrefs]) {
+        path = [[constants sharedInstance].kUserPrefsPath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kUserCaches]) {
+        path = [[constants sharedInstance].kUserCachesPath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kUserAppSupport]) {
+        path = [[constants sharedInstance].kUserAppSupportPath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kUserAutosave]) {
+        path = [[constants sharedInstance].KUserAutoSavePath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kMisc]) {
+        path = [[constants sharedInstance].kMiscPath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kContainers]) {
+        path = [[constants sharedInstance].kContainersPath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kSaveState]) {
+        path = [[constants sharedInstance].kSaveStatePath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kRootPrefs]) {
+        path = [[constants sharedInstance].kRootPrefsPath stringByAppendingString:[NSString stringWithFormat:@"/%@", componets[key]]];
+    }
+    if ([key isEqualToString:kAppFolder]) {
+        path = componets[key];
+    }
+    if (path) {
+        [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path] resultingItemURL:nil error:nil];
+    }
+}
+
+- (void) removeApplicationFromMac:(NSString *)name; {
+    [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:[NSString stringWithFormat:@"/Applications/%@", name]]
+                                  resultingItemURL:nil
+                                             error:nil];
 }
 @end

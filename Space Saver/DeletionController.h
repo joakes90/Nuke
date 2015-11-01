@@ -16,4 +16,5 @@
 
 - (void) removeComponetFromMac:(NSDictionary *)componets;
 
+- (void) removeApplicationFromMac:(NSString *)name;
 @end

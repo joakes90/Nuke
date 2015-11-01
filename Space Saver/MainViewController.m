@@ -20,6 +20,8 @@
 @property (strong) IBOutlet NSProgressIndicator *spinner;
 @property (strong) IBOutlet NSView *populationView;
 
+@property (strong, nonatomic) NSString *mode;
+
 @end
 
 @implementation MainViewController
@@ -28,6 +30,7 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kUpdatedAppsArrayNotification object:nil];
     [self.spinner startAnimation:nil];
+    self.mode = [[NSString alloc] init];
     }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -67,13 +70,18 @@
 }
 
 // detail view delegate methods
--(void)removeButtonPushed{
+-(void)removeButtonPushedInMode:(NSString *)mode{
     long selectedRow = self.tableView.selectedRow;
     if ( selectedRow >= 0) {
+        [self setMode:mode];
         [self performSegueWithIdentifier:@"verifyDeletion" sender:self];
 
     }
     
+}
+
+- (void)changeModeTo:(NSString *)mode {
+    self.mode = mode;
 }
 
 -(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
@@ -82,6 +90,7 @@
         [app setComponetsForApplication];
         DeleteViewController *vc = segue.destinationController;
         vc.App = app;
+        vc.mode = self.mode;
     }
 }
 

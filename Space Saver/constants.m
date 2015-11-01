@@ -11,6 +11,9 @@
 @implementation constants
 
  NSString *const kUpdatedAppsArrayNotification = @"appsArrayUpdated";
+ NSString *const kDeleteMode = @"delete";
+ NSString *const kResetMode = @"reset";
+
  NSString *const kUserPrefs = @"userPrefs";
  NSString *const kUserCaches = @"userCaches";
  NSString *const kUserAppSupport = @"userAppSupport";
@@ -20,6 +23,7 @@
  NSString *const kUserLaunchAgents = @"userLaunchAgents";
  NSString *const kSaveState = @"saveStates";
  NSString *const kRootPrefs = @"rootPrefs";
+ NSString *const kAppFolder = @"appFolder";
 
 + (instancetype) sharedInstance {
     static constants *sharedInstance = nil;

@@ -22,6 +22,6 @@
 @protocol DetailViewDelegate <NSObject>;
 
 //add delegate methods
--(void)removeButtonPushed;
+-(void)removeButtonPushedInMode:(NSString *)mode;
 
 @end

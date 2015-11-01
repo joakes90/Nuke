@@ -12,6 +12,7 @@
 #import "DeletionController.h"
 #import <Quartz/Quartz.h>
 #import "AppRunningViewController.h"
+#import "AppsController.h"
 
 @interface DeleteViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
@@ -28,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    self.ViewLabel.stringValue = [NSString stringWithFormat:@"Remove these items with %@?", self.App.name];
+    self.ViewLabel.stringValue = [self.mode isEqualToString:kDeleteMode]? [NSString stringWithFormat:@"Remove these items with %@?", self.App.name] : [NSString stringWithFormat:@"Reset %@ to factory settings and remove data?", self.App.name];
     self.deleter = [[DeletionController alloc] init];
 }
 - (IBAction)dismisView:(id)sender {
@@ -58,7 +59,11 @@
                 [cell.layer addAnimation:slide forKey:@"slide"];
             }
         }
+        if ([self.mode isEqualToString:kDeleteMode]) {
+            [self.deleter removeApplicationFromMac:self.App.name];
+        }
         [self dismissViewController:self];
+        [[AppsController sharedInstance] findAllApplications];
     }
 }
 
@@ -109,10 +114,15 @@
         NSArray *filesArray = self.App.appComponets[key];
         numberOfEnteries += filesArray.count;
     }
+    if (![self.App.path isEqualToString:[NSString stringWithFormat:@"/Applications/%@", self.App.name]]) {
+        return numberOfEnteries ++;
+    } else {
     return numberOfEnteries;
+    }
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    
     NSMutableArray *orderOfColoms = [[NSMutableArray alloc] init];
     NSArray *keys = [self.App.appComponets allKeys];
     for (NSString *key in keys) {
@@ -122,15 +132,26 @@
         }
     }
     ComponetsTableViewCell *cell = [tableView makeViewWithIdentifier:@"componets" owner:self];
-    NSDictionary *componets = orderOfColoms[row];
-    NSString *type = [componets allKeys][0];
-    NSString *name = componets[type];
+    if (row < orderOfColoms.count) {
     
-    cell.componet = componets;
-    cell.typeLabel.stringValue = [self typeNameForKey:type];
-    cell.itemLabel.stringValue = name;
-    cell.wantsLayer = YES;
+        NSDictionary *componets = orderOfColoms[row];
+        NSString *type = [componets allKeys][0];
+        NSString *name = componets[type];
     
-    return cell;
+        cell.componet = componets;
+        cell.typeLabel.stringValue = [self typeNameForKey:type];
+        cell.itemLabel.stringValue = name;
+        cell.wantsLayer = YES;
+    
+        return cell;
+    } else {
+        cell.componet = @{kAppFolder: [self.App.path stringByReplacingOccurrencesOfString:self.App.name withString:@""]};
+        cell.typeLabel.stringValue = @"Application Folder";
+        cell.itemLabel.stringValue = [self.App.path stringByReplacingOccurrencesOfString:self.App.name withString:@""];
+        cell.wantsLayer = YES;
+        
+        return cell;
+    }
+            
 }
 @end

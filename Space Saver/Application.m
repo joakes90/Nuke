@@ -30,7 +30,7 @@
     NSArray *libDirectories = [self findUserLibraryDirectories];
     NSArray *containers = [self findContainers];
     NSArray *saveStates = [self findSaveStates];
-    NSArray *rootPrefs = [self findRootPrefs];
+//    NSArray *rootPrefs = [self findRootPrefs];
     
     if (userPrefs.count > 0) {
         [components setObject:userPrefs forKey:kUserPrefs];
@@ -53,9 +53,9 @@
     if (saveStates.count > 0) {
         [components setObject:saveStates forKey:kSaveState];
     }
-    if (rootPrefs.count > 0) {
-        [components setObject:rootPrefs forKey:kRootPrefs];
-    }
+//    if (rootPrefs.count > 0) {
+//        [components setObject:rootPrefs forKey:kRootPrefs];
+//    }
     return components;
 }
 

@@ -659,18 +659,23 @@
                         <toolbar key="toolbar" implicitIdentifier="E7757ABB-F630-4257-8D73-EE103B49590A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="MHL-Hw-HSw">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="CACC5990-776F-4221-9556-452DFAE028A8" label="Installed Packages" paletteLabel="Installed Packages" tag="-1" id="vMi-di-deP"/>
-                                <toolbarItem implicitItemIdentifier="A2A31FC4-B5B0-4BDE-85E8-C5B68BEE40EB" label="Remove" paletteLabel="Remove" tag="-1" id="OuP-b5-Ngf">
+                                <toolbarItem implicitItemIdentifier="A2A31FC4-B5B0-4BDE-85E8-C5B68BEE40EB" label="Remove App" paletteLabel="Remove App" tag="-1" id="OuP-b5-Ngf">
                                     <connections>
                                         <action selector="removeToolbarItemPressed:" target="B8D-0N-5wS" id="Voj-Un-QfT"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="YFj-R6-C85"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d1q-PT-mTb"/>
+                                <toolbarItem implicitItemIdentifier="61A2BA59-1E5F-44C1-9B85-00DF67A759CB" label="Reset App" paletteLabel="Reset App" tag="-1" id="yZk-F6-dBu">
+                                    <connections>
+                                        <action selector="resetToolBarItemPressed:" target="B8D-0N-5wS" id="GLw-wN-Lcg"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="d1q-PT-mTb"/>
                                 <toolbarItem reference="vMi-di-deP"/>
-                                <toolbarItem reference="YFj-R6-C85"/>
+                                <toolbarItem reference="d1q-PT-mTb"/>
+                                <toolbarItem reference="yZk-F6-dBu"/>
                                 <toolbarItem reference="OuP-b5-Ngf"/>
                             </defaultToolbarItems>
                         </toolbar>

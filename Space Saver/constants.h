@@ -11,6 +11,9 @@
 @interface constants : NSObject
 
 extern NSString *const kUpdatedAppsArrayNotification;
+extern NSString *const kDeleteMode;
+extern NSString *const kResetMode;
+
 extern NSString *const kUserPrefs;
 extern NSString *const kUserCaches;
 extern NSString *const kUserAppSupport;
@@ -19,6 +22,7 @@ extern NSString *const kMisc;
 extern NSString *const kContainers;
 extern NSString *const kSaveState;
 extern NSString *const kRootPrefs;
+extern NSString *const kAppFolder;
 
 @property (strong, nonatomic) NSString *kUserPrefsPath;
 @property (strong, nonatomic) NSString *kUserCachesPath;

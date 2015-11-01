@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) Application *App;
 
+@property (strong, nonatomic) NSString *mode;
+
 @end
