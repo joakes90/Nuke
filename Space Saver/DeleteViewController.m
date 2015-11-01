@@ -140,7 +140,7 @@
     
         cell.componet = componets;
         cell.typeLabel.stringValue = [self typeNameForKey:type];
-        cell.itemLabel.stringValue = name;
+        cell.itemLabel.stringValue = [name stringByReplacingOccurrencesOfString:@".app" withString:@""];
         cell.wantsLayer = YES;
     
         return cell;

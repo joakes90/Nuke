@@ -48,7 +48,7 @@
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     if ([tableColumn.identifier isEqualToString:@"cell"]) {
         ApplicationCell *cell = [tableView makeViewWithIdentifier:@"cell" owner:self];
-        cell.nameLabel.stringValue = [AppsController sharedInstance].apps[row].name;
+        cell.nameLabel.stringValue = [[AppsController sharedInstance].apps[row].name stringByReplacingOccurrencesOfString:@".app" withString:@""];
         cell.appIcon.image = [AppsController sharedInstance].apps[row].icon;
         return cell;
     }
