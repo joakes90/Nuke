@@ -22,6 +22,33 @@
     return appIsRunning;
 }
 
+- (BOOL) appAppearsInDock:(Application *)app {
+    BOOL inDock = NO;
+    NSMutableArray *dockDict = [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.dock"][@"persistent-apps"];
+    for (NSDictionary * entery in dockDict) {
+        if ([entery[@"tile-data"][@"bundle-identifier"] isEqualToString:app.bundelIdentifier]){
+            inDock = YES;
+        }
+    }
+    return inDock;
+}
+
+- (void) removeFromDockApplicationWithBundelIdentifier:(NSString *)ident {
+    NSMutableDictionary *dockDict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.dock"]];
+    NSMutableArray *dockArray = dockDict[@"persistent-apps"];
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < dockArray.count; i++) {
+        if (![dockArray[i][@"tile-data"][@"bundle-identifier"] isEqualToString:ident]) {
+            [newArray addObject:dockArray[i]];
+        }
+    }
+    dockDict[@"persistent-apps"] = newArray;
+    [[NSUserDefaults standardUserDefaults] setPersistentDomain:dockDict forName:@"com.apple.dock"];
+    [NSUserDefaults resetStandardUserDefaults];
+    NSAppleScript *restartDock = [[NSAppleScript alloc] initWithSource:@"tell application \"Dock\" to quit"];
+    [restartDock executeAndReturnError:nil];
+}
+
 - (void) removeComponetFromMac:(NSDictionary *)componets {
     NSString *key = [componets allKeys][0];
     NSString *path;

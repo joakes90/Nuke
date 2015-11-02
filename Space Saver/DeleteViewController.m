@@ -60,6 +60,9 @@
             }
         }
         if ([self.mode isEqualToString:kDeleteMode]) {
+            if ([self.deleter appAppearsInDock:self.App]) {
+                [self.deleter removeFromDockApplicationWithBundelIdentifier:self.App.bundelIdentifier];
+            }
             [self.deleter removeApplicationFromMac:self.App.name];
         }
         [self dismissViewController:self];

@@ -14,7 +14,12 @@
 
 - (BOOL) appIsRunning:(Application *)app;
 
+- (BOOL) appAppearsInDock:(Application *)app;
+
 - (void) removeComponetFromMac:(NSDictionary *)componets;
 
 - (void) removeApplicationFromMac:(NSString *)name;
+
+- (void) removeFromDockApplicationWithBundelIdentifier:(NSString *)ident;
+
 @end
