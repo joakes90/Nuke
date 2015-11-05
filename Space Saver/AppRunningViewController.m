@@ -20,7 +20,7 @@
 }
 
 -(void)viewDidAppear {
-    self.messageLabel.stringValue = [NSString stringWithFormat:@"Application %@ is already running. Please stop this process before trying to uninstall", self.app.name];
+    self.messageLabel.stringValue = [NSString stringWithFormat:@"Application %@ is already running. Please stop this process before trying to uninstall", [self.app.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
     self.appImage.image = self.app.icon;
 }
 

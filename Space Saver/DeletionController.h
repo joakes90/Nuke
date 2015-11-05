@@ -16,6 +16,8 @@
 
 - (BOOL) appAppearsInDock:(Application *)app;
 
+- (BOOL) appIsStartupItem:(NSString *)app;
+
 - (void) removeComponetFromMac:(NSDictionary *)componets;
 
 - (void) removeApplicationFromMac:(NSString *)name;

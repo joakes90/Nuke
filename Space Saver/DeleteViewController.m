@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    self.ViewLabel.stringValue = [self.mode isEqualToString:kDeleteMode]? [NSString stringWithFormat:@"Remove these items with %@?", self.App.name] : [NSString stringWithFormat:@"Reset %@ to factory settings and remove data?", self.App.name];
+    self.ViewLabel.stringValue = [self.mode isEqualToString:kDeleteMode]? [NSString stringWithFormat:@"Remove these items with %@?", [self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]] : [NSString stringWithFormat:@"Reset %@ to factory settings and remove data?", [self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
     self.deleter = [[DeletionController alloc] init];
 }
 - (IBAction)dismisView:(id)sender {
@@ -63,6 +63,7 @@
             if ([self.deleter appAppearsInDock:self.App]) {
                 [self.deleter removeFromDockApplicationWithBundelIdentifier:self.App.bundelIdentifier];
             }
+            [self.deleter appIsStartupItem:[self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
             [self.deleter removeApplicationFromMac:self.App.name];
         }
         [self dismissViewController:self];

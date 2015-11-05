@@ -834,10 +834,10 @@
             </objects>
             <point key="canvasLocation" x="537.5" y="936"/>
         </scene>
-        <!--App Running View Controller-->
+        <!--Open App-->
         <scene sceneID="fnn-oT-uZQ">
             <objects>
-                <viewController id="dOU-uB-1EL" customClass="AppRunningViewController" sceneMemberID="viewController">
+                <viewController title="Open App" id="dOU-uB-1EL" customClass="AppRunningViewController" sceneMemberID="viewController">
                     <view key="view" id="QQU-SD-Ts1">
                         <rect key="frame" x="0.0" y="0.0" width="459" height="112"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -926,7 +926,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" viewBased="YES" id="Ugt-Uw-czF">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="202"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                             <size key="intercellSpacing" width="3" height="2"/>

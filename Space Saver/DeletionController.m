@@ -33,6 +33,26 @@
     return inDock;
 }
 
+- (BOOL) appIsStartupItem:(NSString *)app {
+    NSAppleScript *getLoginItems = [[NSAppleScript alloc] initWithSource:@"tell application \"System Events\" to get the name of every login item"];
+    NSAppleEventDescriptor *allLoginItemsDescriptor = [getLoginItems executeAndReturnError:nil];
+    NSMutableArray *allLoginItems = [NSMutableArray array];
+    for (NSInteger i=1; i <= allLoginItemsDescriptor.numberOfItems; i++) {
+        NSString *stringValue = [[allLoginItemsDescriptor descriptorAtIndex:i] stringValue];
+        [allLoginItems addObject:stringValue];
+    }
+    
+    for (NSString *startupItem in allLoginItems) {
+        if ([startupItem containsString:app]) {
+            NSString *appleScriptString = [NSString stringWithFormat:@"tell application \"System Events\" to delete login item \"%@\"", startupItem];
+            NSAppleScript *removeFromStartupScript = [[NSAppleScript alloc] initWithSource:appleScriptString];
+            [removeFromStartupScript executeAndReturnError:nil];
+        }
+    }
+    
+    return YES;
+}
+
 - (void) removeFromDockApplicationWithBundelIdentifier:(NSString *)ident {
     NSMutableDictionary *dockDict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.dock"]];
     NSMutableArray *dockArray = dockDict[@"persistent-apps"];
