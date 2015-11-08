@@ -33,7 +33,7 @@
     return inDock;
 }
 
-- (BOOL) appIsStartupItem:(NSString *)app {
+- (void) appIsStartupItem:(NSString *)app {
     NSAppleScript *getLoginItems = [[NSAppleScript alloc] initWithSource:@"tell application \"System Events\" to get the name of every login item"];
     NSAppleEventDescriptor *allLoginItemsDescriptor = [getLoginItems executeAndReturnError:nil];
     NSMutableArray *allLoginItems = [NSMutableArray array];
@@ -49,8 +49,6 @@
             [removeFromStartupScript executeAndReturnError:nil];
         }
     }
-    
-    return YES;
 }
 
 - (void) removeFromDockApplicationWithBundelIdentifier:(NSString *)ident {
@@ -99,14 +97,36 @@
     if ([key isEqualToString:kAppFolder]) {
         path = componets[key];
     }
+    if ([key isEqualToString:@"Unique Items"]) {
+        path = [componets[key] stringByExpandingTildeInPath];
+    }
     if (path) {
-        [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path] resultingItemURL:nil error:nil];
+        NSString *owner = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil][@"NSFileOwnerAccountName"];
+        if (![owner isEqualToString:@"root"]) {
+            [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path] resultingItemURL:nil error:nil];
+        } else {
+            NSString *diskName = [[[NSFileManager defaultManager] componentsToDisplayForPath:path] objectAtIndex:0];
+            path = [path substringFromIndex:1];
+            path = [path stringByReplacingOccurrencesOfString:@"/" withString:@":"];
+            NSString *appleScriptPath = [NSString stringWithFormat:@"%@:%@", diskName, path];
+            NSAppleScript *deleteScript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"Finder\" to delete file \"%@\"", appleScriptPath]];
+            [deleteScript executeAndReturnError:nil];
+        }
     }
 }
 
 - (void) removeApplicationFromMac:(NSString *)name; {
-    [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:[NSString stringWithFormat:@"/Applications/%@", name]]
-                                  resultingItemURL:nil
-                                             error:nil];
+    NSString *path = [NSString stringWithFormat:@"/Applications/%@", name];
+    NSString *owner = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil][@"NSFileOwnerAccountName"];
+    if (![owner isEqualToString:@"root"]) {
+        [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path]
+                                      resultingItemURL:nil
+                                                 error:nil];
+    } else {
+        NSString *diskName = [[[NSFileManager defaultManager] componentsToDisplayForPath:path] objectAtIndex:0];
+        NSString *appleScriptPath = [NSString stringWithFormat:@"%@:Applications:%@", diskName, name];
+        NSAppleScript *deleteScript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"Finder\" to delete file \"%@\"", appleScriptPath]];
+        [deleteScript executeAndReturnError:nil];
+    }
 }
 @end

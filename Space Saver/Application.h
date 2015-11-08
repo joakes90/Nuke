@@ -20,6 +20,8 @@
 
 @property (strong, nonatomic) NSDictionary *appComponets;
 
+@property (assign, nonatomic) BOOL hasSpecificItems;
+
 + (id) applicationWithName:(NSString *)name Path:(NSString *)path BundelIdentifier:(NSString *)bundelIdentifier Andicon:(NSImage *)icon;
 
 - (NSDictionary *) returnComponetsForApplication;

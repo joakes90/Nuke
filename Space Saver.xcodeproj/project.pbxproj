@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D01B0AAA1BD0877800FC7B0A /* ComponetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D01B0AA91BD0877800FC7B0A /* ComponetsTableViewCell.m */; };
+		D025239D1BEEBBD3001F9D5C /* otherFiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = D025239C1BEEBBD3001F9D5C /* otherFiles.plist */; };
 		D04CD7631B9E7A210047220E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7621B9E7A210047220E /* AppDelegate.m */; };
 		D04CD7661B9E7A210047220E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7651B9E7A210047220E /* main.m */; };
 		D04CD7691B9E7A210047220E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7681B9E7A210047220E /* MainViewController.m */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		D01B0AA81BD0877800FC7B0A /* ComponetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponetsTableViewCell.h; sourceTree = "<group>"; };
 		D01B0AA91BD0877800FC7B0A /* ComponetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponetsTableViewCell.m; sourceTree = "<group>"; };
+		D025239C1BEEBBD3001F9D5C /* otherFiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = otherFiles.plist; sourceTree = "<group>"; };
 		D04CD75E1B9E7A210047220E /* Space Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04CD7611B9E7A210047220E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D04CD7621B9E7A210047220E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */,
+				D025239C1BEEBBD3001F9D5C /* otherFiles.plist */,
 				D04CD7651B9E7A210047220E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -319,6 +322,7 @@
 				D04CD76B1B9E7A210047220E /* Assets.xcassets in Resources */,
 				D04CD76E1B9E7A210047220E /* Main.storyboard in Resources */,
 				D0BB5E5E1B9FC14700FC9D13 /* blacklist.plist in Resources */,
+				D025239D1BEEBBD3001F9D5C /* otherFiles.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

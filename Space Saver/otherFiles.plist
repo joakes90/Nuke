@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Google Chrome.app</key>
+	<array>
+		<string>~/Applications/Chrome Apps.localized</string>
+	</array>
+	<key>Dropbox.app</key>
+	<array>
+		<string>/Library/DropboxHelperTools</string>
+	</array>
+	<key>Xcode.app</key>
+	<array>
+		<string>~/System/</string>
+	</array>
+	<key>VirtualBox.app</key>
+	<array>
+		<string>~/VirtualBox VMs/</string>
+	</array>
+</dict>
+</plist>

@@ -30,7 +30,8 @@
     NSArray *libDirectories = [self findUserLibraryDirectories];
     NSArray *containers = [self findContainers];
     NSArray *saveStates = [self findSaveStates];
-//    NSArray *rootPrefs = [self findRootPrefs];
+    NSArray *rootPrefs = [self findRootPrefs];
+    NSArray *specificItems = [self findSpecificItems];
     
     if (userPrefs.count > 0) {
         [components setObject:userPrefs forKey:kUserPrefs];
@@ -53,9 +54,12 @@
     if (saveStates.count > 0) {
         [components setObject:saveStates forKey:kSaveState];
     }
-//    if (rootPrefs.count > 0) {
-//        [components setObject:rootPrefs forKey:kRootPrefs];
-//    }
+    if (rootPrefs.count > 0) {
+        [components setObject:rootPrefs forKey:kRootPrefs];
+    }
+    if (specificItems) {
+        [components setObject:specificItems forKey:@"Unique Items"];
+    }
     return components;
 }
 
@@ -70,7 +74,7 @@
     
     NSArray *allUserPrefs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[constants sharedInstance].kUserPrefsPath error:nil];
     for (NSString *name in allUserPrefs) {
-        if ([name containsString:self.bundelIdentifier]) {
+        if (self.bundelIdentifier && [name containsString:self.bundelIdentifier]) {
             [foundPrefs addObject:name];
         }
     }
@@ -83,7 +87,7 @@
     
     NSArray *allCaches = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[constants sharedInstance].kUserCachesPath error:nil];
     for (NSString *name in allCaches) {
-        if ([name containsString:self.bundelIdentifier]) {
+        if (self.bundelIdentifier && [name containsString:self.bundelIdentifier]) {
             [foundCaches addObject:name];
         }
     }
@@ -107,7 +111,7 @@
     
     NSArray *allAutoSaves = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[constants sharedInstance].KUserAutoSavePath error:nil];
     for (NSString *name in allAutoSaves) {
-        if ([name containsString:self.bundelIdentifier]) {
+        if (self.bundelIdentifier && [name containsString:self.bundelIdentifier]) {
             [foundAutoSave addObject:name];
         }
     }
@@ -131,7 +135,7 @@
     
     NSArray *allContainers = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[constants sharedInstance].kContainersPath error:nil];
     for (NSString *name in allContainers) {
-        if ([name containsString:self.bundelIdentifier]) {
+        if (self.bundelIdentifier && [name containsString:self.bundelIdentifier]) {
             [foundContainer addObject:name];
         }
     }
@@ -143,7 +147,7 @@
     
     NSArray *allStates = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[constants sharedInstance].kSaveStatePath error:nil];
     for (NSString *name in allStates) {
-        if ([name containsString:self.bundelIdentifier]) {
+        if (self.bundelIdentifier && [name containsString:self.bundelIdentifier]) {
             [foundStates addObject:name];
         }
     }
@@ -155,10 +159,25 @@
     
     NSArray *allPrefs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[constants sharedInstance].kRootPrefsPath error:nil];
     for (NSString *name in allPrefs) {
-        if ([name containsString:self.bundelIdentifier]) {
+        if (self.bundelIdentifier && [name containsString:self.bundelIdentifier]) {
             [foundPrefs addObject:name];
         }
     }
     return foundPrefs;
+}
+
+- (NSArray *) findSpecificItems{
+    NSDictionary *specailAppsDictionary = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"otherFiles" ofType:@"plist"]];
+    NSArray *appNames = [specailAppsDictionary allKeys];
+    for (NSString *key in appNames) {
+        if ([key isEqualToString:self.name]) {
+            self.hasSpecificItems = YES;
+        }
+    }
+    if (self.hasSpecificItems) {
+        return specailAppsDictionary[self.name];
+    } else {
+        return nil;
+    }
 }
 @end
