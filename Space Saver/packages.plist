@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>packageName</key>
+		<string>Microsoft Office 2011</string>
+		<key>idFile</key>
+		<string>/Applications/MicrosoftOffice 2011</string>
+		<key>imageName</key>
+		<string>outlook2011icon.jpg</string>
+		<key>needsReboot</key>
+		<true/>
+		<key>files</key>
+		<array>
+			<string>/Applications/Microsoft Office 2011</string>
+			<string>/Applications/Lync</string>
+			<string>~/Library/Preferences/com.microsoft.office.plist</string>
+			<string>~/Library/Preferences/com.microsoft.setupassistant.plist</string>
+			<string>~/Library/Preferences/com.microsoft.databasedaemon.plist</string>
+			<string>~/Library/Preferences/com.microsoft.outlook.office_reminders.plist</string>
+			<string>~/Library/Preferences/com.microsoft.Outlook.plist</string>
+			<string>~/Library/Preferences/com.microsoft.PowerPoint.plist</string>
+			<string>~/Library/Preferences/com.microsoft.Lync.plist</string>
+			<string>~/Library/Preferences/com.microsoft.Excel.plist</string>
+			<string>com.microsoft.office.licensing.helper.plist</string>
+			<string>/Library/Prefrences/com.microsoft.office.licensing.plist</string>
+			<string>/Library/Prefrences/com.microsoft.PlayReady.plist</string>
+			<string>/Library/PrivlegedHelperTools/com.microsoft.office.licensing.helper</string>
+			<string>/Library/Application Support/Microsoft/</string>
+			<string>~/Documents/Microsoft User Data/</string>
+		</array>
+		<key>dockItems</key>
+		<array>
+			<string>com.microsoft.Lync</string>
+			<string>com.microsoft.Excel</string>
+			<string>com.microsoft.Outlook</string>
+			<string>com.microsoft.Powerpoint</string>
+			<string>com.microsoft.Word</string>
+		</array>
+		<key>Message</key>
+		<string>After Uninstalling Office 2011 you may need to reinstall Micorsoft Silverlight. If you have multipul versions of Office installed you may need to reinstall the version you want to use.</string>
+		<key>recipts</key>
+		<array>
+			<string>com.microsoft</string>
+			<string>MicrosoftLync</string>
+		</array>
+	</dict>
+</array>
+</plist>

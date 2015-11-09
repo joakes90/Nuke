@@ -18,6 +18,8 @@
 		D04CD7841B9E7A220047220E /* Space_SaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7831B9E7A220047220E /* Space_SaverUITests.m */; };
 		D04CD7941B9E915C0047220E /* AppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7931B9E915C0047220E /* AppsController.m */; };
 		D04CD7991B9E9EFD0047220E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7981B9E9EFD0047220E /* Application.m */; };
+		D056662E1BF01386001E8EF4 /* PackageUninstallController.m in Sources */ = {isa = PBXBuildFile; fileRef = D056662D1BF01386001E8EF4 /* PackageUninstallController.m */; };
+		D05666301BF01444001E8EF4 /* packages.plist in Resources */ = {isa = PBXBuildFile; fileRef = D056662F1BF01444001E8EF4 /* packages.plist */; };
 		D05F3C021BCCC5EC00C4CB69 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05F3C011BCCC5EC00C4CB69 /* WindowController.m */; };
 		D05F3C051BCDE89300C4CB69 /* DeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05F3C041BCDE89300C4CB69 /* DeleteViewController.m */; };
 		D05F3C071BCDEF2200C4CB69 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F3C061BCDEF2200C4CB69 /* Quartz.framework */; };
@@ -68,6 +70,9 @@
 		D04CD7931B9E915C0047220E /* AppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsController.m; sourceTree = "<group>"; };
 		D04CD7971B9E9EFD0047220E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		D04CD7981B9E9EFD0047220E /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		D056662C1BF01386001E8EF4 /* PackageUninstallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageUninstallController.h; sourceTree = "<group>"; };
+		D056662D1BF01386001E8EF4 /* PackageUninstallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageUninstallController.m; sourceTree = "<group>"; };
+		D056662F1BF01444001E8EF4 /* packages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = packages.plist; sourceTree = "<group>"; };
 		D05F3C001BCCC5EC00C4CB69 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		D05F3C011BCCC5EC00C4CB69 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		D05F3C031BCDE89300C4CB69 /* DeleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteViewController.h; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		D04CD7641B9E7A210047220E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D056662F1BF01444001E8EF4 /* packages.plist */,
 				D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */,
 				D025239C1BEEBBD3001F9D5C /* otherFiles.plist */,
 				D04CD7651B9E7A210047220E /* main.m */,
@@ -184,6 +190,8 @@
 				D04CD7931B9E915C0047220E /* AppsController.m */,
 				D08EF6541BD5C92B00E74B39 /* DeletionController.h */,
 				D08EF6551BD5C92B00E74B39 /* DeletionController.m */,
+				D056662C1BF01386001E8EF4 /* PackageUninstallController.h */,
+				D056662D1BF01386001E8EF4 /* PackageUninstallController.m */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04CD76B1B9E7A210047220E /* Assets.xcassets in Resources */,
+				D05666301BF01444001E8EF4 /* packages.plist in Resources */,
 				D04CD76E1B9E7A210047220E /* Main.storyboard in Resources */,
 				D0BB5E5E1B9FC14700FC9D13 /* blacklist.plist in Resources */,
 				D025239D1BEEBBD3001F9D5C /* otherFiles.plist in Resources */,
@@ -358,6 +367,7 @@
 				D05F3C051BCDE89300C4CB69 /* DeleteViewController.m in Sources */,
 				D04CD7631B9E7A210047220E /* AppDelegate.m in Sources */,
 				D04CD7991B9E9EFD0047220E /* Application.m in Sources */,
+				D056662E1BF01386001E8EF4 /* PackageUninstallController.m in Sources */,
 				D04CD7941B9E915C0047220E /* AppsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
