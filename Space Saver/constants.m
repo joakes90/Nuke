@@ -13,6 +13,7 @@
  NSString *const kUpdatedAppsArrayNotification = @"appsArrayUpdated";
  NSString *const kDeleteMode = @"delete";
  NSString *const kResetMode = @"reset";
+ NSString *const kpackageMode = @"package";
 
  NSString *const kUserPrefs = @"userPrefs";
  NSString *const kUserCaches = @"userCaches";

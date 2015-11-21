@@ -13,6 +13,7 @@
 extern NSString *const kUpdatedAppsArrayNotification;
 extern NSString *const kDeleteMode;
 extern NSString *const kResetMode;
+extern NSString *const kpackageMode;
 
 extern NSString *const kUserPrefs;
 extern NSString *const kUserCaches;

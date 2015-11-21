@@ -11,6 +11,8 @@
 
 @interface MainViewController : NSViewController<DetailViewDelegate>
 
+@property (strong) IBOutlet NSView *populationView;
+@property (strong) IBOutlet NSTableView *tableView;
 
 @end
 

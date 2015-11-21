@@ -16,15 +16,19 @@
 
 @interface MainViewController() <NSTableViewDataSource, NSTableViewDelegate>
 
-@property (strong) IBOutlet NSTableView *tableView;
+
 @property (strong) IBOutlet NSProgressIndicator *spinner;
-@property (strong) IBOutlet NSView *populationView;
+
 
 @property (strong, nonatomic) NSString *mode;
 
 @end
 
 @implementation MainViewController
+
+-(void)viewWillAppear {
+    self.view.wantsLayer = YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,13 +75,11 @@
 
 // detail view delegate methods
 -(void)removeButtonPushedInMode:(NSString *)mode{
-    long selectedRow = self.tableView.selectedRow;
-    if ( selectedRow >= 0) {
-        [self setMode:mode];
-        [self performSegueWithIdentifier:@"verifyDeletion" sender:self];
-
-    }
-    
+        long selectedRow = self.tableView.selectedRow;
+        if ( selectedRow >= 0) {
+            [self setMode:mode];
+            [self performSegueWithIdentifier:@"verifyDeletion" sender:self];
+        }
 }
 
 - (void)changeModeTo:(NSString *)mode {
@@ -93,5 +95,6 @@
         vc.mode = self.mode;
     }
 }
+
 
 @end

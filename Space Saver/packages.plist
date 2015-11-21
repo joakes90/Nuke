@@ -6,9 +6,9 @@
 		<key>packageName</key>
 		<string>Microsoft Office 2011</string>
 		<key>idFile</key>
-		<string>/Applications/MicrosoftOffice 2011</string>
+		<string>/Applications/Microsoft Office 2011</string>
 		<key>imageName</key>
-		<string>outlook2011icon.jpg</string>
+		<string>outlook2011icon.png</string>
 		<key>needsReboot</key>
 		<true/>
 		<key>files</key>
