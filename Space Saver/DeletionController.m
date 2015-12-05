@@ -11,11 +11,11 @@
 
 @implementation DeletionController
 
-- (BOOL)appIsRunning:(Application *)app {
+- (BOOL)appIsRunning:(NSString *)bundelID {
     BOOL appIsRunning = NO;
     NSArray *runningApplications = [[NSWorkspace sharedWorkspace] runningApplications];
     for (NSRunningApplication *runningApplication in runningApplications) {
-        if ([runningApplication.bundleIdentifier isEqualToString:app.bundelIdentifier]) {
+        if ([runningApplication.bundleIdentifier isEqualToString:bundelID]) {
             appIsRunning = YES;
         }
     }
@@ -109,7 +109,8 @@
             path = [path substringFromIndex:1];
             path = [path stringByReplacingOccurrencesOfString:@"/" withString:@":"];
             NSString *appleScriptPath = [NSString stringWithFormat:@"%@:%@", diskName, path];
-            NSAppleScript *deleteScript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"Finder\" to delete file \"%@\"", appleScriptPath]];
+            NSString *folder = [[componets[key] substringFromIndex:[componets[key] length] - 1] isEqualToString:@"/"] ? @"folder" : @"file";
+            NSAppleScript *deleteScript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"Finder\" to delete %@ \"%@\"", folder, appleScriptPath]];
             [deleteScript executeAndReturnError:nil];
         }
     }

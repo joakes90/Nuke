@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
+<dict>
+	<key>Microsoft Office 2011</key>
 	<dict>
 		<key>packageName</key>
 		<string>Microsoft Office 2011</string>
@@ -13,8 +14,9 @@
 		<true/>
 		<key>files</key>
 		<array>
-			<string>/Applications/Microsoft Office 2011</string>
-			<string>/Applications/Lync</string>
+			<string>/Applications/Microsoft Lync.app</string>
+			<string>~/Library/Preferences/com.microsoft.Word.plist</string>
+			<string>/Applications/Microsoft Office 2011/</string>
 			<string>~/Library/Preferences/com.microsoft.office.plist</string>
 			<string>~/Library/Preferences/com.microsoft.setupassistant.plist</string>
 			<string>~/Library/Preferences/com.microsoft.databasedaemon.plist</string>
@@ -46,5 +48,5 @@
 			<string>MicrosoftLync</string>
 		</array>
 	</dict>
-</array>
+</dict>
 </plist>

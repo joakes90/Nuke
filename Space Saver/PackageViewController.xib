@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PackageViewController">
             <connections>
+                <outlet property="table" destination="TPX-1Q-to5" id="BdS-eP-RA7"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -32,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="57" rowSizeStyle="automatic" viewBased="YES" id="TPX-1Q-to5">
-                                <rect key="frame" x="0.0" y="0.0" width="398" height="198"/>
+                                <rect key="frame" x="0.0" y="0.0" width="398" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -112,11 +113,24 @@
                         <animations/>
                     </scroller>
                 </scrollView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DNX-R1-4lv">
+                    <rect key="frame" x="339" y="2" width="93" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Uninstall" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FNK-b8-CET">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="uninstallSelectedPackage:" target="-2" id="Teh-fd-7uB"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="YCY-c0-mmp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="8bX-Tx-dus"/>
+                <constraint firstAttribute="bottom" secondItem="DNX-R1-4lv" secondAttribute="bottom" constant="9" id="VCX-tw-Rav"/>
                 <constraint firstItem="cKv-Rf-NeY" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="b9K-1J-zHs"/>
                 <constraint firstItem="cKv-Rf-NeY" firstAttribute="top" secondItem="YCY-c0-mmp" secondAttribute="bottom" constant="29" id="djz-LU-fVU"/>
+                <constraint firstAttribute="trailing" secondItem="DNX-R1-4lv" secondAttribute="trailing" constant="14" id="f5z-zZ-Paq"/>
                 <constraint firstItem="cKv-Rf-NeY" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="w8N-MJ-Bzs"/>
                 <constraint firstAttribute="bottom" secondItem="cKv-Rf-NeY" secondAttribute="bottom" constant="50" id="wi5-9X-c4x"/>
                 <constraint firstItem="YCY-c0-mmp" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="yzp-qt-IDJ"/>

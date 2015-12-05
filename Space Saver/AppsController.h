@@ -15,6 +15,7 @@
 
 + (instancetype) sharedInstance;
 
-- (void)findAllApplications;
+- (void) findAllApplications;
+- (Application *) appWithBundelID:(NSString *)bundelID;
 
 @end

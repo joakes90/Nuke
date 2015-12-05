@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Package.h"
 
 @interface PackageUninstallController : NSObject
 
-@property (strong, nonatomic) NSArray *packages;
+@property (strong, nonatomic) NSMutableArray *packages;
 
 + (instancetype) sharedInstance;
 
 - (NSArray *) installedPackages;
+
+- (void) uninstallPackage:(Package *)package;
 
 @end

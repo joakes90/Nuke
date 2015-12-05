@@ -38,7 +38,7 @@
 
 - (IBAction)deleteApp:(id)sender {
     
-    if ([self.deleter appIsRunning:self.App]) {
+    if ([self.deleter appIsRunning:self.App.bundelIdentifier]) {
         // warn user that app is running
         [self performSegueWithIdentifier:@"appRunning" sender:self];
     } else {

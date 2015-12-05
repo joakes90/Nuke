@@ -18,6 +18,8 @@
 		D04CD7841B9E7A220047220E /* Space_SaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7831B9E7A220047220E /* Space_SaverUITests.m */; };
 		D04CD7941B9E915C0047220E /* AppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7931B9E915C0047220E /* AppsController.m */; };
 		D04CD7991B9E9EFD0047220E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7981B9E9EFD0047220E /* Application.m */; };
+		D052F4101C13A76100DF6F28 /* PackageUninstallPromptWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D052F40E1C13A76100DF6F28 /* PackageUninstallPromptWindowController.m */; };
+		D052F4111C13A76100DF6F28 /* PackageUninstallPromptWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D052F40F1C13A76100DF6F28 /* PackageUninstallPromptWindowController.xib */; };
 		D056662E1BF01386001E8EF4 /* PackageUninstallController.m in Sources */ = {isa = PBXBuildFile; fileRef = D056662D1BF01386001E8EF4 /* PackageUninstallController.m */; };
 		D05666301BF01444001E8EF4 /* packages.plist in Resources */ = {isa = PBXBuildFile; fileRef = D056662F1BF01444001E8EF4 /* packages.plist */; };
 		D05666451BF043B7001E8EF4 /* PackageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05666431BF043B7001E8EF4 /* PackageViewController.m */; };
@@ -31,6 +33,7 @@
 		D0BB5E581B9F43B900FC9D13 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB5E571B9F43B900FC9D13 /* constants.m */; };
 		D0BB5E5E1B9FC14700FC9D13 /* blacklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */; };
 		D0F41B531BDBE84500E95E2A /* AppRunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F41B521BDBE84500E95E2A /* AppRunningViewController.m */; };
+		D0FFCB2A1C02BE87004C312E /* Package.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFCB291C02BE87004C312E /* Package.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		D04CD7931B9E915C0047220E /* AppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsController.m; sourceTree = "<group>"; };
 		D04CD7971B9E9EFD0047220E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		D04CD7981B9E9EFD0047220E /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		D052F40D1C13A76100DF6F28 /* PackageUninstallPromptWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageUninstallPromptWindowController.h; sourceTree = "<group>"; };
+		D052F40E1C13A76100DF6F28 /* PackageUninstallPromptWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageUninstallPromptWindowController.m; sourceTree = "<group>"; };
+		D052F40F1C13A76100DF6F28 /* PackageUninstallPromptWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageUninstallPromptWindowController.xib; sourceTree = "<group>"; };
 		D056662C1BF01386001E8EF4 /* PackageUninstallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageUninstallController.h; sourceTree = "<group>"; };
 		D056662D1BF01386001E8EF4 /* PackageUninstallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageUninstallController.m; sourceTree = "<group>"; };
 		D056662F1BF01444001E8EF4 /* packages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = packages.plist; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 		D0BB5E5D1B9FC14700FC9D13 /* blacklist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = blacklist.plist; sourceTree = "<group>"; };
 		D0F41B511BDBE84500E95E2A /* AppRunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRunningViewController.h; sourceTree = "<group>"; };
 		D0F41B521BDBE84500E95E2A /* AppRunningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRunningViewController.m; sourceTree = "<group>"; };
+		D0FFCB281C02BE87004C312E /* Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Package.h; sourceTree = "<group>"; };
+		D0FFCB291C02BE87004C312E /* Package.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Package.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +217,8 @@
 			children = (
 				D04CD7971B9E9EFD0047220E /* Application.h */,
 				D04CD7981B9E9EFD0047220E /* Application.m */,
+				D0FFCB281C02BE87004C312E /* Package.h */,
+				D0FFCB291C02BE87004C312E /* Package.m */,
 			);
 			name = "Model Classes";
 			sourceTree = "<group>";
@@ -233,6 +243,9 @@
 				D05666441BF043B7001E8EF4 /* PackageViewController.xib */,
 				D0850B621C002ED4001D0DB3 /* greyView.h */,
 				D0850B631C002ED4001D0DB3 /* greyView.m */,
+				D052F40D1C13A76100DF6F28 /* PackageUninstallPromptWindowController.h */,
+				D052F40E1C13A76100DF6F28 /* PackageUninstallPromptWindowController.m */,
+				D052F40F1C13A76100DF6F28 /* PackageUninstallPromptWindowController.xib */,
 			);
 			name = "View Classes";
 			sourceTree = "<group>";
@@ -341,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04CD76B1B9E7A210047220E /* Assets.xcassets in Resources */,
+				D052F4111C13A76100DF6F28 /* PackageUninstallPromptWindowController.xib in Resources */,
 				D05666461BF043B7001E8EF4 /* PackageViewController.xib in Resources */,
 				D05666301BF01444001E8EF4 /* packages.plist in Resources */,
 				D04CD76E1B9E7A210047220E /* Main.storyboard in Resources */,
@@ -383,7 +397,9 @@
 				D0850B641C002ED4001D0DB3 /* greyView.m in Sources */,
 				D04CD7991B9E9EFD0047220E /* Application.m in Sources */,
 				D056662E1BF01386001E8EF4 /* PackageUninstallController.m in Sources */,
+				D052F4101C13A76100DF6F28 /* PackageUninstallPromptWindowController.m in Sources */,
 				D04CD7941B9E915C0047220E /* AppsController.m in Sources */,
+				D0FFCB2A1C02BE87004C312E /* Package.m in Sources */,
 				D05666451BF043B7001E8EF4 /* PackageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

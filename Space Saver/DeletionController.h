@@ -12,7 +12,7 @@
 
 @interface DeletionController : NSObject
 
-- (BOOL) appIsRunning:(Application *)app;
+- (BOOL)appIsRunning:(NSString *)bundelID;
 
 - (BOOL) appAppearsInDock:(Application *)app;
 

@@ -92,4 +92,13 @@ static NSString *const kApplicationPath = @"/Applications/";
     return blackListed;
 }
 
+- (Application *) appWithBundelID:(NSString *)bundelID {
+    for (Application *app in self.apps) {
+        if ([app.bundelIdentifier isEqualToString:bundelID]) {
+            return app;
+        }
+    }
+    return nil;
+}
+
 @end

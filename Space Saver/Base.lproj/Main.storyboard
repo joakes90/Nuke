@@ -844,7 +844,7 @@
         <!--Open App-->
         <scene sceneID="fnn-oT-uZQ">
             <objects>
-                <viewController title="Open App" id="dOU-uB-1EL" customClass="AppRunningViewController" sceneMemberID="viewController">
+                <viewController title="Open App" storyboardIdentifier="openApp" id="dOU-uB-1EL" customClass="AppRunningViewController" sceneMemberID="viewController">
                     <view key="view" id="QQU-SD-Ts1">
                         <rect key="frame" x="0.0" y="0.0" width="459" height="112"/>
                         <autoresizingMask key="autoresizingMask"/>
