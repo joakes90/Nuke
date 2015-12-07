@@ -11,6 +11,7 @@
 #import "AppsController.h"
 #import "Application.h"
 #import "AppRunningViewController.h"
+#import "constants.h"
 #import <Cocoa/Cocoa.h>
 
 @implementation PackageUninstallController
@@ -62,13 +63,16 @@
     for (NSString *file in filesToRemove) {
         NSDictionary *uniqueItem = @{@"Unique Items" : file};
         [deleter removeComponetFromMac:uniqueItem];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kFileRemovedNotification object:nil];
     }
     for (Application *app in installedApps) {
         [deleter appIsStartupItem:[app.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
     }
     for (NSString *dockItem in dockItems) {
         [deleter removeFromDockApplicationWithBundelIdentifier:dockItem];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kFileRemovedNotification object:nil];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUninstallComplete object:nil];
 }
 
 - (NSArray *)installedAppsForListOfBundelIds:(NSArray *)bundelIDs {

@@ -1,5 +1,5 @@
 //
-//  PackageUninstallPromptWindowController.h
+//  PackageUninstallPromptViewController.h
 //  Space Saver
 //
 //  Created by Justin Oakes on 12/5/15.
@@ -9,8 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "Package.h"
 
-@interface PackageUninstallPromptWindowController : NSWindowController
+@interface PackageUninstallPromptViewController : NSViewController
 
-@property (weak, nonatomic) Package *package;
-
+@property (strong, nonatomic) Package *package;
+    
 @end

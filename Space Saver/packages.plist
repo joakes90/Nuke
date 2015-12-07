@@ -34,14 +34,15 @@
 		</array>
 		<key>dockItems</key>
 		<array>
+			<string>com.microsoft.DocumentConnection</string>
 			<string>com.microsoft.Lync</string>
 			<string>com.microsoft.Excel</string>
 			<string>com.microsoft.Outlook</string>
 			<string>com.microsoft.Powerpoint</string>
 			<string>com.microsoft.Word</string>
 		</array>
-		<key>Message</key>
-		<string>After Uninstalling Office 2011 you may need to reinstall Micorsoft Silverlight. If you have multipul versions of Office installed you may need to reinstall the version you want to use.</string>
+		<key>message</key>
+		<string>After uninstalling Office 2011 you may need to reinstall Micorsoft Silverlight. If you have multipul versions of Office installed you may need to reinstall the version you want to use. Uninstalling Office requieres a reboot.</string>
 		<key>recipts</key>
 		<array>
 			<string>com.microsoft</string>

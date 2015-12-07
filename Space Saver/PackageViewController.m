@@ -8,11 +8,12 @@
 
 #import "PackageViewController.h"
 #import "PackageUninstallController.h"
+#import "PackageUninstallPromptViewController.h"
+#import "constants.h"
 
 @interface PackageViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong) IBOutlet NSTableView *table;
-@property (strong, nonatomic) NSArray *packages;
 
 @end
 
@@ -20,12 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.packages = [[PackageUninstallController sharedInstance] installedPackages];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unInstallComplete) name:kUninstallComplete object:nil];
 }
 
 - (IBAction)uninstallSelectedPackage:(id)sender {
-    Package *package = [self.packages objectAtIndex:[self.table selectedRow]];
-    [[PackageUninstallController sharedInstance] uninstallPackage:package];
+    if ([self.table selectedRow] >= 0) {
+        Package *package = [[[PackageUninstallController sharedInstance] installedPackages] objectAtIndex:[self.table selectedRow]];
+        PackageUninstallPromptViewController *promptView = [[PackageUninstallPromptViewController alloc] init];
+        promptView.package = package;
+        [self presentViewControllerAsModalWindow:promptView];
+    }
 }
 
 //tableview delegate methods
@@ -34,7 +39,7 @@
 }
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return self.packages.count;
+    return [[[PackageUninstallController sharedInstance] installedPackages] count];
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
@@ -49,6 +54,10 @@
         return cell;
     }
     return nil;
+}
+
+- (void) unInstallComplete {
+    [self.table reloadData];
 }
 
 @end

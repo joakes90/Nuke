@@ -11,6 +11,8 @@
 @implementation constants
 
  NSString *const kUpdatedAppsArrayNotification = @"appsArrayUpdated";
+ NSString *const kFileRemovedNotification = @"fileRemoved";
+ NSString *const kUninstallComplete = @"uninstallComplete";
  NSString *const kDeleteMode = @"delete";
  NSString *const kResetMode = @"reset";
  NSString *const kpackageMode = @"package";

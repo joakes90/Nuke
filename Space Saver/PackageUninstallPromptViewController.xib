@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PackageUninstallPromptViewController">
+            <connections>
+                <outlet property="imageView" destination="aoZ-zG-wdg" id="N9p-nc-eg4"/>
+                <outlet property="messageLabel" destination="u4B-kn-ytD" id="Yg2-p8-OL4"/>
+                <outlet property="progressBar" destination="EiP-eL-zR3" id="dor-1T-HbO"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="171"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="szB-Zg-Bhv">
+                    <rect key="frame" x="384" y="13" width="82" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Ok" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="npE-HA-gxA">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="okClicked:" target="-2" id="r42-FS-H0h"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lVi-XF-sqw">
+                    <rect key="frame" x="302" y="13" width="82" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GQl-hy-f1C">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="cancelClicked:" target="-2" id="Mw4-J4-yjF"/>
+                    </connections>
+                </button>
+                <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="EiP-eL-zR3">
+                    <rect key="frame" x="20" y="53" width="440" height="20"/>
+                    <animations/>
+                </progressIndicator>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aoZ-zG-wdg">
+                    <rect key="frame" x="20" y="86" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="QTT-1r-obq"/>
+                        <constraint firstAttribute="width" constant="65" id="e1v-aB-kQB"/>
+                    </constraints>
+                    <animations/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EYQ-rN-5rw"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u4B-kn-ytD">
+                    <rect key="frame" x="91" y="144" width="370" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="366" id="Ma5-Zf-xhI"/>
+                    </constraints>
+                    <animations/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Label" id="cCm-M0-w5w">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="szB-Zg-Bhv" secondAttribute="bottom" constant="20" id="6x3-K6-d3l"/>
+                <constraint firstItem="u4B-kn-ytD" firstAttribute="leading" secondItem="aoZ-zG-wdg" secondAttribute="trailing" constant="8" id="9f8-ez-zRh"/>
+                <constraint firstItem="szB-Zg-Bhv" firstAttribute="width" secondItem="lVi-XF-sqw" secondAttribute="width" id="BGB-BP-2jp"/>
+                <constraint firstItem="aoZ-zG-wdg" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="Bnb-Df-ald"/>
+                <constraint firstItem="EiP-eL-zR3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="HUJ-rr-NRG"/>
+                <constraint firstAttribute="trailing" secondItem="EiP-eL-zR3" secondAttribute="trailing" constant="20" id="LFI-I3-n21"/>
+                <constraint firstItem="lVi-XF-sqw" firstAttribute="top" secondItem="EiP-eL-zR3" secondAttribute="bottom" constant="13" id="M0L-Ib-NKp"/>
+                <constraint firstItem="u4B-kn-ytD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="UNi-bs-RKU"/>
+                <constraint firstItem="szB-Zg-Bhv" firstAttribute="leading" secondItem="lVi-XF-sqw" secondAttribute="trailing" constant="12" id="Wxm-9G-GvL"/>
+                <constraint firstAttribute="trailing" secondItem="szB-Zg-Bhv" secondAttribute="trailing" constant="20" id="e6A-OE-hMm"/>
+                <constraint firstItem="lVi-XF-sqw" firstAttribute="centerY" secondItem="szB-Zg-Bhv" secondAttribute="centerY" id="keg-DV-9aH"/>
+                <constraint firstItem="aoZ-zG-wdg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="lKT-EY-7bu"/>
+            </constraints>
+            <animations/>
+            <point key="canvasLocation" x="562" y="388.5"/>
+        </customView>
+    </objects>
+</document>

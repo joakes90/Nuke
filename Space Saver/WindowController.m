@@ -122,6 +122,7 @@
         self.removeButton.enabled = YES;
         self.resetButton.enabled = YES;
         self.packagesButton.label = @"Installed Packages";
+        self.delegate = (MainViewController *)self.contentViewController;
     }
 }
 @end

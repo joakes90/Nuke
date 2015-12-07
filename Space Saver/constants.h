@@ -11,6 +11,8 @@
 @interface constants : NSObject
 
 extern NSString *const kUpdatedAppsArrayNotification;
+extern NSString *const kFileRemovedNotification;
+extern NSString *const kUninstallComplete;
 extern NSString *const kDeleteMode;
 extern NSString *const kResetMode;
 extern NSString *const kpackageMode;
