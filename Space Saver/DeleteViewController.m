@@ -64,7 +64,7 @@
                 [self.deleter removeFromDockApplicationWithBundelIdentifier:self.App.bundelIdentifier];
             }
             [self.deleter appIsStartupItem:[self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
-            [self.deleter removeApplicationFromMac:self.App.name];
+            [self.deleter removeApplicationFromMac:self.App];
         }
         [self dismissViewController:self];
         [[AppsController sharedInstance] findAllApplications];

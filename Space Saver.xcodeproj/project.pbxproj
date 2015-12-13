@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D014F17C1C1CDAB5000DEFCC /* ScriptBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D014F17B1C1CDAB5000DEFCC /* ScriptBuilder.m */; };
 		D01B0AAA1BD0877800FC7B0A /* ComponetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D01B0AA91BD0877800FC7B0A /* ComponetsTableViewCell.m */; };
 		D025239D1BEEBBD3001F9D5C /* otherFiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = D025239C1BEEBBD3001F9D5C /* otherFiles.plist */; };
 		D04CD7631B9E7A210047220E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7621B9E7A210047220E /* AppDelegate.m */; };
@@ -16,7 +17,7 @@
 		D04CD76E1B9E7A210047220E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04CD76C1B9E7A210047220E /* Main.storyboard */; };
 		D04CD7791B9E7A220047220E /* Space_SaverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7781B9E7A220047220E /* Space_SaverTests.m */; };
 		D04CD7841B9E7A220047220E /* Space_SaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7831B9E7A220047220E /* Space_SaverUITests.m */; };
-		D04CD7941B9E915C0047220E /* AppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7931B9E915C0047220E /* AppsController.m */; };
+		D04CD7941B9E915C0047220E /* AppsController .m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7931B9E915C0047220E /* AppsController .m */; };
 		D04CD7991B9E9EFD0047220E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CD7981B9E9EFD0047220E /* Application.m */; };
 		D052F4151C13AB8E00DF6F28 /* PackageUninstallPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D052F4131C13AB8E00DF6F28 /* PackageUninstallPromptViewController.m */; };
 		D052F4161C13AB8E00DF6F28 /* PackageUninstallPromptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D052F4141C13AB8E00DF6F28 /* PackageUninstallPromptViewController.xib */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D014F17A1C1CDAB5000DEFCC /* ScriptBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptBuilder.h; sourceTree = "<group>"; };
+		D014F17B1C1CDAB5000DEFCC /* ScriptBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptBuilder.m; sourceTree = "<group>"; };
 		D01B0AA81BD0877800FC7B0A /* ComponetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponetsTableViewCell.h; sourceTree = "<group>"; };
 		D01B0AA91BD0877800FC7B0A /* ComponetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponetsTableViewCell.m; sourceTree = "<group>"; };
 		D025239C1BEEBBD3001F9D5C /* otherFiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = otherFiles.plist; sourceTree = "<group>"; };
@@ -73,7 +76,7 @@
 		D04CD7831B9E7A220047220E /* Space_SaverUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_SaverUITests.m; sourceTree = "<group>"; };
 		D04CD7851B9E7A220047220E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04CD7921B9E915C0047220E /* AppsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsController.h; sourceTree = "<group>"; };
-		D04CD7931B9E915C0047220E /* AppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsController.m; sourceTree = "<group>"; };
+		D04CD7931B9E915C0047220E /* AppsController .m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppsController .m"; sourceTree = "<group>"; };
 		D04CD7971B9E9EFD0047220E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		D04CD7981B9E9EFD0047220E /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		D052F4121C13AB8E00DF6F28 /* PackageUninstallPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageUninstallPromptViewController.h; sourceTree = "<group>"; };
@@ -203,11 +206,13 @@
 			isa = PBXGroup;
 			children = (
 				D04CD7921B9E915C0047220E /* AppsController.h */,
-				D04CD7931B9E915C0047220E /* AppsController.m */,
+				D04CD7931B9E915C0047220E /* AppsController .m */,
 				D08EF6541BD5C92B00E74B39 /* DeletionController.h */,
 				D08EF6551BD5C92B00E74B39 /* DeletionController.m */,
 				D056662C1BF01386001E8EF4 /* PackageUninstallController.h */,
 				D056662D1BF01386001E8EF4 /* PackageUninstallController.m */,
+				D014F17A1C1CDAB5000DEFCC /* ScriptBuilder.h */,
+				D014F17B1C1CDAB5000DEFCC /* ScriptBuilder.m */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D014F17C1C1CDAB5000DEFCC /* ScriptBuilder.m in Sources */,
 				D0BB5E541B9F3D4500FC9D13 /* ApplicationCell.m in Sources */,
 				D08EF6561BD5C92B00E74B39 /* DeletionController.m in Sources */,
 				D05F3C021BCCC5EC00C4CB69 /* WindowController.m in Sources */,
@@ -398,7 +404,7 @@
 				D0850B641C002ED4001D0DB3 /* greyView.m in Sources */,
 				D04CD7991B9E9EFD0047220E /* Application.m in Sources */,
 				D056662E1BF01386001E8EF4 /* PackageUninstallController.m in Sources */,
-				D04CD7941B9E915C0047220E /* AppsController.m in Sources */,
+				D04CD7941B9E915C0047220E /* AppsController .m in Sources */,
 				D0FFCB2A1C02BE87004C312E /* Package.m in Sources */,
 				D05666451BF043B7001E8EF4 /* PackageViewController.m in Sources */,
 			);

@@ -101,8 +101,7 @@
         path = [componets[key] stringByExpandingTildeInPath];
     }
     if (path) {
-        NSString *owner = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil][@"NSFileOwnerAccountName"];
-        if (![owner isEqualToString:@"root"]) {
+        if (![self isOwnedByroot:path]) {
             [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path] resultingItemURL:nil error:nil];
         } else {
             NSString *diskName = [[[NSFileManager defaultManager] componentsToDisplayForPath:path] objectAtIndex:0];
@@ -116,18 +115,28 @@
     }
 }
 
-- (void) removeApplicationFromMac:(NSString *)name; {
-    NSString *path = [NSString stringWithFormat:@"/Applications/%@", name];
-    NSString *owner = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil][@"NSFileOwnerAccountName"];
+- (void) removeApplicationFromMac:(Application *)app; {
+
+    NSString *owner = [[NSFileManager defaultManager] attributesOfItemAtPath:app.path error:nil][@"NSFileOwnerAccountName"];
     if (![owner isEqualToString:@"root"]) {
-        [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path]
+        [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:app.path]
                                       resultingItemURL:nil
                                                  error:nil];
     } else {
-        NSString *diskName = [[[NSFileManager defaultManager] componentsToDisplayForPath:path] objectAtIndex:0];
-        NSString *appleScriptPath = [NSString stringWithFormat:@"%@:Applications:%@", diskName, name];
+        NSString *diskName = [[[NSFileManager defaultManager] componentsToDisplayForPath:app.path] objectAtIndex:0];
+        NSString *appleScriptPath = [NSString stringWithFormat:@"%@:Applications:%@", diskName, app.name];
         NSAppleScript *deleteScript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"Finder\" to delete file \"%@\"", appleScriptPath]];
         [deleteScript executeAndReturnError:nil];
     }
 }
+
+- (BOOL) isOwnedByroot:(NSString *)path {
+    NSString *owner = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil][@"NSFileOwnerAccountName"];
+    if ([owner isEqualToString:@"root"]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 @end

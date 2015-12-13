@@ -16,11 +16,13 @@
 
 - (BOOL) appAppearsInDock:(Application *)app;
 
+- (BOOL) isOwnedByroot:(NSString *)path;
+
 - (void) appIsStartupItem:(NSString *)app;
 
 - (void) removeComponetFromMac:(NSDictionary *)componets;
 
-- (void) removeApplicationFromMac:(NSString *)name;
+- (void) removeApplicationFromMac:(Application *)app;
 
 - (void) removeFromDockApplicationWithBundelIdentifier:(NSString *)ident;
 

@@ -11,6 +11,7 @@
 #import "AppsController.h"
 #import "Application.h"
 #import "AppRunningViewController.h"
+#import "ScriptBuilder.h"
 #import "constants.h"
 #import <Cocoa/Cocoa.h>
 
@@ -60,11 +61,21 @@
             return;
         }
     }
+    NSMutableArray *filesOwnedByRoot = [[NSMutableArray alloc] init];
     for (NSString *file in filesToRemove) {
-        NSDictionary *uniqueItem = @{@"Unique Items" : file};
-        [deleter removeComponetFromMac:uniqueItem];
+        if (![deleter isOwnedByroot:file]) {
+            NSDictionary *uniqueItem = @{@"Unique Items" : file};
+            [deleter removeComponetFromMac:uniqueItem];
+            
+        } else {
+            [filesOwnedByRoot addObject:file];
+        }
         [[NSNotificationCenter defaultCenter] postNotificationName:kFileRemovedNotification object:nil];
     }
+    NSString *script = [ScriptBuilder bashScriptToDeleteArrayOfFile:filesOwnedByRoot];
+    NSString *appleScriptString = [NSString stringWithFormat:@"tell application \"Terminal\" \n do shell script \"%@\" with administrator privileges quit\n end tell", script];
+    NSAppleScript *deleteAction = [[NSAppleScript alloc] initWithSource:appleScriptString];
+    [deleteAction executeAndReturnError:nil];
     for (Application *app in installedApps) {
         [deleter appIsStartupItem:[app.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
     }
