@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- PEALISTv1: TextSize:0| -->
 <plist version="1.0">
 <dict>
 	<key>Google Chrome.app</key>
@@ -17,6 +18,13 @@
 	<key>VirtualBox.app</key>
 	<array>
 		<string>~/VirtualBox VMs/</string>
+		<string>/Library/VirtualBox/</string>
+	</array>
+	<key>GoToMeeting.app</key>
+	<array>
+		<string>/Applications/GoToMeeting/</string>
+		<string>~/Library/LaunchAgents/com.citrixonline.GoToMeeting.G2MUpdate.plist</string>
+		<string>~/Library/Application Support/CitrixOnline/</string>
 	</array>
 </dict>
 </plist>

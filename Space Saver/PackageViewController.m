@@ -49,7 +49,7 @@
         
         cell.textField.stringValue = package.packageName;
         NSImage *packageImage = [NSImage imageNamed:package.imageName];
-        cell.imageView.image = packageImage;
+        [cell.imageView setImage:packageImage];
         
         return cell;
     }

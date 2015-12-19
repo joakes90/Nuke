@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- PEALISTv1: TextSize:0| -->
 <plist version="1.0">
 <dict>
 	<key>Microsoft Office 2011</key>
@@ -10,7 +9,7 @@
 		<key>idFile</key>
 		<string>/Applications/Microsoft Office 2011</string>
 		<key>imageName</key>
-		<string>outlook2011icon.png</string>
+		<string>outlook2011icon</string>
 		<key>needsReboot</key>
 		<true/>
 		<key>files</key>
@@ -37,6 +36,7 @@
 			<string>/Library/Preferences/com.microsoft.outlook.databasedaemon.plist</string>
 			<string>/Library/Preferences/com.microsoft.PlayReady.plist</string>
 			<string>/Library/Preferences/com.microsoft.Word.plist</string>
+			<string>/Library/PrivilegedHelperTools/com.microsoft.office.licensing.helper</string>
 		</array>
 		<key>dockItems</key>
 		<array>
@@ -57,7 +57,7 @@
 		<key>idFile</key>
 		<string>/Library/Application Support/Microsoft/MAU2.0/</string>
 		<key>imageName</key>
-		<string>office2016icon.png</string>
+		<string>office2016icon</string>
 		<key>needsReboot</key>
 		<true/>
 		<key>files</key>
@@ -87,6 +87,7 @@
 			<string>/Library/Preferences/com.microsoft.outlook.databasedaemon.plist</string>
 			<string>/Library/Preferences/com.microsoft.PlayReady.plist</string>
 			<string>/Library/Preferences/com.microsoft.Word.plist</string>
+			<string>/Library/PrivilegedHelperTools/com.microsoft.office.licensingV2.helper</string>
 		</array>
 		<key>dockItems</key>
 		<array>
@@ -97,7 +98,49 @@
 			<string>com.microsoft.Word</string>
 		</array>
 		<key>message</key>
-		<string>After uninstalling Office 2016 you may need to reinstall Micorsoft Silverlight. If you have multipul versions of Office installed you may need to reinstall the version you want to use. Uninstalling Office requieres a reboot.</string>
+		<string>After uninstalling Office 2016 you may need to reinstall Micorsoft Silverlight. If you have multiple versions of Office installed you may need to reinstall the version you want to use. Uninstalling Office requires a reboot.</string>
+	</dict>
+	<key>Adobe Photoshop Elements</key>
+	<dict>
+		<key>packageName</key>
+		<string>Adobe Photoshop Elements</string>
+		<key>idFile</key>
+		<string>/Applications/Adobe Photoshop Elements 14/</string>
+		<key>imageName</key>
+		<string>pse</string>
+		<key>needsReboot</key>
+		<true/>
+		<key>files</key>
+		<array>
+			<string>/Applications/Adobe Photoshop Elements 14/</string>
+			<string>/Applications/Adobe Elements 14 Organizer.app</string>
+			<string>~/Library/Preferences/Adobe/</string>
+			<string>~/Library/Preferences/Adobe Photoshop Elements 14 Paths</string>
+			<string>~/Library/Preferences/Adobe Photoshop Elements 14 Settings/</string>
+			<string>~/Library/Preferences/com.adobe.crashreporter.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Elements Organizer.14.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.Elements14.plist</string>
+			<string>~/Library/Preferences/com.adobe.ElementsOrganizer14.plist</string>
+			<string>~/Library/Preferences/com.adobe.PhotoshopElements.plist</string>
+			<string>~/Library/Application Support/Adobe/Adobe Photoshop Elements 14/</string>
+			<string>~/Library/Application Support/Adobe/Elements Organizer</string>
+			<string>~/Library/Application Support/Adobe/Photoshop Elements/</string>
+			<string>/Library/Application Support/Adobe/Elements Organizer/</string>
+			<string>/Library/Application Support/Adobe/Photoshop Elements/</string>
+			<string>/Library/Application Support/Adobe/WelcomePSE/</string>
+			<string>/Library/Preferences/com.Adobe.Elements Organizer.14.0.plist</string>
+			<string>/Library/Preferences/com.adobe.Elementslog.plist</string>
+			<string>/Library/Preferences/com.adobe.PhotoshopElements.plist</string>
+			<string>/Applications/Utilities/Adobe Installers/Uninstall Adobe Photoshop Elements 14</string>
+		</array>
+		<key>dockItems</key>
+		<array>
+			<string>com.adobe.ElementsOrganizer14</string>
+			<string>com.adobe.Elements14</string>
+			<string>com.Adobe.Uninstall Product</string>
+		</array>
+		<key>message</key>
+		<string>After uninstalling Photoshop Elements you may need to reinstall Premier Elements to regain the Elements Organizer. Uninstalling does not remove your Photoshop, Premier or Creative Cloud documents. Uninstalling Photoshop Elements requires a reboot.</string>
 	</dict>
 </dict>
 </plist>
