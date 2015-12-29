@@ -16,7 +16,7 @@
 
 - (BOOL) appAppearsInDock:(Application *)app;
 
-- (BOOL) isOwnedByroot:(NSString *)path;
+- (BOOL) isOwnedByUser:(NSString *)path;
 
 - (void) appIsStartupItem:(NSString *)app;
 

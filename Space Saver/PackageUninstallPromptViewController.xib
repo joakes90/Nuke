@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PackageUninstallPromptViewController">
@@ -21,7 +21,6 @@
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="szB-Zg-Bhv">
                     <rect key="frame" x="384" y="13" width="82" height="32"/>
-                    <animations/>
                     <buttonCell key="cell" type="push" title="Ok" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="npE-HA-gxA">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -32,7 +31,6 @@
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lVi-XF-sqw">
                     <rect key="frame" x="302" y="13" width="82" height="32"/>
-                    <animations/>
                     <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GQl-hy-f1C">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -46,7 +44,6 @@ Gw
                 </button>
                 <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="EiP-eL-zR3">
                     <rect key="frame" x="20" y="53" width="440" height="20"/>
-                    <animations/>
                 </progressIndicator>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aoZ-zG-wdg">
                     <rect key="frame" x="20" y="86" width="65" height="65"/>
@@ -54,7 +51,6 @@ Gw
                         <constraint firstAttribute="height" constant="65" id="QTT-1r-obq"/>
                         <constraint firstAttribute="width" constant="65" id="e1v-aB-kQB"/>
                     </constraints>
-                    <animations/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="EYQ-rN-5rw"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u4B-kn-ytD">
@@ -62,7 +58,6 @@ Gw
                     <constraints>
                         <constraint firstAttribute="width" constant="366" id="Ma5-Zf-xhI"/>
                     </constraints>
-                    <animations/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Label" id="cCm-M0-w5w">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -84,7 +79,6 @@ Gw
                 <constraint firstItem="lVi-XF-sqw" firstAttribute="centerY" secondItem="szB-Zg-Bhv" secondAttribute="centerY" id="keg-DV-9aH"/>
                 <constraint firstItem="aoZ-zG-wdg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="lKT-EY-7bu"/>
             </constraints>
-            <animations/>
             <point key="canvasLocation" x="562" y="388.5"/>
         </customView>
     </objects>

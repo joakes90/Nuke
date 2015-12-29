@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- PEALISTv1: TextSize:0| -->
 <plist version="1.0">
 <dict>
 	<key>Microsoft Office 2011</key>
@@ -37,6 +38,8 @@
 			<string>/Library/Preferences/com.microsoft.PlayReady.plist</string>
 			<string>/Library/Preferences/com.microsoft.Word.plist</string>
 			<string>/Library/PrivilegedHelperTools/com.microsoft.office.licensing.helper</string>
+			<string>~/Library/Caches/com.microsoft.autoupdate.fba</string>
+			<string>~/Library/Caches/com.microsoft.autoupdate2</string>
 		</array>
 		<key>dockItems</key>
 		<array>
@@ -49,13 +52,17 @@
 		</array>
 		<key>message</key>
 		<string>After uninstalling Office 2011 you may need to reinstall Micorsoft Silverlight. If you have multipul versions of Office installed you may need to reinstall the version you want to use. Uninstalling Office requieres a reboot.</string>
+		<key>startupItems</key>
+		<array>
+			<string></string>
+		</array>
 	</dict>
 	<key>Microsoft Office 2016</key>
 	<dict>
 		<key>packageName</key>
 		<string>Microsoft Office 2016</string>
 		<key>idFile</key>
-		<string>/Library/Application Support/Microsoft/MAU2.0/</string>
+		<string>~/Library/Containers/com.microsoft.Office365ServiceV2/</string>
 		<key>imageName</key>
 		<string>office2016icon</string>
 		<key>needsReboot</key>
@@ -88,6 +95,8 @@
 			<string>/Library/Preferences/com.microsoft.PlayReady.plist</string>
 			<string>/Library/Preferences/com.microsoft.Word.plist</string>
 			<string>/Library/PrivilegedHelperTools/com.microsoft.office.licensingV2.helper</string>
+			<string>~/Library/Caches/com.microsoft.autoupdate.fba</string>
+			<string>~/Library/Caches/com.microsoft.autoupdate2</string>
 		</array>
 		<key>dockItems</key>
 		<array>
@@ -99,6 +108,10 @@
 		</array>
 		<key>message</key>
 		<string>After uninstalling Office 2016 you may need to reinstall Micorsoft Silverlight. If you have multiple versions of Office installed you may need to reinstall the version you want to use. Uninstalling Office requires a reboot.</string>
+		<key>startupItems</key>
+		<array>
+			<string></string>
+		</array>
 	</dict>
 	<key>Adobe Photoshop Elements</key>
 	<dict>
@@ -132,6 +145,10 @@
 			<string>/Library/Preferences/com.adobe.Elementslog.plist</string>
 			<string>/Library/Preferences/com.adobe.PhotoshopElements.plist</string>
 			<string>/Applications/Utilities/Adobe Installers/Uninstall Adobe Photoshop Elements 14</string>
+			<string>~/Library/Caches/Adobe/</string>
+			<string>~/Library/Caches/com.adobe.PhotoshopElements</string>
+			<string>~/Library/Caches/com.adobe.Elements14/</string>
+			<string>~/Library/Caches/com.adobe.ElementsOrganizer14</string>
 		</array>
 		<key>dockItems</key>
 		<array>
@@ -141,6 +158,326 @@
 		</array>
 		<key>message</key>
 		<string>After uninstalling Photoshop Elements you may need to reinstall Premier Elements to regain the Elements Organizer. Uninstalling does not remove your Photoshop, Premier or Creative Cloud documents. Uninstalling Photoshop Elements requires a reboot.</string>
+		<key>startupItems</key>
+		<array>
+			<string></string>
+		</array>
+	</dict>
+	<key>Adobe Premiere Elements</key>
+	<dict>
+		<key>packageName</key>
+		<string>Adobe Premiere Elements</string>
+		<key>idFile</key>
+		<string>/Applications/Adobe Premiere Elements 14/</string>
+		<key>imageName</key>
+		<string>pre</string>
+		<key>needsReboot</key>
+		<true/>
+		<key>files</key>
+		<array>
+			<string>/Applications/Adobe Premiere Elements 14/</string>
+			<string>/Applications/Adobe Elements 14 Organizer.app</string>
+			<string>~/Library/Preferences/Adobe/</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Premiere Elements-14.0.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Common 14.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.crashreporter.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Elements Organizer.14.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.Elements14.plist</string>
+			<string>~/Library/Preferences/com.adobe.ElementsOrganizer14.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Premiere Elements.14.0.plist</string>
+			<string>~/Library/Application Support/Adobe/Premiere Elements/</string>
+			<string>~/Library/Caches/Adobe/</string>
+			<string>~/Library/Caches/com.adobe.Adobe Premiere Elements-14.0/</string>
+			<string>~/Library/Caches/com.adobe.ElementsOrganizer14/</string>
+			<string>~/Library/Caches/com.adobe.Elements14/</string>
+			<string>/Library/Application Support/Adobe/Elements Organizer/</string>
+			<string>/Library/Preferences/com.Adobe.Premiere Elements.14.0.plist</string>
+		</array>
+		<key>dockItems</key>
+		<array>
+			<string>com.adobe.ElementsOrganizer14</string>
+			<string>com.adobe.Elements14</string>
+			<string>com.Adobe.Uninstall Product</string>
+		</array>
+		<key>message</key>
+		<string>After uninstalling Premiere Elements you may need to reboot for changes to take affect. Uninstalling does not remove your Photoshop, Premier or Creative Cloud documents.</string>
+		<key>startupItems</key>
+		<array>
+			<string></string>
+		</array>
+	</dict>
+	<key>Adobe Creative Cloud</key>
+	<dict>
+		<key>packageName</key>
+		<string>Adobe Creative Cloud</string>
+		<key>idFile</key>
+		<string>/Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app</string>
+		<key>imageName</key>
+		<string>acc</string>
+		<key>needsReboot</key>
+		<true/>
+		<key>files</key>
+		<array>
+			<string>/Applications/Adobe Creative Cloud/</string>
+			<string>/Applications/Adobe/</string>
+			<string>/Applications/Adobe Acrobat DC/</string>
+			<string>/Applications/Adobe After Effects CC 2015/</string>
+			<string>/Applications/Adobe After Effects CC 2014/</string>
+			<string>/Applications/Adobe After Effects CC 2013/</string>
+			<string>/Applications/Adobe After Effects CC 2012/</string>
+			<string>/Applications/Adobe After Effects CC/</string>
+			<string>/Applications/Adobe Audition CC 2015/</string>
+			<string>/Applications/Adobe Audition CC 2014/</string>
+			<string>/Applications/Adobe Audition CC 2013/</string>
+			<string>/Applications/Adobe Audition CC 2012/</string>
+			<string>/Applications/Adobe Audition CC/</string>
+			<string>/Applications/Adobe Bridge CC/</string>
+			<string>/Applications/Adobe Character Animator (Preview)/</string>
+			<string>/Applications/Adobe Character Animator/</string>
+			<string>/Applications/Adobe Dreamweaver CC 2015/</string>
+			<string>/Applications/Adobe Dreamweaver CC 2014/</string>
+			<string>/Applications/Adobe Dreamweaver CC 2013/</string>
+			<string>/Applications/Adobe Dreamweaver CC 2012/</string>
+			<string>/Applications/Adobe Dreamweaver CC/</string>
+			<string>/Applications/Adobe Edge Animate CC 2015/</string>
+			<string>/Applications/Adobe Edge Animate CC 2014/</string>
+			<string>/Applications/Adobe Edge Animate CC 2013/</string>
+			<string>/Applications/Adobe Edge Animate CC 2012/</string>
+			<string>/Applications/Adobe Edge Animate CC/</string>
+			<string>/Applications/Adobe Edge Code CC.app</string>
+			<string>/Applications/Adobe Edge Inspect CC.app</string>
+			<string>/Applications/Adobe Edge Reflow CC.app</string>
+			<string>/Applications/Adobe ExtendScript Toolkit CC/</string>
+			<string>/Applications/Adobe Extension Manager CC/</string>
+			<string>/Applications/Adobe Extension Manager CS6/</string>
+			<string>/Applications/Adobe Fireworks CS6/</string>
+			<string>/Applications/Adobe Flash Builder 4.7/</string>
+			<string>/Applications/Adobe Flash CC 2015/</string>
+			<string>/Applications/Adobe Flash CC 2014/</string>
+			<string>/Applications/Adobe Flash CC 2013/</string>
+			<string>/Applications/Adobe Flash CC 2012/</string>
+			<string>/Applications/Adobe Flash CC/</string>
+			<string>/Applications/Adobe Fuse CC (Preview)/</string>
+			<string>/Applications/Adobe Fuse CC/</string>
+			<string>/Applications/Adobe Gaming SDK 1.4/</string>
+			<string>/Applications/Adobe Illustrator CC 2015/</string>
+			<string>/Applications/Adobe Illustrator CC 2014/</string>
+			<string>/Applications/Adobe Illustrator CC 2013/</string>
+			<string>/Applications/Adobe Illustrator CC 2012/</string>
+			<string>/Applications/Adobe Illustrator CC/</string>
+			<string>/Applications/Adobe InCopy CC 2015/</string>
+			<string>/Applications/Adobe InCopy CC 2014/</string>
+			<string>/Applications/Adobe InCopy CC 2013/</string>
+			<string>/Applications/Adobe InCopy CC 2012/</string>
+			<string>/Applications/Adobe InCopy CC/</string>
+			<string>/Applications/Adobe InDesign CC 2015/</string>
+			<string>/Applications/Adobe InDesign CC 2014/</string>
+			<string>/Applications/Adobe InDesign CC 2013/</string>
+			<string>/Applications/Adobe InDesign CC 2012/</string>
+			<string>/Applications/Adobe InDesign CC/</string>
+			<string>/Applications/Adobe Lightroom/</string>
+			<string>/Applications/Adobe Media Encoder CC 2015/</string>
+			<string>/Applications/Adobe Media Encoder CC 2014/</string>
+			<string>/Applications/Adobe Media Encoder CC 2013/</string>
+			<string>/Applications/Adobe Media Encoder CC 2012/</string>
+			<string>/Applications/Adobe Media Encoder CC/</string>
+			<string>/Applications/Adobe Muse CC 2015/</string>
+			<string>/Applications/Adobe Muse CC 2014/</string>
+			<string>/Applications/Adobe Muse CC 2013/</string>
+			<string>/Applications/Adobe Muse CC 2012/</string>
+			<string>/Applications/Adobe Muse CC/</string>
+			<string>/Applications/Adobe Photoshop CC 2015/</string>
+			<string>/Applications/Adobe Photoshop CC 2014/</string>
+			<string>/Applications/Adobe Photoshop CC 2013/</string>
+			<string>/Applications/Adobe Photoshop CC 2012/</string>
+			<string>/Applications/Adobe Photoshop CC/</string>
+			<string>/Applications/Adobe Prelude CC 2015/</string>
+			<string>/Applications/Adobe Prelude CC 2014/</string>
+			<string>/Applications/Adobe Prelude CC 2013/</string>
+			<string>/Applications/Adobe Prelude CC 2012/</string>
+			<string>/Applications/Adobe Prelude CC/</string>
+			<string>/Applications/Adobe Premiere Pro CC 2015/</string>
+			<string>/Applications/Adobe Premiere Pro CC 2014/</string>
+			<string>/Applications/Adobe Premiere Pro CC 2013/</string>
+			<string>/Applications/Adobe Premiere Pro CC 2012/</string>
+			<string>/Applications/Adobe Premiere Pro CC/</string>
+			<string>/Applications/Adobe Scout CC.app</string>
+			<string>/Applications/Adobe SpeedGrade CC 2015/</string>
+			<string>/Applications/Adobe SpeedGrade CC 2014/</string>
+			<string>/Applications/Adobe SpeedGrade CC 2013/</string>
+			<string>/Applications/Adobe SpeedGrade CC 2012/</string>
+			<string>/Applications/Adobe SpeedGrade CC/</string>
+			<string>/Applications/Utilities/Adobe Creative Cloud/</string>
+			<string>~/Library/Application Support/ Adobe/</string>
+			<string>~/Library/Group Containers/Adobe-Hub-App/</string>
+			<string>~/Library/Group Containers/com.adobe.accmac.explinder/</string>
+			<string>~/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist</string>
+			<string>~/Library/PhotoshopCrashes/</string>
+			<string>~/Library/Preferences/Adobe/</string>
+			<string>~/Library/Preferences/Adobe Dreamweaver CC 2015 Prefs</string>
+			<string>~/Library/Preferences/Adobe Dreamweaver CC 2014 Prefs</string>
+			<string>~/Library/Preferences/Adobe Dreamweaver CC 2013 Prefs</string>
+			<string>~/Library/Preferences/Adobe Dreamweaver CC 2013 Prefs</string>
+			<string>~/Library/Preferences/Adobe Dreamweaver CC Prefs</string>
+			<string>~/Library/Preferences/Adobe Fireworks CS6/</string>
+			<string>~/Library/Preferences/Adobe Illustrator 19 Settings/</string>
+			<string>~/Library/Preferences/Adobe InCopy/</string>
+			<string>~/Library/Preferences/Adobe InDesign/</string>
+			<string>~/Library/Preferences/Adobe Photoshop CC 2015 Paths</string>
+			<string>~/Library/Preferences/Adobe Photoshop CC 2014 Paths</string>
+			<string>~/Library/Preferences/Adobe Photoshop CC 2013 Paths</string>
+			<string>~/Library/Preferences/Adobe Photoshop CC 2012 Paths</string>
+			<string>~/Library/Preferences/Adobe Photoshop CC Paths</string>
+			<string>~/Library/Preferences/Adobe Photoshop CC 2015 Settings/</string>
+			<string>~/Library/Preferences/Adobe.ExMan/</string>
+			<string>~/Library/Preferences/adobe.SpeedGrade.plist</string>
+			<string>~/Library/Preferences/com.adobe.accmac.plist</string>
+			<string>~/Library/Preferences/com.adobe.Acrobat.Pro.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Edge Animate CC 2015.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Edge Animate CC 2014.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Edge Animate CC 2013.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Edge Animate CC 2012.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Edge Animate CC.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Flash CC 2015.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Flash CC 2014.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Flash CC 2013.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Flash CC 2012.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Adobe Flash CC.application.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Adobe Media Encoder.9.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.AdobeAcroCEFHelper.plist</string>
+			<string>~/Library/Preferences/com.adobe.AdobeMuseCC.2015.0/</string>
+			<string>~/Library/Preferences/com.adobe.AdobePremierePro.plist</string>
+			<string>~/Library/Preferences/com.Adobe.After Effects.13.6.1.plist</string>
+			<string>~/Library/Preferences/com.adobe.AfterEffects.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Audition.8.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.bridge6.plist</string>
+			<string>~/Library/Preferences/com.adobe.cep.CEPHtmlEngine Helper.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Common 9.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.crashreporter.plist</string>
+			<string>~/Library/Preferences/com.adobe.CSXS.3.plist</string>
+			<string>~/Library/Preferences/com.adobe.CSXS.6.plist</string>
+			<string>~/Library/Preferences/com.adobe.dreamweaver-16.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.EdgeCode.plist</string>
+			<string>~/Library/Preferences/com.adobe.EdgeReflow.plist</string>
+			<string>~/Library/Preferences/com.adobe.Fuse.plist</string>
+			<string>~/Library/Preferences/com.adobe.Lightroom6.plist</string>
+			<string>~/Library/Preferences/com.adobe.mediabrowser.plist</string>
+			<string>~/Library/Preferences/com.adobe.Muse.application.plist</string>
+			<string>~/Library/Preferences/com.adobe.Photoshop.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Prelude.4.0.plist</string>
+			<string>~/Library/Preferences/com.adobe.Prelude.plist</string>
+			<string>~/Library/Preferences/com.Adobe.Premiere Pro.9.0.plist</string>
+			<string>~/Library/Preferences/com.Adobe.SpeedGrade.9.1.plist</string>
+			<string>~/Library/Preferences/com.adobe.SynKit.1.plist</string>
+			<string>~/Library/Preferences/Caches/Adobe/</string>
+			<string>~/Library/Containers/com.adobe.accmac.ACCFinderSync/</string>
+			<string>/Library/Application Support/Adobe/</string>
+			<string>/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist</string>
+			<string>/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist</string>
+			<string>/Library/LaunchDaemons/com.adobe.adobeupdatedaemon.plist</string>
+			<string>/Library/LaunchDaemons/com.adobe.agsservice.plist</string>
+			<string>/Library/LaunchDaemons/com.adobe.ARMDC.Communicator.plist</string>
+			<string>/Library/LaunchDaemons/com.adobe.ARMDC.SMJobBlessHelper.plist</string>
+			<string>/Library/LaunchDaemons/com.adobe.SC.FPFeedbackService-1.0.plist</string>
+			<string>/Library/Logs/Adobe/</string>
+			<string>/Preferences/com.adobe.acc.AdobeDesktopService.plist</string>
+			<string>/Preferences/com.adobe.acrobat.DC.WebResource.plist</string>
+			<string>/Preferences/com.adobe.acrobat.pdfviewer.plist</string>
+			<string>/Preferences/com.Adobe.After Effects.paths.plist</string>
+			<string>/Preferences/com.adobe.CSXS.3.plist</string>
+			<string>/Preferences/com.adobe.Fireworks.12.0.0.plist</string>
+			<string>/Preferences/com.adobe.headlights.apip.plist</string>
+			<string>/Preferences/com.adobe.PDFAdminSettings.plist</string>
+			<string>/Preferences/com.Adobe.Premiere Pro.paths.plist</string>
+			<string>/Preferences/com.Adobe.SpeedGrade.paths.plist</string>
+			<string>/PrivilegedHelperTools/com.adobe.ARMDC.Communicator</string>
+			<string>/PrivilegedHelperTools/com.adobe.ARMDC.Communicator</string>
+			<string>/PrivilegedHelperTools/com.adobe.ARMDC.Communicator</string>
+			<string>/ScriptingAdditions/Adobe Unit Types.osax</string>
+			<string>~/Library/Caches/com.adobe.Acrobat.Pro</string>
+			<string>~/Library/Caches/Adobe/After Effects/</string>
+			<string>~/Library/Caches/Adobe/CCX Welcome/</string>
+			<string>~/Library/Group Containers/Adobe-Hub-App/</string>
+		</array>
+		<key>dockItems</key>
+		<array>
+			<string>chc.4875E02D9FB21EE389F73B8D1702B320485DF8CE.1</string>
+			<string>com.adobe.distiller</string>
+			<string>com.adobe.Acrobat.Uninstaller</string>
+			<string>com.adobe.Acrobat.Pro</string>
+			<string>com.Adobe.Uninstall Product</string>
+			<string>com.adobe.AfterEffects</string>
+			<string>com.adobe.Audition</string>
+			<string>com.adobe.bridge6</string>
+			<string>com.adobe.Character-Animator.application</string>
+			<string>com.adobe.acc.AdobeCreativeCloud</string>
+			<string>com.adobe.ACCC.Uninstaller</string>
+			<string>com.adobe.CreativeCloud-URIHandler-</string>
+			<string>com.adobe.dreamweaver-16.0</string>
+			<string>com.adobe.Adobe Edge Animate CC 2015.application</string>
+			<string>com.adobe.EdgeCode</string>
+			<string>com.adobe.EdgeInspect.application</string>
+			<string>com.adobe.EdgeReflow</string>
+			<string>com.adobe.estoolkit-4.0</string>
+			<string>com.adobe.ExtensionManager</string>
+			<string>com.macromedia.fireworks</string>
+			<string>org.eclipse.eclipse</string>
+			<string>com.adobe.Adobe Flash CC 2015.application</string>
+			<string>com.mixamo.Fuse</string>
+			<string>com.apple.ScriptEditor.id.Install-AwayBuilder</string>
+			<string>com.adobe.illustrator</string>
+			<string>com.adobe.InCopy</string>
+			<string>com.adobe.InDesign</string>
+			<string>com.adobe.Lightroom6</string>
+			<string>com.adobe.ame.application</string>
+			<string>com.adobe.Muse.application</string>
+			<string>com.adobe.Photoshop</string>
+			<string>com.adobe.Prelude</string>
+			<string>com.adobe.AdobePremierePro</string>
+			<string>com.adobe.Scout.application</string>
+			<string>adobe.SpeedGrade</string>
+			<string>com.adobe.AdobeResourceSynchronizer</string>
+		</array>
+		<key>message</key>
+		<string>Clicking Ok will remove all Adobe Creative Cloud apps from your Mac while leaving any documents you created with them in place. It is Strongly recommended you reboot before emptying the Trash.</string>
+		<key>startupItems</key>
+		<array>
+			<string>AdobeResourceSynchronizer</string>
+		</array>
+	</dict>
+	<key>MacKeeper</key>
+	<dict>
+		<key>packageName</key>
+		<string>MacKeeper</string>
+		<key>idFile</key>
+		<string>/Applications/MacKeeper.app</string>
+		<key>imageName</key>
+		<string>mackeeper</string>
+		<key>needsReboot</key>
+		<true/>
+		<key>files</key>
+		<array>
+			<string>/Applications/MacKeeper.app</string>
+			<string>~/Library/Caches/com.mackeeper.MacKeeper/</string>
+			<string>~/Library/Caches/com.mackeeper.MacKeeper.Helper/</string>
+			<string>~/Library/Caches/com.mackeeper.MacKeeper.MKCleanService/</string>
+			<string>~/Library/Containers/com.mactrackerapp.Mactracker/</string>
+			<string>~/Library/LaunchAgents/com.mackeeper.MacKeeper.Helper.plist</string>
+			<string>~/Library/Preferences/com.mackeeper.MacKeeper.Helper.plist</string>
+			<string>~/Library/Preferences/com.mackeeper.MacKeeper.plist</string>
+			<string>~/Library/Application Support/MacKeeper Helper</string>
+			<string>~/Library/LaunchDaemons/com.mackeeper.MacKeeper.plugin.AntiTheft.daemon.plist</string>
+		</array>
+		<key>dockItems</key>
+		<array>
+			<string>com.mackeeper.MacKeeper</string>
+		</array>
+		<key>message</key>
+		<string>Clicking Ok will remove MacKeeper from your Mac. It is Strongly recommended you reboot before emptying the Trash.</string>
+		<key>startupItems</key>
+		<array>
+			<string></string>
+		</array>
 	</dict>
 </dict>
 </plist>

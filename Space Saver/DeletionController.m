@@ -101,7 +101,7 @@
         path = [componets[key] stringByExpandingTildeInPath];
     }
     if (path) {
-        if (![self isOwnedByroot:path]) {
+        if ([self isOwnedByUser:path]) {
             [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path] resultingItemURL:nil error:nil];
         } else {
             NSString *diskName = [[[NSFileManager defaultManager] componentsToDisplayForPath:path] objectAtIndex:0];
@@ -130,9 +130,10 @@
     }
 }
 
-- (BOOL) isOwnedByroot:(NSString *)path {
+- (BOOL) isOwnedByUser:(NSString *)path {
     NSString *owner = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil][@"NSFileOwnerAccountName"];
-    if ([owner isEqualToString:@"root"]) {
+    
+    if ([owner isEqualToString:NSUserName()]) {
         return YES;
     } else {
         return NO;

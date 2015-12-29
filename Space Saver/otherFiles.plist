@@ -9,7 +9,7 @@
 	</array>
 	<key>Dropbox.app</key>
 	<array>
-		<string>/Library/DropboxHelperTools</string>
+		<string>/Library/DropboxHelperTools/</string>
 	</array>
 	<key>Xcode.app</key>
 	<array>
@@ -19,12 +19,39 @@
 	<array>
 		<string>~/VirtualBox VMs/</string>
 		<string>/Library/VirtualBox/</string>
+		<string>~/Library/LaunchAgents/org.virtualbox.vboxwebsrv.plist</string>
+		<string>/Library/Application Support/VirtualBox/</string>
 	</array>
 	<key>GoToMeeting.app</key>
 	<array>
 		<string>/Applications/GoToMeeting/</string>
 		<string>~/Library/LaunchAgents/com.citrixonline.GoToMeeting.G2MUpdate.plist</string>
 		<string>~/Library/Application Support/CitrixOnline/</string>
+	</array>
+	<key>MacKeeper.app</key>
+	<array>
+		<string>~/Library/Caches/com.mackeeper.MacKeeper.Helper/</string>
+		<string>~/Library/Caches/com.mackeeper.MacKeeper.MKCleanService/</string>
+		<string>~/Library/LaunchAgents/com.mackeeper.MacKeeper.Helper.plist</string>
+		<string>~/Library/Preferences/com.mackeeper.MacKeeper.Helper.plist</string>
+		<string>~/Library/Application Support/MacKeeper Helper/</string>
+		<string>~/Library/LaunchDaemons/com.mackeeper.MacKeeper.plugin.AntiTheft.daemon.plist</string>
+	</array>
+	<key>Parrallels</key>
+	<array>
+		<string></string>
+	</array>
+	<key>VM Ware</key>
+	<array>
+		<string></string>
+	</array>
+	<key>Spotify</key>
+	<array>
+		<string>~/Library/LaunchAgents/com.spotify.webhelper.plist</string>
+	</array>
+	<key>Steam</key>
+	<array>
+		<string>~/Library/LaunchAgents/com.valvesoftware.steamclean.plist</string>
 	</array>
 </dict>
 </plist>

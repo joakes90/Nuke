@@ -21,6 +21,7 @@
         self.dockItems = dictionary[@"dockItems"];
         self.message = dictionary[@"message"];
         self.recipts = dictionary[@"recipts"];
+        self.startupItems = dictionary[@"startupItems"];
     }
     return self;
 }

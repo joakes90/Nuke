@@ -37,7 +37,7 @@
 - (NSArray *) installedPackages {
     NSMutableArray *installedPackages = [[NSMutableArray alloc] init];
     for (Package *pack in self.packages) {
-        if ([[NSFileManager defaultManager] fileExistsAtPath:pack.idFile]) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[pack.idFile stringByExpandingTildeInPath]]) {
             [installedPackages addObject:pack];
         }
     }
@@ -49,21 +49,24 @@
     NSArray *filesToRemove = package.files;
     NSArray *dockItems = package.dockItems;
     NSArray *installedApps = [self installedAppsForListOfBundelIds:dockItems];
+    NSArray *startupItems = package.startupItems;
     
     for (NSString *app in dockItems) {
         BOOL appIsRunning = [deleter appIsRunning:app];
         if (appIsRunning) {
             Application *runningApp = [[AppsController sharedInstance] appWithBundelID:app];
-            NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-            AppRunningViewController *vc = [sb instantiateControllerWithIdentifier:@"openApp"];
-            vc.app = runningApp;
-            [vc presentViewControllerAsModalWindow:vc];
-            return;
+            if (runningApp) {
+                NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+                AppRunningViewController *vc = [sb instantiateControllerWithIdentifier:@"openApp"];
+                vc.app = runningApp;
+                [vc presentViewControllerAsModalWindow:vc];
+                return;
+            }
         }
     }
     NSMutableArray *filesOwnedByRoot = [[NSMutableArray alloc] init];
     for (NSString *file in filesToRemove) {
-        if (![deleter isOwnedByroot:file]) {
+        if ([deleter isOwnedByUser:file]) {
             NSDictionary *uniqueItem = @{@"Unique Items" : file};
             [deleter removeComponetFromMac:uniqueItem];
             
@@ -78,6 +81,9 @@
     [deleteAction executeAndReturnError:nil];
     for (Application *app in installedApps) {
         [deleter appIsStartupItem:[app.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
+    }
+    for (NSString *item in startupItems) {
+        [deleter appIsStartupItem:item];
     }
     for (NSString *dockItem in dockItems) {
         [deleter removeFromDockApplicationWithBundelIdentifier:dockItem];

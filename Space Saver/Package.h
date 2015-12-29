@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSArray *dockItems;
 @property (strong, nonatomic) NSString *message;
 @property (strong, nonatomic) NSArray *recipts;
+@property (strong, nonatomic) NSArray *startupItems;
 
 - (id) initFromDictionary:(NSDictionary *)dictionary;
 

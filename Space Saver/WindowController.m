@@ -118,10 +118,12 @@
         self.removeButton.enabled = NO;
         self.resetButton.enabled = NO;
         self.packagesButton.label = @"Installed Apps";
+        self.packagesButton.image = [NSImage imageNamed:@"appicon"];
     } else {
         self.removeButton.enabled = YES;
         self.resetButton.enabled = YES;
         self.packagesButton.label = @"Installed Packages";
+        self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
         self.delegate = (MainViewController *)self.contentViewController;
     }
 }

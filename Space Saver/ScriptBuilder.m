@@ -15,11 +15,18 @@
     for (NSString *file in files) {
         NSString *fileString = [file stringByExpandingTildeInPath];
         fileString = [fileString stringByReplacingOccurrencesOfString:@" " withString:@"\\\\ "];
+        fileString = [fileString stringByReplacingOccurrencesOfString:@"(" withString:@"\\\\("];
+        fileString = [fileString stringByReplacingOccurrencesOfString:@")" withString:@"\\\\)"];
         NSString *trashString = [@"~/.Trash/" stringByExpandingTildeInPath];
         trashString = [trashString stringByReplacingOccurrencesOfString:@" " withString:@"\\\\ "];
-        NSString *newLine = [NSString stringWithFormat:@"mv %@ %@", fileString, trashString];
+        NSString *newDir = [NSString stringWithFormat:@"%@/%@", trashString, [[NSNumber numberWithInt:arc4random()] stringValue]];
+        NSString *addDirLine = [NSString stringWithFormat:@"mkdir %@ \n", newDir];
+        NSString *newLine = [NSString stringWithFormat:@"mv %@ %@", fileString, newDir];
         newLine = [newLine stringByAppendingString:@"\n"];
-        script = [script stringByAppendingString:newLine];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[file stringByExpandingTildeInPath]]) {
+            script = [script stringByAppendingString:addDirLine];
+            script = [script stringByAppendingString:newLine];
+        }
     }
     return script;
 }

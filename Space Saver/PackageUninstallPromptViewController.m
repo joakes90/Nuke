@@ -8,6 +8,7 @@
 
 #import "PackageUninstallPromptViewController.h"
 #import "PackageUninstallController.h"
+#import "AppsController.h"
 #import "constants.h"
 
 @interface PackageUninstallPromptViewController ()
@@ -27,8 +28,16 @@
     self.imageView.image = [NSImage imageNamed:self.package.imageName];
     self.title = [NSString stringWithFormat:@"Uninstall %@", self.package.packageName];
     self.progressBar.maxValue = [self.package.files count] + 1;
+}
+
+-(void)viewWillAppear {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incrimentProgressBar) name:kFileRemovedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelClicked:) name:kUninstallComplete object:nil];
+}
+
+- (void) viewWillDisappear {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[AppsController sharedInstance] findAllApplications];
 }
 
 - (void) incrimentProgressBar {
