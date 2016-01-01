@@ -77,9 +77,9 @@
                 [self.deleter appIsStartupItem:[self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
                 [self.deleter removeApplicationFromMac:self.App];
                 //call method to remove root
-                if ([self.deleter rootItemsPresent]) {
-                    [self.deleter removeRootItems];
-                }
+            }
+            if ([self.deleter rootItemsPresent]) {
+                [self.deleter removeRootItems];
             }
             [self dismissViewController:self];
             [[AppsController sharedInstance] findAllApplications];
