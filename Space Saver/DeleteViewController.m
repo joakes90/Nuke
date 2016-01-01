@@ -13,6 +13,7 @@
 #import <Quartz/Quartz.h>
 #import "AppRunningViewController.h"
 #import "AppsController.h"
+#import "ScriptBuilder.h"
 
 @interface DeleteViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
@@ -59,12 +60,17 @@
                 [cell.layer addAnimation:slide forKey:@"slide"];
             }
         }
+        
         if ([self.mode isEqualToString:kDeleteMode]) {
             if ([self.deleter appAppearsInDock:self.App]) {
                 [self.deleter removeFromDockApplicationWithBundelIdentifier:self.App.bundelIdentifier];
             }
             [self.deleter appIsStartupItem:[self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
             [self.deleter removeApplicationFromMac:self.App];
+            //call method to remove root
+            if ([self.deleter rootItemsPresent]) {
+                [self.deleter removeRootItems];
+            }
         }
         [self dismissViewController:self];
         [[AppsController sharedInstance] findAllApplications];

@@ -76,9 +76,11 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kFileRemovedNotification object:nil];
     }
     NSString *script = [ScriptBuilder bashScriptToDeleteArrayOfFile:filesOwnedByRoot];
-    NSString *appleScriptString = [NSString stringWithFormat:@"tell application \"Terminal\" \n do shell script \"%@\" with administrator privileges quit\n end tell", script];
-    NSAppleScript *deleteAction = [[NSAppleScript alloc] initWithSource:appleScriptString];
-    [deleteAction executeAndReturnError:nil];
+    [ScriptBuilder executeScript:script];
+    
+//    NSString *appleScriptString = [NSString stringWithFormat:@"tell application \"Terminal\" \n do shell script \"%@\" with administrator privileges quit\n end tell", script];
+//    NSAppleScript *deleteAction = [[NSAppleScript alloc] initWithSource:appleScriptString];
+//    [deleteAction executeAndReturnError:nil];
     for (Application *app in installedApps) {
         [deleter appIsStartupItem:[app.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
     }

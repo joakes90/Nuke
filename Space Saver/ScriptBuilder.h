@@ -12,4 +12,6 @@
 
 + (NSString *)bashScriptToDeleteArrayOfFile:(NSMutableArray *)files;
 
++ (void) executeScript:(NSString *)script;
+
 @end

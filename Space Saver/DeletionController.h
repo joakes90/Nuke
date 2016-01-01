@@ -12,6 +12,8 @@
 
 @interface DeletionController : NSObject
 
+- (BOOL)rootItemsPresent;
+
 - (BOOL)appIsRunning:(NSString *)bundelID;
 
 - (BOOL) appAppearsInDock:(Application *)app;
@@ -25,5 +27,7 @@
 - (void) removeApplicationFromMac:(Application *)app;
 
 - (void) removeFromDockApplicationWithBundelIdentifier:(NSString *)ident;
+
+- (void) removeRootItems;
 
 @end
