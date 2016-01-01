@@ -33,6 +33,13 @@
     self.ViewLabel.stringValue = [self.mode isEqualToString:kDeleteMode]? [NSString stringWithFormat:@"Remove these items with %@?", [self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]] : [NSString stringWithFormat:@"Reset %@ to factory settings and remove data?", [self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
     self.deleter = [[DeletionController alloc] init];
 }
+
+-(void)viewWillAppear {
+    if ([[self.App.appComponets allKeys] count] < 1) {
+        [self.tableView.superview.superview setHidden:YES];
+        self.ViewLabel.stringValue = [NSString stringWithFormat:@"Bummer! No additional componets found with %@.", [self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
+    }
+}
 - (IBAction)dismisView:(id)sender {
     [self dismissViewController:self];
 }
@@ -47,8 +54,6 @@
         for (NSInteger i = 0 ; i < [self.tableView numberOfRows]; i++) {
             ComponetsTableViewCell *cell = [self.tableView viewAtColumn:0 row:i makeIfNecessary:YES];
             if (cell.removeCheckBox.state == 1){
-                [self.deleter removeComponetFromMac:cell.componet];
-                
                 //animation to slide away cell
                 CAKeyframeAnimation *slide = [CAKeyframeAnimation animation];
                 slide.keyPath = @"position.x";
@@ -58,22 +63,27 @@
                 slide.additive = NO;
                 
                 [cell.layer addAnimation:slide forKey:@"slide"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.45 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [cell setHidden:YES];
+                    [self.deleter removeComponetFromMac:cell.componet];
+                });
             }
         }
-        
-        if ([self.mode isEqualToString:kDeleteMode]) {
-            if ([self.deleter appAppearsInDock:self.App]) {
-                [self.deleter removeFromDockApplicationWithBundelIdentifier:self.App.bundelIdentifier];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if ([self.mode isEqualToString:kDeleteMode]) {
+                if ([self.deleter appAppearsInDock:self.App]) {
+                    [self.deleter removeFromDockApplicationWithBundelIdentifier:self.App.bundelIdentifier];
+                }
+                [self.deleter appIsStartupItem:[self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
+                [self.deleter removeApplicationFromMac:self.App];
+                //call method to remove root
+                if ([self.deleter rootItemsPresent]) {
+                    [self.deleter removeRootItems];
+                }
             }
-            [self.deleter appIsStartupItem:[self.App.name stringByReplacingOccurrencesOfString:@".app" withString:@""]];
-            [self.deleter removeApplicationFromMac:self.App];
-            //call method to remove root
-            if ([self.deleter rootItemsPresent]) {
-                [self.deleter removeRootItems];
-            }
-        }
-        [self dismissViewController:self];
-        [[AppsController sharedInstance] findAllApplications];
+            [self dismissViewController:self];
+            [[AppsController sharedInstance] findAllApplications];
+        });
     }
 }
 
