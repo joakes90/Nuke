@@ -49,8 +49,25 @@
 
 - (void) removeMainVC {
     PackageViewController *newVC = [[PackageViewController alloc] init];
+    if ([self.window styleMask] & NSFullScreenWindowMask) {
+        [newVC.view setFrame:CGRectMake(newVC.view.frame.origin.x, newVC.view.frame.origin.y, self.window.screen.frame.size.width, self.window.screen.frame.size.height - 100)];
+        self.window.contentViewController = newVC;
+        
+        if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
+            self.removeButton.enabled = NO;
+            self.resetButton.enabled = NO;
+            self.packagesButton.label = @"Installed Apps";
+            self.packagesButton.image = [NSImage imageNamed:@"appicon"];
+        } else {
+            self.removeButton.enabled = YES;
+            self.resetButton.enabled = YES;
+            self.packagesButton.label = @"Installed Packages";
+            self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
+            self.delegate = (MainViewController *)self.contentViewController;
+        }
+
+    } else {
     newVC.view.frame = self.window.contentViewController.view.frame;
-    
     NSImage *oldview = [[NSImage alloc] initWithData:[self.window.contentViewController.view dataWithPDFInsideRect:self.window.contentViewController.view.bounds]];
     NSImageView *oldImageView = [[NSImageView alloc] init];
     oldImageView.frame = newVC.view.frame;
@@ -69,42 +86,64 @@
     slideOut.delegate = self;
     [oldImageView.layer addAnimation:slideOut forKey:@"slideOut"];
     [self performSelector:@selector(postAnimationCleanup:) withObject:oldImageView afterDelay:0.6];
+    }
 }
 
 - (void) replaceMainVC {
     NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
     MainViewController *vc = [sb instantiateControllerWithIdentifier:@"main"];
-    vc.view.frame = self.window.contentViewController.view.frame;
+    
 
-    
-    NSImage *oldImage = [[NSImage alloc] initWithData:[self.window.contentViewController.view dataWithPDFInsideRect:self.window.contentViewController.view.frame]];
-    NSImageView *oldImageView = [[NSImageView alloc] init];
-    oldImageView.frame = vc.view.frame;
-    oldImageView.image = oldImage;
-    
-    [self setContentViewController:vc];
-    [vc.populationView removeFromSuperview];
-    
-    NSImage *newImage = [[NSImage alloc] initWithData:[self.window.contentViewController.view dataWithPDFInsideRect:self.window.contentViewController.view.bounds]];
-    NSImageView *newImageView = [[NSImageView alloc] init];
-    newImageView.frame = vc.view.frame;
-    newImageView.image = newImage;
-    newImageView.wantsLayer = YES;
-    
-    [vc.view addSubview:oldImageView];
-    [vc.view addSubview:newImageView];
-    
-    CAKeyframeAnimation *slideIn = [CAKeyframeAnimation animation];
-    slideIn.keyPath = @"position.y";
-    slideIn.values = @[[NSNumber numberWithDouble:(0 - (self.contentViewController.view.frame.size.height + 55))], @0];
-    slideIn.duration = 0.5;
-    slideIn.additive = NO;
-    slideIn.removedOnCompletion = YES;
-    slideIn.delegate = self;
-    
-    [newImageView.layer addAnimation:slideIn forKey:@"slideIn"];
-    [self performSelector:@selector(postAnimationCleanup:) withObject:oldImageView afterDelay:0.6];
-    [self performSelector:@selector(postAnimationCleanup:) withObject:newImageView afterDelay:0.6];
+     if ([self.window styleMask] & NSFullScreenWindowMask) {
+        [vc.view setFrame:CGRectMake(vc.view.frame.origin.x, vc.view.frame.origin.y, self.window.screen.frame.size.width, self.window.screen.frame.size.height - 100)];
+         self.window.contentViewController = vc;
+         [vc.view setNeedsDisplay:YES];
+         [vc.populationView removeFromSuperview];
+         
+         if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
+             self.removeButton.enabled = NO;
+             self.resetButton.enabled = NO;
+             self.packagesButton.label = @"Installed Apps";
+             self.packagesButton.image = [NSImage imageNamed:@"appicon"];
+         } else {
+             self.removeButton.enabled = YES;
+             self.resetButton.enabled = YES;
+             self.packagesButton.label = @"Installed Packages";
+             self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
+             self.delegate = (MainViewController *)self.contentViewController;
+         }
+
+     } else {
+         vc.view.frame = self.window.contentViewController.view.frame;
+         NSImage *oldImage = [[NSImage alloc] initWithData:[self.window.contentViewController.view dataWithPDFInsideRect:self.window.contentViewController.view.frame]];
+         NSImageView *oldImageView = [[NSImageView alloc] init];
+         oldImageView.frame = vc.view.frame;
+         oldImageView.image = oldImage;
+         
+         [self setContentViewController:vc];
+         [vc.populationView removeFromSuperview];
+         
+         NSImage *newImage = [[NSImage alloc] initWithData:[self.window.contentViewController.view dataWithPDFInsideRect:self.window.contentViewController.view.bounds]];
+         NSImageView *newImageView = [[NSImageView alloc] init];
+         newImageView.frame = vc.view.frame;
+         newImageView.image = newImage;
+         newImageView.wantsLayer = YES;
+         
+         [vc.view addSubview:oldImageView];
+         [vc.view addSubview:newImageView];
+         
+         CAKeyframeAnimation *slideIn = [CAKeyframeAnimation animation];
+         slideIn.keyPath = @"position.y";
+         slideIn.values = @[[NSNumber numberWithDouble:(0 - (self.contentViewController.view.frame.size.height + 55))], @0];
+         slideIn.duration = 0.5;
+         slideIn.additive = NO;
+         slideIn.removedOnCompletion = YES;
+         slideIn.delegate = self;
+         
+         [newImageView.layer addAnimation:slideIn forKey:@"slideIn"];
+         [self performSelector:@selector(postAnimationCleanup:) withObject:oldImageView afterDelay:0.6];
+         [self performSelector:@selector(postAnimationCleanup:) withObject:newImageView afterDelay:0.6];
+     }
 }
 
 - (void) postAnimationCleanup:(NSImageView *)oldView {
