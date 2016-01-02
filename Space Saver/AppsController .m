@@ -15,6 +15,7 @@ static NSString *const kApplicationPath = @"/Applications/";
 @interface AppsController()
 
 @property (strong, nonatomic) NSMutableArray<Application *> *apps;
+@property (assign, nonatomic) BOOL refreshingApps;
 
 @end
 
@@ -34,9 +35,9 @@ static NSString *const kApplicationPath = @"/Applications/";
 
 - (void)findAllApplications {
     dispatch_queue_t populationQ;
-    populationQ = dispatch_queue_create("com.oklasoft.Space-Saver", nil);
+    populationQ = dispatch_queue_create("com.oklasoft.Nuke", nil);
     dispatch_async(populationQ, ^{
-
+        _refreshingApps = YES;
         _apps = [[NSMutableArray alloc] init];
         NSArray *applications = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:kApplicationPath error:nil];
         for (NSString *name in applications) {
@@ -77,6 +78,7 @@ static NSString *const kApplicationPath = @"/Applications/";
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
+            _refreshingApps = NO;
         });
     });
 }

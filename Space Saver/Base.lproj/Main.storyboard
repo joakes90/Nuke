@@ -11,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Space Saver" id="1Xt-HY-uBw">
+                            <menuItem title="Nuke" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Space Saver" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Nuke" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Space Saver" id="5kV-Vb-QxS">
+                                        <menuItem title="About Nuke" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +29,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide Space Saver" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Nuke" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Space Saver" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Nuke" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -628,7 +628,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Space Saver Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Nuke Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -650,8 +650,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" sceneMemberID="viewController">
-                    <window key="window" title="Space Saver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController storyboardIdentifier="window" id="B8D-0N-5wS" customClass="WindowController" sceneMemberID="viewController">
+                    <window key="window" title="Nuke" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="695" height="407"/>
@@ -784,43 +784,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="JpN-TL-HAH">
-                                <rect key="frame" x="206" y="71" width="258" height="139"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-el-1Ga">
-                                        <rect key="frame" x="16" y="90" width="227" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Populating Installed Applications List" placeholderString="Populating Installed Applications List" id="ysw-BH-H6X">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="T38-g1-37M">
-                                        <rect key="frame" x="121" y="20" width="16" height="16"/>
-                                    </progressIndicator>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Acy-el-1Ga" firstAttribute="top" secondItem="JpN-TL-HAH" secondAttribute="top" constant="32" id="Cxe-gl-JZy"/>
-                                    <constraint firstItem="T38-g1-37M" firstAttribute="top" secondItem="Acy-el-1Ga" secondAttribute="bottom" constant="54" id="Pqp-wG-Co5"/>
-                                    <constraint firstItem="Acy-el-1Ga" firstAttribute="centerX" secondItem="JpN-TL-HAH" secondAttribute="centerX" id="TfW-Xd-wtm"/>
-                                    <constraint firstItem="T38-g1-37M" firstAttribute="centerX" secondItem="JpN-TL-HAH" secondAttribute="centerX" id="icX-YS-gi9"/>
-                                </constraints>
-                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="thg-0S-2zo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="9Jg-Il-EDi"/>
-                            <constraint firstAttribute="bottom" secondItem="JpN-TL-HAH" secondAttribute="bottom" constant="71" id="9W3-mF-Vyt"/>
-                            <constraint firstAttribute="trailing" secondItem="JpN-TL-HAH" secondAttribute="trailing" constant="231" id="P57-QY-Awo"/>
-                            <constraint firstItem="JpN-TL-HAH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="206" id="Xga-s8-5MN"/>
                             <constraint firstAttribute="trailing" secondItem="thg-0S-2zo" secondAttribute="trailing" id="cuE-hm-Uoi"/>
                             <constraint firstItem="thg-0S-2zo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="eS8-to-01G"/>
                             <constraint firstAttribute="bottom" secondItem="thg-0S-2zo" secondAttribute="bottom" id="i3D-nw-99p"/>
-                            <constraint firstItem="JpN-TL-HAH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="60" id="ocH-mk-ijU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="populationView" destination="JpN-TL-HAH" id="Cc0-yv-i7f"/>
-                        <outlet property="spinner" destination="T38-g1-37M" id="JLn-Cb-LeH"/>
                         <outlet property="tableView" destination="Rug-wt-hVY" id="xOk-mV-5B9"/>
                         <segue destination="RCA-A9-x6e" kind="sheet" identifier="verifyDeletion" id="EmN-sJ-5h2"/>
                     </connections>

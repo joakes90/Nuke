@@ -28,14 +28,19 @@
 
 -(void)viewWillAppear {
     self.view.wantsLayer = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kUpdatedAppsArrayNotification object:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kUpdatedAppsArrayNotification object:nil];
+    
     [self.spinner startAnimation:nil];
     self.mode = [[NSString alloc] init];
     }
+
+-(void)viewWillDisappear {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
@@ -50,10 +55,13 @@
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    if ([tableColumn.identifier isEqualToString:@"cell"]) {
+    if ([tableColumn.identifier isEqualToString:@"cell"] && [[AppsController sharedInstance].apps count] > row) {
         ApplicationCell *cell = [tableView makeViewWithIdentifier:@"cell" owner:self];
         cell.nameLabel.stringValue = [[AppsController sharedInstance].apps[row].name stringByReplacingOccurrencesOfString:@".app" withString:@""];
         cell.appIcon.image = [AppsController sharedInstance].apps[row].icon;
+        if (row == [[AppsController sharedInstance].apps count] - 1) {
+            [self.populationView setHidden:YES];
+        }
         return cell;
     }
         return nil;

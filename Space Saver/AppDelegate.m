@@ -15,7 +15,7 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize windowController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
@@ -27,6 +27,17 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+}
+
+-(BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+    if (flag) {
+        return NO;
+    } else {
+        NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+        windowController = [sb instantiateControllerWithIdentifier:@"window"];
+        [windowController showWindow:self];
+        return YES;
+    }
 }
 
 @end

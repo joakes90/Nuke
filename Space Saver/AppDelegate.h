@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "WindowController.h"
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property WindowController *windowController;
 
 @end
 

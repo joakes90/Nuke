@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic, readonly) NSMutableArray<Application *> *apps;
 
+@property (assign, nonatomic, readonly) BOOL refreshingApps;
+
 + (instancetype) sharedInstance;
 
 - (void) findAllApplications;
