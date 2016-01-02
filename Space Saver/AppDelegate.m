@@ -20,9 +20,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     [AppsController sharedInstance];
+}
 
-    
-    
+- (IBAction)refreshApps:(id)sender {
+    [[AppsController sharedInstance] findAllApplications];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

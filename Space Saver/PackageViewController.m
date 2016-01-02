@@ -14,6 +14,7 @@
 @interface PackageViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong) IBOutlet NSTableView *table;
+@property (strong) IBOutlet NSTextField *label;
 
 @end
 
@@ -24,6 +25,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unInstallComplete) name:kUninstallComplete object:nil];
 }
 
+-(void)viewWillAppear {
+    if ([[[PackageUninstallController sharedInstance] installedPackages] count] < 1) {
+        self.label.stringValue = @"No packages where found on your Mac";
+    }
+}
 - (IBAction)uninstallSelectedPackage:(id)sender {
     if ([self.table selectedRow] >= 0) {
         Package *package = [[[PackageUninstallController sharedInstance] installedPackages] objectAtIndex:[self.table selectedRow]];
