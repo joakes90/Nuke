@@ -35,6 +35,10 @@
     NSString *appleScriptString = [NSString stringWithFormat:@"tell application \"Terminal\" \n do shell script \"%@\" with administrator privileges quit\n end tell", script];
     NSAppleScript *deleteAction = [[NSAppleScript alloc] initWithSource:appleScriptString];
     [deleteAction executeAndReturnError:nil];
+    
+    NSString *terminalCloseString = @"tell application \"Terminal\" quit end tell";
+    NSAppleScript *quitAction = [[NSAppleScript alloc] initWithSource:terminalCloseString];
+    [quitAction executeAndReturnError:nil];
 }
 
 @end

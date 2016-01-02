@@ -426,14 +426,14 @@
                                         <action selector="installedPackagesItemPressed:" target="B8D-0N-5wS" id="6Zf-SZ-Re7"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="A2A31FC4-B5B0-4BDE-85E8-C5B68BEE40EB" label="Remove App" paletteLabel="Remove App" tag="-1" id="OuP-b5-Ngf">
+                                <toolbarItem implicitItemIdentifier="A2A31FC4-B5B0-4BDE-85E8-C5B68BEE40EB" label="Remove App" paletteLabel="Remove App" tag="-1" image="trash" id="OuP-b5-Ngf">
                                     <connections>
                                         <action selector="removeToolbarItemPressed:" target="B8D-0N-5wS" id="Voj-Un-QfT"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="YFj-R6-C85"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d1q-PT-mTb"/>
-                                <toolbarItem implicitItemIdentifier="61A2BA59-1E5F-44C1-9B85-00DF67A759CB" label="Reset App" paletteLabel="Reset App" tag="-1" id="yZk-F6-dBu">
+                                <toolbarItem implicitItemIdentifier="61A2BA59-1E5F-44C1-9B85-00DF67A759CB" label="Reset App" paletteLabel="Reset App" tag="-1" image="reset" id="yZk-F6-dBu">
                                     <connections>
                                         <action selector="resetToolBarItemPressed:" target="B8D-0N-5wS" id="GLw-wN-Lcg"/>
                                     </connections>
@@ -679,6 +679,10 @@ DQ
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aVA-We-odh">
                                                                     <rect key="frame" x="3" y="22" width="32" height="32"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="32" id="Wr6-fN-RWO"/>
+                                                                        <constraint firstAttribute="height" constant="32" id="b6D-No-e7D"/>
+                                                                    </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSBonjour" id="YOC-NG-kI8"/>
                                                                 </imageView>
                                                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="Ff8-Zf-GWH">
@@ -748,8 +752,8 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPg-Ry-mgK">
-                                <rect key="frame" x="360" y="2" width="72" height="32"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sPg-Ry-mgK">
+                                <rect key="frame" x="364" y="2" width="72" height="32"/>
                                 <buttonCell key="cell" type="push" title="Nuke" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JSx-tj-oub">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -758,8 +762,8 @@ DQ
                                     <action selector="deleteApp:" target="RCA-A9-x6e" id="ShR-qu-8Us"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rkc-nP-707">
-                                <rect key="frame" x="275" y="2" width="82" height="32"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rkc-nP-707">
+                                <rect key="frame" x="283" y="2" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8DQ-Us-IVc">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -800,5 +804,7 @@ Gw
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSBonjour" width="32" height="32"/>
         <image name="packageicon" width="512" height="512"/>
+        <image name="reset" width="512" height="512"/>
+        <image name="trash" width="512" height="512"/>
     </resources>
 </document>

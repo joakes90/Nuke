@@ -117,6 +117,7 @@
 
 }
 //tableview datasource and delegate methods
+#pragma mark TableView Methods
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
     return 50.0;
@@ -161,6 +162,7 @@
         cell.componet = componets;
         cell.typeLabel.stringValue = [self typeNameForKey:type];
         cell.itemLabel.stringValue = [name stringByReplacingOccurrencesOfString:@".app" withString:@""];
+        cell.imageView.image = [self typeImage:cell.typeLabel.stringValue];
         cell.wantsLayer = YES;
     
         return cell;
@@ -174,4 +176,22 @@
     }
             
 }
+
+- (NSImage *) typeImage:(NSString *)type {
+    NSImage *image;
+    if ([type isEqualToString:@"Cache"]) {
+        image = [NSImage imageNamed:@"cacheicon"];
+    }
+    if ([type isEqualToString:@"Root Prefrences"] || [type isEqualToString:@"User Prefrences"]) {
+        image = [NSImage imageNamed:@"prefs"];
+    }
+    if ([type isEqualToString:@"Application Support"]) {
+        image = [NSImage imageNamed:@"appSupport"];
+    }
+    if ([type isEqualToString:@"Misc"]) {
+        image = [NSImage imageNamed:@"misc"];
+    }
+    return image;
+}
+
 @end
