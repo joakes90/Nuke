@@ -191,6 +191,12 @@
     if ([type isEqualToString:@"Misc"]) {
         image = [NSImage imageNamed:@"misc"];
     }
+    if ([type isEqualToString:@"Container"]) {
+        image = [NSImage imageNamed:@"container"];
+    }
+    if ([type isEqualToString:@"Save State"]) {
+        image = [NSImage imageNamed:@"saveState"];
+    }
     return image;
 }
 
