@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cacheicon50.png",
+      "filename" : "mackeeper50.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cacheicon100.png",
+      "filename" : "mackeeper100.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cacheicon150.png",
+      "filename" : "mackeeper150.png",
       "scale" : "3x"
     }
   ],

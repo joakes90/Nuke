@@ -21,6 +21,8 @@
 		<string>/Library/VirtualBox/</string>
 		<string>~/Library/LaunchAgents/org.virtualbox.vboxwebsrv.plist</string>
 		<string>/Library/Application Support/VirtualBox/</string>
+		<string>/Library/LaunchDaemons/org.virtualbox.startup.plist</string>
+		<string>/Library/Preferences/VirtualBox/</string>
 	</array>
 	<key>GoToMeeting.app</key>
 	<array>
@@ -36,20 +38,23 @@
 		<string>~/Library/Preferences/com.mackeeper.MacKeeper.Helper.plist</string>
 		<string>~/Library/Application Support/MacKeeper Helper/</string>
 		<string>~/Library/LaunchDaemons/com.mackeeper.MacKeeper.plugin.AntiTheft.daemon.plist</string>
+		<string>~/Documents/MacKeeper Backups/</string>
 	</array>
-	<key>Parrallels</key>
+	<key>Parallels Desktop.app</key>
 	<array>
-		<string></string>
+		<string>~/Documents/Parallels/</string>
+		<string>~/Library/Parallels/</string>
+		<string>/Library/Preferences/Parallels/</string>
 	</array>
 	<key>VM Ware</key>
 	<array>
 		<string></string>
 	</array>
-	<key>Spotify</key>
+	<key>Spotify.app</key>
 	<array>
 		<string>~/Library/LaunchAgents/com.spotify.webhelper.plist</string>
 	</array>
-	<key>Steam</key>
+	<key>Steam.app</key>
 	<array>
 		<string>~/Library/LaunchAgents/com.valvesoftware.steamclean.plist</string>
 	</array>
