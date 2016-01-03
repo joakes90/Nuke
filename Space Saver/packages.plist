@@ -149,6 +149,7 @@
 			<string>~/Library/Caches/com.adobe.PhotoshopElements</string>
 			<string>~/Library/Caches/com.adobe.Elements14/</string>
 			<string>~/Library/Caches/com.adobe.ElementsOrganizer14</string>
+			<string>/Caches/com.adobe.PhotoshopElements</string>
 		</array>
 		<key>dockItems</key>
 		<array>
@@ -192,6 +193,7 @@
 			<string>~/Library/Caches/com.adobe.Elements14/</string>
 			<string>/Library/Application Support/Adobe/Elements Organizer/</string>
 			<string>/Library/Preferences/com.Adobe.Premiere Elements.14.0.plist</string>
+			<string>/Caches/com.adobe.Adobe Premiere Elements-14.0/</string>
 		</array>
 		<key>dockItems</key>
 		<array>
@@ -396,6 +398,14 @@
 			<string>~/Library/Caches/com.adobe.Acrobat.Pro</string>
 			<string>~/Library/Caches/Adobe/After Effects/</string>
 			<string>~/Library/Caches/Adobe/CCX Welcome/</string>
+			<string>/Caches/Acrobat/</string>
+			<string>/Caches/Adobe/</string>
+			<string>/Caches/Adobe Camera Raw</string>
+			<string>/Caches/com.adobe.flashplayer.installmanager</string>
+			<string>/Caches/com.adobe.illustrator</string>
+			<string>/Caches/com.adobe.Lightroom6</string>
+			<string>/Caches/com.adobe.PDApp</string>
+			<string>/Caches/com.adobe.Photoshop</string>
 		</array>
 		<key>dockItems</key>
 		<array>

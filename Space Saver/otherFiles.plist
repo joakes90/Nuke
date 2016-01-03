@@ -23,6 +23,8 @@
 		<string>/Library/Application Support/VirtualBox/</string>
 		<string>/Library/LaunchDaemons/org.virtualbox.startup.plist</string>
 		<string>/Library/Preferences/VirtualBox/</string>
+		<string>~/VirtualBox VMs/</string>
+		<string>/Application Support/VirtualBox/</string>
 	</array>
 	<key>GoToMeeting.app</key>
 	<array>
@@ -45,10 +47,16 @@
 		<string>~/Documents/Parallels/</string>
 		<string>~/Library/Parallels/</string>
 		<string>/Library/Preferences/Parallels/</string>
+		<string>~/Library/Preferences/com.parallels.Parallels Desktop Statistics.plist</string>
+		<string>~/Library/Preferences/com.parallels.Parallels Desktop.plist</string>
+		<string>~/Library/Preferences/com.parallels.PDInfo.plist</string>
+		<string>~/Library/Preferences/com.parallels.Parallels.plist</string>
 	</array>
-	<key>VM Ware</key>
+	<key>VMware Fusion.app</key>
 	<array>
-		<string></string>
+		<string>~/Documents/Virtual Machines</string>
+		<string>/Application Support/VMware</string>
+		<string>~/Application Support/VMware Fusion/</string>
 	</array>
 	<key>Spotify.app</key>
 	<array>
@@ -57,6 +65,55 @@
 	<key>Steam.app</key>
 	<array>
 		<string>~/Library/LaunchAgents/com.valvesoftware.steamclean.plist</string>
+	</array>
+	<key>Adobe Photoshop Elements 14.app</key>
+	<array>
+		<string>/Applications/Adobe Photoshop Elements 14/</string>
+		<string>/Applications/Adobe Elements 14 Organizer.app</string>
+		<string>~/Library/Preferences/Adobe/</string>
+		<string>~/Library/Preferences/Adobe Photoshop Elements 14 Paths</string>
+		<string>~/Library/Preferences/Adobe Photoshop Elements 14 Settings/</string>
+		<string>~/Library/Preferences/com.adobe.crashreporter.plist</string>
+		<string>~/Library/Preferences/com.Adobe.Elements Organizer.14.0.plist</string>
+		<string>~/Library/Preferences/com.adobe.Elements14.plist</string>
+		<string>~/Library/Preferences/com.adobe.ElementsOrganizer14.plist</string>
+		<string>~/Library/Preferences/com.adobe.PhotoshopElements.plist</string>
+		<string>~/Library/Application Support/Adobe/Adobe Photoshop Elements 14/</string>
+		<string>~/Library/Application Support/Adobe/Elements Organizer</string>
+		<string>~/Library/Application Support/Adobe/Photoshop Elements/</string>
+		<string>/Library/Application Support/Adobe/Elements Organizer/</string>
+		<string>/Library/Application Support/Adobe/Photoshop Elements/</string>
+		<string>/Library/Application Support/Adobe/WelcomePSE/</string>
+		<string>/Library/Preferences/com.Adobe.Elements Organizer.14.0.plist</string>
+		<string>/Library/Preferences/com.adobe.Elementslog.plist</string>
+		<string>/Library/Preferences/com.adobe.PhotoshopElements.plist</string>
+		<string>/Applications/Utilities/Adobe Installers/Uninstall Adobe Photoshop Elements 14</string>
+		<string>~/Library/Caches/Adobe/</string>
+		<string>~/Library/Caches/com.adobe.PhotoshopElements</string>
+		<string>~/Library/Caches/com.adobe.Elements14/</string>
+		<string>~/Library/Caches/com.adobe.ElementsOrganizer14</string>
+		<string>/Caches/com.adobe.PhotoshopElements</string>
+	</array>
+	<key>Adobe Premiere Elements 14.app</key>
+	<array>
+		<string>/Applications/Adobe Premiere Elements 14/</string>
+		<string>/Applications/Adobe Elements 14 Organizer.app</string>
+		<string>~/Library/Preferences/Adobe/</string>
+		<string>~/Library/Preferences/com.adobe.Adobe Premiere Elements-14.0.plist</string>
+		<string>~/Library/Preferences/com.Adobe.Common 14.0.plist</string>
+		<string>~/Library/Preferences/com.adobe.crashreporter.plist</string>
+		<string>~/Library/Preferences/com.Adobe.Elements Organizer.14.0.plist</string>
+		<string>~/Library/Preferences/com.adobe.Elements14.plist</string>
+		<string>~/Library/Preferences/com.adobe.ElementsOrganizer14.plist</string>
+		<string>~/Library/Preferences/com.Adobe.Premiere Elements.14.0.plist</string>
+		<string>~/Library/Application Support/Adobe/Premiere Elements/</string>
+		<string>~/Library/Caches/Adobe/</string>
+		<string>~/Library/Caches/com.adobe.Adobe Premiere Elements-14.0/</string>
+		<string>~/Library/Caches/com.adobe.ElementsOrganizer14/</string>
+		<string>~/Library/Caches/com.adobe.Elements14/</string>
+		<string>/Library/Application Support/Adobe/Elements Organizer/</string>
+		<string>/Library/Preferences/com.Adobe.Premiere Elements.14.0.plist</string>
+		<string>/Caches/com.adobe.Adobe Premiere Elements-14.0/</string>
 	</array>
 </dict>
 </plist>
