@@ -21,7 +21,7 @@
         trashString = [trashString stringByReplacingOccurrencesOfString:@" " withString:@"\\\\ "];
         NSString *newDir = [NSString stringWithFormat:@"%@/%@", trashString, [[NSNumber numberWithInt:arc4random()] stringValue]];
         NSString *addDirLine = [NSString stringWithFormat:@"mkdir %@ \n", newDir];
-        NSString *newLine = [NSString stringWithFormat:@"mv %@ %@", fileString, newDir];
+        NSString *newLine = [NSString stringWithFormat:@"mv %@ %@ 2>> ~/Library/Logs/com.oklasoft.nuke.log", fileString, newDir];
         newLine = [newLine stringByAppendingString:@"\n"];
         if ([[NSFileManager defaultManager] fileExistsAtPath:[file stringByExpandingTildeInPath]]) {
             script = [script stringByAppendingString:addDirLine];

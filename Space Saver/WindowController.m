@@ -15,8 +15,6 @@
 @interface WindowController ()
 
 @property (strong) IBOutlet NSToolbarItem *packagesButton;
-@property (strong) IBOutlet NSToolbarItem *removeButton;
-@property (strong) IBOutlet NSToolbarItem *resetButton;
 
 @end
 
@@ -55,12 +53,16 @@
         
         if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
             self.removeButton.enabled = NO;
+            self.removeButton.image = [NSImage imageNamed:@"trashgrey"];
             self.resetButton.enabled = NO;
+            self.resetButton.image = [NSImage imageNamed:@"resetgrey"];
             self.packagesButton.label = @"Installed Apps";
             self.packagesButton.image = [NSImage imageNamed:@"appicon"];
         } else {
             self.removeButton.enabled = YES;
+            self.removeButton.image = [NSImage imageNamed:@"trash"];
             self.resetButton.enabled = YES;
+            self.resetButton.image = [NSImage imageNamed:@"reset"];
             self.packagesButton.label = @"Installed Packages";
             self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
             self.delegate = (MainViewController *)self.contentViewController;
@@ -102,12 +104,16 @@
          
          if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
              self.removeButton.enabled = NO;
+             self.removeButton.image = [NSImage imageNamed:@"trashgrey"];
              self.resetButton.enabled = NO;
+             self.resetButton.image = [NSImage imageNamed:@"resetgrey"];
              self.packagesButton.label = @"Installed Apps";
              self.packagesButton.image = [NSImage imageNamed:@"appicon"];
          } else {
              self.removeButton.enabled = YES;
+             self.removeButton.image = [NSImage imageNamed:@"trash"];
              self.resetButton.enabled = YES;
+             self.resetButton.image = [NSImage imageNamed:@"reset"];
              self.packagesButton.label = @"Installed Packages";
              self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
              self.delegate = (MainViewController *)self.contentViewController;
@@ -155,12 +161,16 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
         self.removeButton.enabled = NO;
+        self.removeButton.image = [NSImage imageNamed:@"trashgrey"];
         self.resetButton.enabled = NO;
+        self.resetButton.image = [NSImage imageNamed:@"resetgrey"];
         self.packagesButton.label = @"Installed Apps";
         self.packagesButton.image = [NSImage imageNamed:@"appicon"];
     } else {
         self.removeButton.enabled = YES;
+        self.removeButton.image = [NSImage imageNamed:@"trash"];
         self.resetButton.enabled = YES;
+        self.resetButton.image = [NSImage imageNamed:@"reset"];
         self.packagesButton.label = @"Installed Packages";
         self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
         self.delegate = (MainViewController *)self.contentViewController;

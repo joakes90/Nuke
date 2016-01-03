@@ -373,7 +373,6 @@
 			<string>~/Library/Containers/com.adobe.accmac.ACCFinderSync/</string>
 			<string>/Library/Application Support/Adobe/</string>
 			<string>/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist</string>
-			<string>/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist</string>
 			<string>/Library/LaunchDaemons/com.adobe.adobeupdatedaemon.plist</string>
 			<string>/Library/LaunchDaemons/com.adobe.agsservice.plist</string>
 			<string>/Library/LaunchDaemons/com.adobe.ARMDC.Communicator.plist</string>
@@ -397,7 +396,6 @@
 			<string>~/Library/Caches/com.adobe.Acrobat.Pro</string>
 			<string>~/Library/Caches/Adobe/After Effects/</string>
 			<string>~/Library/Caches/Adobe/CCX Welcome/</string>
-			<string>~/Library/Group Containers/Adobe-Hub-App/</string>
 		</array>
 		<key>dockItems</key>
 		<array>

@@ -9,6 +9,7 @@
 #import "PackageViewController.h"
 #import "PackageUninstallController.h"
 #import "PackageUninstallPromptViewController.h"
+#import "WindowController.h"
 #import "constants.h"
 
 @interface PackageViewController () <NSTableViewDataSource, NSTableViewDelegate>
@@ -30,6 +31,7 @@
         self.label.stringValue = @"No packages where found on your Mac";
     }
 }
+
 - (IBAction)uninstallSelectedPackage:(id)sender {
     if ([self.table selectedRow] >= 0) {
         Package *package = [[[PackageUninstallController sharedInstance] installedPackages] objectAtIndex:[self.table selectedRow]];
