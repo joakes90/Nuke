@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppsController.h"
-#import "Application.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,8 +18,18 @@
 @synthesize windowController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
     [AppsController sharedInstance];
+}
+
+-(void)applicationDidBecomeActive:(NSNotification *)notification {
+    self.authController = [[AutherizationController alloc] init];
+    
+    if ([self.authController appIsRegistered]) {
+        NSLog(@"YES");
+    } else {
+        MainViewController *mainView = (MainViewController *)[[[NSApplication sharedApplication] mainWindow] contentViewController];
+        [mainView performSegueWithIdentifier:@"register" sender:self.windowController];
+    }
 }
 
 - (IBAction)refreshApps:(id)sender {

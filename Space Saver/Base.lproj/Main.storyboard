@@ -558,11 +558,25 @@
                     <connections>
                         <outlet property="tableView" destination="Rug-wt-hVY" id="xOk-mV-5B9"/>
                         <segue destination="RCA-A9-x6e" kind="sheet" identifier="verifyDeletion" id="EmN-sJ-5h2"/>
+                        <segue destination="8P8-c9-pIw" kind="modal" identifier="register" id="1ft-cP-taz"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="537.5" y="936"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jt1-VO-Xpc">
+            <objects>
+                <viewController storyboardIdentifier="register" showSeguePresentationStyle="single" id="8P8-c9-pIw" sceneMemberID="viewController">
+                    <view key="view" id="7rP-gY-ZRO">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="t0f-xe-7f6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="537" y="1366"/>
         </scene>
         <!--Open App-->
         <scene sceneID="fnn-oT-uZQ">
@@ -803,8 +817,8 @@ Gw
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSBonjour" width="32" height="32"/>
-        <image name="packageicon" width="512" height="512"/>
-        <image name="reset" width="512" height="512"/>
-        <image name="trash" width="512" height="512"/>
+        <image name="packageicon" width="50" height="50"/>
+        <image name="reset" width="50" height="50"/>
+        <image name="trash" width="50" height="50"/>
     </resources>
 </document>

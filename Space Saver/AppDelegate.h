@@ -8,9 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "WindowController.h"
+#import "AutherizationController.h"
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property WindowController *windowController;
+@property (strong, nonatomic) AutherizationController *authController;
 
 @end
 
