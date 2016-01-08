@@ -10,8 +10,10 @@
 
 @interface AutherizationController : NSObject
 
-
-
 - (BOOL)appIsRegistered;
+
+- (BOOL)appIsInTrial;
+
++ (void)startTrial;
 
 @end

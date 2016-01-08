@@ -47,6 +47,9 @@
         NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
         windowController = [sb instantiateControllerWithIdentifier:@"window"];
         [windowController showWindow:self];
+        if (![self.authController appIsRegistered]) {
+            [windowController.contentViewController performSegueWithIdentifier:@"register" sender:self.windowController];
+        }
         return YES;
     }
 }

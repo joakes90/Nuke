@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- PEALISTv1: TextSize:0| -->
 <plist version="1.0">
 <dict>
 	<key>Google Chrome.app</key>
@@ -54,6 +55,7 @@
 	<key>VMware Fusion.app</key>
 	<array>
 		<string>/Library/Preferences/VMware Fusion/</string>
+		<string>~/Library/Preferences/VMware Fusion/</string>
 		<string>~/Documents/Virtual Machines</string>
 		<string>/Application Support/VMware</string>
 		<string>~/Application Support/VMware Fusion/</string>
