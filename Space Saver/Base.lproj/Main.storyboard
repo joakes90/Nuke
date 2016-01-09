@@ -22,7 +22,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Register" id="0St-to-Xuc">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="register:" target="Voe-Tx-rLC" id="WVe-Dg-JD6"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -565,6 +570,24 @@
             </objects>
             <point key="canvasLocation" x="537.5" y="936"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="sUa-tG-Jzf">
+            <objects>
+                <windowController storyboardIdentifier="registerNonmodal" id="XJQ-KG-FXI" sceneMemberID="viewController">
+                    <window key="window" title="Thank you for Downloading Nuke" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Pwa-dr-nW6">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="722" y="379" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                    </window>
+                    <connections>
+                        <segue destination="8P8-c9-pIw" kind="relationship" relationship="window.shadowedContentViewController" id="IR7-u6-ASH"/>
+                    </connections>
+                </windowController>
+                <customObject id="Cfh-B2-hyF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-166" y="1799"/>
+        </scene>
         <!--Thank you for Downloading Nuke-->
         <scene sceneID="Jt1-VO-Xpc">
             <objects>
@@ -592,10 +615,13 @@
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6xv-mn-RQc">
                                 <rect key="frame" x="351" y="3" width="90" height="32"/>
-                                <buttonCell key="cell" type="push" title="Register" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1CI-jS-3Rh">
+                                <buttonCell key="cell" type="push" title="Register" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1CI-jS-3Rh">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="register:" target="8P8-c9-pIw" id="Zle-RB-Vwq"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QLA-3g-ufY">
                                 <rect key="frame" x="14" y="3" width="90" height="32"/>
@@ -603,10 +629,13 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="openPurachePage:" target="8P8-c9-pIw" id="Kao-Bh-UDK"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RGa-3P-hS7">
                                 <rect key="frame" x="104" y="3" width="90" height="32"/>
-                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="6E98C91E-EF03-4C46-96FA-73B5E8D2ADA1" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
+                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="C5D4F41A-1551-4F26-B7CB-C21FCA979719" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -674,14 +703,61 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="8iv-PN-KiS" id="Kg0-dY-6QM"/>
+                        <outlet property="registerButton" destination="6xv-mn-RQc" id="fYD-0b-Lq1"/>
                         <outlet property="serialTextField" destination="q8e-vK-XRK" id="BM8-lI-MFA"/>
                         <outlet property="tryButton" destination="RGa-3P-hS7" id="hBA-CH-tZS"/>
                         <outlet property="welcomeLabel" destination="RU5-41-tnT" id="reX-IG-c30"/>
+                        <segue destination="iY8-Mc-f1p" kind="show" identifier="thanks" id="OYT-lL-L6k"/>
                     </connections>
                 </viewController>
                 <customObject id="t0f-xe-7f6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="537.5" y="1831"/>
+            <point key="canvasLocation" x="537.5" y="1794"/>
+        </scene>
+        <!--Muchas Gracias-->
+        <scene sceneID="SG3-yX-zWU">
+            <objects>
+                <viewController title="Muchas Gracias" id="iY8-Mc-f1p" customClass="ThanksViewController" sceneMemberID="viewController">
+                    <view key="view" id="2Gj-Rd-hy1">
+                        <rect key="frame" x="0.0" y="0.0" width="455" height="114"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WiP-vn-3Ga">
+                                <rect key="frame" x="20" y="44" width="50" height="50"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon" id="K8l-FV-kAj"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQD-Ut-jzs">
+                                <rect key="frame" x="178" y="58" width="98" height="23"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Thank you!" id="A0v-SL-MJl">
+                                    <font key="font" metaFont="system" size="19"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gXg-WI-3nS">
+                                <rect key="frame" x="305" y="13" width="136" height="32"/>
+                                <buttonCell key="cell" type="push" title="You're welcome" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Odb-UZ-oaa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="close:" target="iY8-Mc-f1p" id="0Gt-aq-frn"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gXg-WI-3nS" secondAttribute="trailing" constant="20" id="3uG-IL-vaR"/>
+                            <constraint firstItem="WiP-vn-3Ga" firstAttribute="leading" secondItem="2Gj-Rd-hy1" secondAttribute="leading" constant="20" id="FW2-9q-APD"/>
+                            <constraint firstItem="fQD-Ut-jzs" firstAttribute="top" secondItem="2Gj-Rd-hy1" secondAttribute="top" constant="33" id="Pe3-Gn-dDS"/>
+                            <constraint firstItem="WiP-vn-3Ga" firstAttribute="top" secondItem="2Gj-Rd-hy1" secondAttribute="top" constant="20" id="TTE-zj-RQS"/>
+                            <constraint firstAttribute="bottom" secondItem="gXg-WI-3nS" secondAttribute="bottom" constant="20" id="VH5-5r-fP5"/>
+                            <constraint firstItem="fQD-Ut-jzs" firstAttribute="centerX" secondItem="2Gj-Rd-hy1" secondAttribute="centerX" id="Yhz-14-Ye7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="5LT-aS-H1I" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="537.5" y="2115"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="luR-vK-Zk8">
@@ -938,7 +1014,7 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="6E98C91E-EF03-4C46-96FA-73B5E8D2ADA1" width="1" height="1">
+        <image name="C5D4F41A-1551-4F26-B7CB-C21FCA979719" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -996,4 +1072,7 @@ CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
         <image name="reset" width="50" height="50"/>
         <image name="trash" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IR7-u6-ASH"/>
+    </inferredMetricsTieBreakers>
 </document>

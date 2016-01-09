@@ -25,7 +25,7 @@
     self.authController = [[AutherizationController alloc] init];
     
     if ([self.authController appIsRegistered]) {
-        NSLog(@"YES");
+        //actions to perform when serial is found valid
     } else {
         MainViewController *mainView = (MainViewController *)[[[NSApplication sharedApplication] mainWindow] contentViewController];
         [mainView performSegueWithIdentifier:@"register" sender:self.windowController];
@@ -52,6 +52,12 @@
         }
         return YES;
     }
+}
+
+- (IBAction)register:(id)sender {
+    NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+    NSWindowController *newWindow = [sb instantiateControllerWithIdentifier:@"registerNonmodal"];
+    [newWindow showWindow:self];
 }
 
 @end
