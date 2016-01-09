@@ -60,4 +60,9 @@
     [newWindow showWindow:self];
 }
 
+- (IBAction)recoverSN:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"https://oklasoftware.com/recovery.html"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
 @end
