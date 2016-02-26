@@ -56,8 +56,8 @@
 	<array>
 		<string>/Library/Preferences/VMware Fusion/</string>
 		<string>~/Library/Preferences/VMware Fusion/</string>
-		<string>~/Documents/Virtual Machines</string>
-		<string>/Application Support/VMware</string>
+		<string>~/Documents/Virtual Machines/</string>
+		<string>/Application Support/VMware/</string>
 		<string>~/Application Support/VMware Fusion/</string>
 	</array>
 	<key>Spotify.app</key>

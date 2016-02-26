@@ -31,7 +31,7 @@
 
 -(void)viewDidAppear {
     AutherizationController *auth = [[AutherizationController alloc] init];
-    if ([auth trialHasExpired]) {
+    if ([auth trailHasRan]) {
         [self.tryButton setEnabled:NO];
     }
     
@@ -89,11 +89,12 @@
             }
             break;
         case 29:
-            if ([auth validateWithEmail:self.emailTextField.stringValue andSerial:self.serialTextField.stringValue]) {
+            if ([auth validateWithEmail:[self.emailTextField.stringValue lowercaseString] andSerial:self.serialTextField.stringValue]) {
                 [self.registerButton setEnabled:YES];
             } else {
                 [self.registerButton setEnabled:NO];
             }
+            [self.serialTextField setStringValue:[self.serialTextField.stringValue uppercaseString]];
             break;
         case 30:
             [self.serialTextField setStringValue:[[self.serialTextField.stringValue substringToIndex:29] uppercaseString]];
@@ -106,7 +107,7 @@
 }
 
 - (IBAction)register:(id)sender {
-    [[NSUserDefaults standardUserDefaults] setValue:self.emailTextField.stringValue forKey:@"email"];
+    [[NSUserDefaults standardUserDefaults] setValue:[self.emailTextField.stringValue lowercaseString] forKey:@"email"];
     [[NSUserDefaults standardUserDefaults] setValue:self.serialTextField.stringValue forKey:@"serial"];
     [self performSegueWithIdentifier:@"thanks" sender:nil];
     [self.view.window close];

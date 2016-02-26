@@ -28,7 +28,7 @@
 
 -(void)viewWillAppear {
     if ([[[PackageUninstallController sharedInstance] installedPackages] count] < 1) {
-        self.label.stringValue = @"No packages where found on your Mac";
+        self.label.stringValue = @"No packages were found on your Mac";
     }
 }
 

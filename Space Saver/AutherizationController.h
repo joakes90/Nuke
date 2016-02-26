@@ -16,6 +16,8 @@
 
 - (BOOL)trialHasExpired;
 
+- (BOOL)trailHasRan;
+
 - (BOOL) validateWithEmail:(NSString *)email andSerial:(NSString *)serial;
 
 + (void)startTrial;

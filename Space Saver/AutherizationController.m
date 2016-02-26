@@ -46,6 +46,11 @@
     }
 }
 
+- (BOOL)trailHasRan {
+    NSURL *documentURL = [[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
+    return [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"%@/Nuke/nuke.okd",[documentURL path]]];
+}
+
 + (void)startTrial {
     NSDate *endOfTrial = [NSDate dateWithTimeIntervalSinceNow:(86400 * 14)];
     NSURL *documentURL = [[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];

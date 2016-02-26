@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -32,6 +32,12 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="recoverSN:" target="Voe-Tx-rLC" id="GWY-u0-g7d"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Check for Updates" id="6ZC-KH-pSR">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="R94-wi-QmG" id="9h5-Qv-E9M"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -402,7 +408,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Nuke Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Nuke Help" hidden="YES" enabled="NO" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -418,6 +424,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="R94-wi-QmG" customClass="SUUpdater"/>
             </objects>
             <point key="canvasLocation" x="-156" y="-51"/>
         </scene>
@@ -641,7 +648,7 @@
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RGa-3P-hS7">
                                 <rect key="frame" x="104" y="3" width="90" height="32"/>
-                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="0D1BCA04-81E2-4378-9B65-76699A9537CD" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
+                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="138077B6-8B44-4D0E-91B1-BEB746CBC7CD" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -769,7 +776,7 @@
         <scene sceneID="luR-vK-Zk8">
             <objects>
                 <windowController id="pYO-oO-H3u" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="uq3-8Q-bU5">
+                    <window key="window" title="Thank you for Downloading Nuke" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="uq3-8Q-bU5">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
@@ -1020,7 +1027,7 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="0D1BCA04-81E2-4378-9B65-76699A9537CD" width="1" height="1">
+        <image name="138077B6-8B44-4D0E-91B1-BEB746CBC7CD" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1079,6 +1086,6 @@ CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
         <image name="trash" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IR7-u6-ASH"/>
+        <segue reference="eem-o8-dom"/>
     </inferredMetricsTieBreakers>
 </document>
