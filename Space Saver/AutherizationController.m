@@ -52,7 +52,7 @@
 }
 
 + (void)startTrial {
-    NSDate *endOfTrial = [NSDate dateWithTimeIntervalSinceNow:(86400 * 14)];
+    NSDate *endOfTrial = [NSDate dateWithTimeIntervalSinceNow:(86400 * 7)];
     NSURL *documentURL = [[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
     NSString *documentPath = [NSString stringWithFormat:@"%@/Nuke/nuke.okd",[documentURL path]];
     if (![[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"%@/Nuke/",[documentURL path]]]) {
