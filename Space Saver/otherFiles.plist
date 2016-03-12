@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- PEALISTv1: TextSize:0| -->
 <plist version="1.0">
 <dict>
+	<key>JustCloud.app</key>
+	<array>
+		<string>/private/var/db/receipts/com.jdibackup.JustCloud.pkg.plist</string>
+		<string>/private/var/db/receipts/com.jdibackup.JustCloud.pkg.bom</string>
+		<string>/private/var/db/BootCaches/838F255F-2063-47C5-AB0D-D701E4318A59/app.com.jdibackup.JustCloud.playlist</string>
+		<string>~/Library/LaunchAgents/com.jdibackup.JustCloud.notify.plist</string>
+		<string>~/Library/LaunchAgents/com.jdibackup.JustCloud.autostart.plist</string>
+		<string>~/Library/Logs/JustCloud/</string>
+		<string>~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.jdibackup.justcloud.sfl</string>
+	</array>
+	<key>MacKeeper.app</key>
+	<array>
+		<string>~//Library/Logs/MacKeeper.log</string>
+		<string>~/Library/Logs/MacKeeper.log</string>
+		<string>~/Library/Preferences/.3FAD0F65-FC6E-4889-B975-B96CBF807B78</string>
+		<string>/Applications/MacKeeper.app</string>
+		<string>~/Library/Caches/com.mackeeper.MacKeeper/</string>
+		<string>~/Library/Caches/com.mackeeper.MacKeeper.Helper/</string>
+		<string>~/Library/Caches/com.mackeeper.MacKeeper.MKCleanService/</string>
+		<string>~/Library/Containers/com.mactrackerapp.Mactracker/</string>
+		<string>~/Library/LaunchAgents/com.mackeeper.MacKeeper.Helper.plist</string>
+		<string>~/Library/Preferences/com.mackeeper.MacKeeper.Helper.plist</string>
+		<string>~/Library/Preferences/com.mackeeper.MacKeeper.plist</string>
+		<string>~/Library/Application Support/MacKeeper Helper</string>
+		<string>~/Library/LaunchDaemons/com.mackeeper.MacKeeper.plugin.AntiTheft.daemon.plist</string>
+	</array>
 	<key>Google Chrome.app</key>
 	<array>
 		<string>~/Applications/Chrome Apps.localized</string>
@@ -31,16 +56,6 @@
 		<string>/Applications/GoToMeeting/</string>
 		<string>~/Library/LaunchAgents/com.citrixonline.GoToMeeting.G2MUpdate.plist</string>
 		<string>~/Library/Application Support/CitrixOnline/</string>
-	</array>
-	<key>MacKeeper.app</key>
-	<array>
-		<string>~/Library/Caches/com.mackeeper.MacKeeper.Helper/</string>
-		<string>~/Library/Caches/com.mackeeper.MacKeeper.MKCleanService/</string>
-		<string>~/Library/LaunchAgents/com.mackeeper.MacKeeper.Helper.plist</string>
-		<string>~/Library/Preferences/com.mackeeper.MacKeeper.Helper.plist</string>
-		<string>~/Library/Application Support/MacKeeper Helper/</string>
-		<string>~/Library/LaunchDaemons/com.mackeeper.MacKeeper.plugin.AntiTheft.daemon.plist</string>
-		<string>~/Documents/MacKeeper Backups/</string>
 	</array>
 	<key>Parallels Desktop.app</key>
 	<array>

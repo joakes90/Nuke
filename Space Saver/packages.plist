@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- PEALISTv1: TextSize:0| -->
 <plist version="1.0">
 <dict>
 	<key>Microsoft Office 2011</key>
@@ -465,6 +464,9 @@
 		<true/>
 		<key>files</key>
 		<array>
+			<string>~//Library/Logs/MacKeeper.log</string>
+			<string>~/Library/Logs/MacKeeper.log</string>
+			<string>~/Library/Preferences/.3FAD0F65-FC6E-4889-B975-B96CBF807B78</string>
 			<string>/Applications/MacKeeper.app</string>
 			<string>~/Library/Caches/com.mackeeper.MacKeeper/</string>
 			<string>~/Library/Caches/com.mackeeper.MacKeeper.Helper/</string>
