@@ -48,7 +48,7 @@
     
     if ([self.deleter appIsRunning:self.App.bundelIdentifier]) {
         // warn user that app is running
-        [self performSegueWithIdentifier:@"appRunning" sender:self];
+        [self performSegueWithIdentifier:kappRunningSegue sender:self];
     } else {
        // remove selected componets
         for (NSInteger i = 0 ; i < [self.tableView numberOfRows]; i++) {
@@ -62,7 +62,7 @@
                 slide.duration = 0.5;
                 slide.additive = NO;
                 
-                [cell.layer addAnimation:slide forKey:@"slide"];
+                [cell.layer addAnimation:slide forKey:kslide];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.45 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [cell setHidden:YES];
                     [self.deleter removeComponetFromMac:cell.componet];
@@ -90,27 +90,27 @@
 
 - (NSString *)typeNameForKey:(NSString *)key {
     if ([key isEqualToString:kUserPrefs]) {
-        return @"User Prefrences";
+        return kUserPrefrences;
     } else if ([key isEqualToString:kUserCaches]){
-        return @"Cache";
+        return kCache;
     } else if ([key isEqualToString:kUserAppSupport]) {
-        return @"Application Support";
+        return kApplicationSupport;
     } else if ([key isEqualToString:kUserAutosave]) {
-        return @"Auto Saves";
+        return kAutoSaves;
     } else if ([key isEqualToString:kContainers]) {
-        return @"Container";
-    } else if ([key isEqualToString:kSaveState]) {
-        return @"Save State";
+        return kContainer;
+    } else if ([key isEqualToString:kSaveStates]) {
+        return kAutoSaves;
     } else if ([key isEqualToString:kRootPrefs]) {
-        return @"Root Prefrences";
+        return kRootPrefrences;
     } else {
-        return @"Misc";
+        return kmisc;
     }
 }
 
 
 -(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"appRunning"]) {
+    if ([segue.identifier isEqualToString:kappRunningSegue]) {
         AppRunningViewController *vc = segue.destinationController;
         vc.app = self.App;
     }
@@ -179,23 +179,23 @@
 
 - (NSImage *) typeImage:(NSString *)type {
     NSImage *image;
-    if ([type isEqualToString:@"Cache"]) {
-        image = [NSImage imageNamed:@"cacheicon"];
+    if ([type isEqualToString:kCache]) {
+        image = [NSImage imageNamed:kcacheicon];
     }
-    if ([type isEqualToString:@"Root Prefrences"] || [type isEqualToString:@"User Prefrences"]) {
-        image = [NSImage imageNamed:@"prefs"];
+    if ([type isEqualToString:kRootPrefrences] || [type isEqualToString:kUserPrefrences]) {
+        image = [NSImage imageNamed:kprefs];
     }
-    if ([type isEqualToString:@"Application Support"]) {
-        image = [NSImage imageNamed:@"appSupport"];
+    if ([type isEqualToString:kApplicationSupport]) {
+        image = [NSImage imageNamed:kappSupport];
     }
-    if ([type isEqualToString:@"Misc"]) {
-        image = [NSImage imageNamed:@"misc"];
+    if ([type isEqualToString:kmisc]) {
+        image = [NSImage imageNamed:kMisc];
     }
-    if ([type isEqualToString:@"Container"]) {
-        image = [NSImage imageNamed:@"container"];
+    if ([type isEqualToString:kContainer]) {
+        image = [NSImage imageNamed:kcontainer];
     }
-    if ([type isEqualToString:@"Save State"]) {
-        image = [NSImage imageNamed:@"saveState"];
+    if ([type isEqualToString:kSaveStates]) {
+        image = [NSImage imageNamed:ksaveStateImage];
     }
     return image;
 }

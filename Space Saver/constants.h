@@ -21,7 +21,7 @@ extern NSString *const kcellIdentString;
 extern NSString *const kverifyDeletionSegue;
 extern NSString *const kmainStoryBoard;
 extern NSString *const kmainViewController;
-
+extern NSString *const kappRunningSegue;
 extern NSString *const kUserPrefs;
 extern NSString *const kUserCaches;
 extern NSString *const kUserAppSupport;
@@ -53,10 +53,26 @@ extern NSString *const kappIcon;
 extern NSString *const ktrash;
 extern NSString *const kreset;
 extern NSString *const kpackageIcon;
+extern NSString *const kcacheicon;
+extern NSString *const kprefs;
+extern NSString *const kappSupport;
+extern NSString *const kcontainer;
+extern NSString *const ksaveStateImage;
 
 // animation names
 extern NSString *const kslideIn;
 extern NSString *const kslideOut;
+extern NSString *const kslide;
+
+// componet types
+extern NSString *const kUserPrefrences;
+extern NSString *const kCache;
+extern NSString *const kApplicationSupport;
+extern NSString *const kAutoSaves;
+extern NSString *const kContainer;
+extern NSString *const kSaveStates;
+extern NSString *const kRootPrefrences;
+extern NSString *const kmisc;
 
 + (instancetype) sharedInstance;
 
