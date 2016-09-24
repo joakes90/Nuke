@@ -37,7 +37,7 @@
 }
 
 - (IBAction)installedPackagesItemPressed:(id)sender {
-    if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
+    if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
         [self removeMainVC];
     } else {
         [self replaceMainVC];
@@ -51,20 +51,20 @@
         [newVC.view setFrame:CGRectMake(newVC.view.frame.origin.x, newVC.view.frame.origin.y, self.window.screen.frame.size.width, self.window.screen.frame.size.height - 100)];
         self.window.contentViewController = newVC;
         
-        if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
+        if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
             self.removeButton.enabled = NO;
-            self.removeButton.image = [NSImage imageNamed:@"trashgrey"];
+            self.removeButton.image = [NSImage imageNamed:ktrashgrey];
             self.resetButton.enabled = NO;
-            self.resetButton.image = [NSImage imageNamed:@"resetgrey"];
-            self.packagesButton.label = @"Installed Apps";
-            self.packagesButton.image = [NSImage imageNamed:@"appicon"];
+            self.resetButton.image = [NSImage imageNamed:kresetgrey];
+            self.packagesButton.label = kinstalledApps;
+            self.packagesButton.image = [NSImage imageNamed:kappIcon];
         } else {
             self.removeButton.enabled = YES;
-            self.removeButton.image = [NSImage imageNamed:@"trash"];
+            self.removeButton.image = [NSImage imageNamed:ktrash];
             self.resetButton.enabled = YES;
-            self.resetButton.image = [NSImage imageNamed:@"reset"];
-            self.packagesButton.label = @"Installed Packages";
-            self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
+            self.resetButton.image = [NSImage imageNamed:kreset];
+            self.packagesButton.label = kinstalledPackages;
+            self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
             self.delegate = (MainViewController *)self.contentViewController;
         }
 
@@ -86,14 +86,14 @@
     slideOut.additive = NO;
     slideOut.removedOnCompletion = YES;
     slideOut.delegate = self;
-    [oldImageView.layer addAnimation:slideOut forKey:@"slideOut"];
+    [oldImageView.layer addAnimation:slideOut forKey:kslideOut];
     [self performSelector:@selector(postAnimationCleanup:) withObject:oldImageView afterDelay:0.6];
     }
 }
 
 - (void) replaceMainVC {
-    NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-    MainViewController *vc = [sb instantiateControllerWithIdentifier:@"main"];
+    NSStoryboard *sb = [NSStoryboard storyboardWithName:kmainStoryBoard bundle:nil];
+    MainViewController *vc = [sb instantiateControllerWithIdentifier:kmainViewController];
     
 
      if ([self.window styleMask] & NSFullScreenWindowMask) {
@@ -102,20 +102,20 @@
          [vc.view setNeedsDisplay:YES];
          [vc.populationView removeFromSuperview];
          
-         if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
+         if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
              self.removeButton.enabled = NO;
-             self.removeButton.image = [NSImage imageNamed:@"trashgrey"];
+             self.removeButton.image = [NSImage imageNamed:ktrashgrey];
              self.resetButton.enabled = NO;
-             self.resetButton.image = [NSImage imageNamed:@"resetgrey"];
-             self.packagesButton.label = @"Installed Apps";
-             self.packagesButton.image = [NSImage imageNamed:@"appicon"];
+             self.resetButton.image = [NSImage imageNamed:kresetgrey];
+             self.packagesButton.label = kinstalledApps;
+             self.packagesButton.image = [NSImage imageNamed:kappIcon];
          } else {
              self.removeButton.enabled = YES;
-             self.removeButton.image = [NSImage imageNamed:@"trash"];
+             self.removeButton.image = [NSImage imageNamed:ktrash];
              self.resetButton.enabled = YES;
-             self.resetButton.image = [NSImage imageNamed:@"reset"];
-             self.packagesButton.label = @"Installed Packages";
-             self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
+             self.resetButton.image = [NSImage imageNamed:kreset];
+             self.packagesButton.label = kinstalledPackages;
+             self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
              self.delegate = (MainViewController *)self.contentViewController;
          }
 
@@ -146,7 +146,7 @@
          slideIn.removedOnCompletion = YES;
          slideIn.delegate = self;
          
-         [newImageView.layer addAnimation:slideIn forKey:@"slideIn"];
+         [newImageView.layer addAnimation:slideIn forKey:kslideIn];
          [self performSelector:@selector(postAnimationCleanup:) withObject:oldImageView afterDelay:0.6];
          [self performSelector:@selector(postAnimationCleanup:) withObject:newImageView afterDelay:0.6];
      }
@@ -159,20 +159,20 @@
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    if ([self.packagesButton.label isEqualToString:@"Installed Packages"]) {
+    if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
         self.removeButton.enabled = NO;
-        self.removeButton.image = [NSImage imageNamed:@"trashgrey"];
+        self.removeButton.image = [NSImage imageNamed:ktrashgrey];
         self.resetButton.enabled = NO;
-        self.resetButton.image = [NSImage imageNamed:@"resetgrey"];
+        self.resetButton.image = [NSImage imageNamed:kresetgrey];
         self.packagesButton.label = @"Installed Apps";
-        self.packagesButton.image = [NSImage imageNamed:@"appicon"];
+        self.packagesButton.image = [NSImage imageNamed:kappIcon];
     } else {
         self.removeButton.enabled = YES;
-        self.removeButton.image = [NSImage imageNamed:@"trash"];
+        self.removeButton.image = [NSImage imageNamed:ktrash];
         self.resetButton.enabled = YES;
-        self.resetButton.image = [NSImage imageNamed:@"reset"];
-        self.packagesButton.label = @"Installed Packages";
-        self.packagesButton.image = [NSImage imageNamed:@"packageicon"];
+        self.resetButton.image = [NSImage imageNamed:kreset];
+        self.packagesButton.label = kinstalledPackages;
+        self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
         self.delegate = (MainViewController *)self.contentViewController;
     }
 }

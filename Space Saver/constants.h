@@ -10,12 +10,17 @@
 
 @interface constants : NSObject
 
+//identifiers
 extern NSString *const kUpdatedAppsArrayNotification;
 extern NSString *const kFileRemovedNotification;
 extern NSString *const kUninstallComplete;
 extern NSString *const kDeleteMode;
 extern NSString *const kResetMode;
 extern NSString *const kpackageMode;
+extern NSString *const kcellIdentString;
+extern NSString *const kverifyDeletionSegue;
+extern NSString *const kmainStoryBoard;
+extern NSString *const kmainViewController;
 
 extern NSString *const kUserPrefs;
 extern NSString *const kUserCaches;
@@ -27,6 +32,7 @@ extern NSString *const kSaveState;
 extern NSString *const kRootPrefs;
 extern NSString *const kAppFolder;
 
+//paths
 @property (strong, nonatomic) NSString *kUserPrefsPath;
 @property (strong, nonatomic) NSString *kUserCachesPath;
 @property (strong, nonatomic) NSString *kUserAppSupportPath;
@@ -35,6 +41,22 @@ extern NSString *const kAppFolder;
 @property (strong, nonatomic) NSString *kContainersPath;
 @property (strong, nonatomic) NSString *kSaveStatePath;
 @property (strong, nonatomic) NSString *kRootPrefsPath;
+
+//label text
+extern NSString *const kinstalledPackages;
+extern NSString *const kinstalledApps;
+
+//image names
+extern NSString *const ktrashgrey;
+extern NSString *const kresetgrey;
+extern NSString *const kappIcon;
+extern NSString *const ktrash;
+extern NSString *const kreset;
+extern NSString *const kpackageIcon;
+
+// animation names
+extern NSString *const kslideIn;
+extern NSString *const kslideOut;
 
 + (instancetype) sharedInstance;
 

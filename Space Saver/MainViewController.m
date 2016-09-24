@@ -55,8 +55,8 @@
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    if ([tableColumn.identifier isEqualToString:@"cell"] && [[AppsController sharedInstance].apps count] > row) {
-        ApplicationCell *cell = [tableView makeViewWithIdentifier:@"cell" owner:self];
+    if ([tableColumn.identifier isEqualToString:kcellIdentString] && [[AppsController sharedInstance].apps count] > row) {
+        ApplicationCell *cell = [tableView makeViewWithIdentifier:kcellIdentString owner:self];
         cell.nameLabel.stringValue = [[AppsController sharedInstance].apps[row].name stringByReplacingOccurrencesOfString:@".app" withString:@""];
         cell.appIcon.image = [AppsController sharedInstance].apps[row].icon;
         if (row == [[AppsController sharedInstance].apps count] - 1) {
@@ -68,8 +68,6 @@
 }
 
 -(void)tableViewSelectionIsChanging:(NSNotification *)notification {
-//    [self.tableView deselectAll:self];
-//    [self performSegueWithIdentifier:@"deleteViewController" sender:self];
 }
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
@@ -86,7 +84,7 @@
         long selectedRow = self.tableView.selectedRow;
         if ( selectedRow >= 0) {
             [self setMode:mode];
-            [self performSegueWithIdentifier:@"verifyDeletion" sender:self];
+            [self performSegueWithIdentifier:kverifyDeletionSegue sender:self];
         }
 }
 
@@ -95,7 +93,7 @@
 }
 
 -(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"verifyDeletion"]) {
+    if ([segue.identifier isEqualToString:kverifyDeletionSegue]) {
         Application *app = [AppsController sharedInstance].apps[[self.tableView selectedRow]];
         [app setComponetsForApplication];
         DeleteViewController *vc = segue.destinationController;
