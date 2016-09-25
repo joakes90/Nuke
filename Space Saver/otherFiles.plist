@@ -2,6 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Android Studio.app</key>
+	<array>
+		<string>~/Library/Preferences/AndroidStudio*</string>
+		<string>~/Library/Android/</string>
+	</array>
+	<key>Backblaze.app</key>
+	<array>
+		<string>/Library/PreferencePanes/BackblazeBackup.prefPane</string>
+		<string>/Library/LaunchDaemons/com.backblaze.bzserv.plist</string>
+		<string>/Library/Backblaze.bzpkg</string>
+		<string>~/Library/LaunchAgents/com.backblaze.bzbmenu.plist</string>
+	</array>
+	<key>NordVPN.app</key>
+	<array>
+		<string>~/Library/Application Support/com.nordvpn.NordVPN/</string>
+		<string>/Library/LaunchDaemons/com.nordvpn.NordVPN.Helper.plist</string>
+	</array>
+	<key>Logi Options.app</key>
+	<array>
+		<string>/Library/PreferencePanes/Logi Options Launcher.prefPane</string>
+		<string>/Applications/Utilities/LogiMgr Uninstaller.app</string>
+		<string>/Library/LaunchAgents/com.logitech.manager.daemon.plist</string>
+	</array>
 	<key>JustCloud.app</key>
 	<array>
 		<string>/private/var/db/receipts/com.jdibackup.JustCloud.pkg.plist</string>

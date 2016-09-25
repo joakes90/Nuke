@@ -451,11 +451,6 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="YFj-R6-C85"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d1q-PT-mTb"/>
-                                <toolbarItem implicitItemIdentifier="61A2BA59-1E5F-44C1-9B85-00DF67A759CB" label="Reset App" paletteLabel="Reset App" tag="-1" image="reset" id="yZk-F6-dBu">
-                                    <connections>
-                                        <action selector="resetToolBarItemPressed:" target="B8D-0N-5wS" id="GLw-wN-Lcg"/>
-                                    </connections>
-                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="vMi-di-deP"/>
@@ -467,7 +462,6 @@
                     <connections>
                         <outlet property="packagesButton" destination="vMi-di-deP" id="apG-ZK-NtP"/>
                         <outlet property="removeButton" destination="OuP-b5-Ngf" id="NA6-Jn-IjB"/>
-                        <outlet property="resetButton" destination="yZk-F6-dBu" id="i7h-8X-tXu"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -646,7 +640,7 @@
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RGa-3P-hS7">
                                 <rect key="frame" x="104" y="3" width="90" height="32"/>
-                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="CD6A8D3E-47A0-444D-A9B9-80316CD24882" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
+                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="A0F126F3-8788-4DB0-AE23-E03E0CB383C8" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1024,7 +1018,7 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="CD6A8D3E-47A0-444D-A9B9-80316CD24882" width="1" height="1">
+        <image name="A0F126F3-8788-4DB0-AE23-E03E0CB383C8" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1079,7 +1073,6 @@ CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
         <image name="NSBonjour" width="32" height="32"/>
         <image name="icon" width="50" height="50"/>
         <image name="packageicon" width="50" height="50"/>
-        <image name="reset" width="50" height="50"/>
         <image name="trash" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
