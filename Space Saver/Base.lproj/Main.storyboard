@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -460,7 +460,6 @@
                             <defaultToolbarItems>
                                 <toolbarItem reference="vMi-di-deP"/>
                                 <toolbarItem reference="d1q-PT-mTb"/>
-                                <toolbarItem reference="yZk-F6-dBu"/>
                                 <toolbarItem reference="OuP-b5-Ngf"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -491,7 +490,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="80" rowSizeStyle="automatic" viewBased="YES" id="Rug-wt-hVY">
-                                            <rect key="frame" x="0.0" y="0.0" width="693" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="693" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -554,7 +553,6 @@
                                             </connections>
                                         </tableView>
                                     </subviews>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FX0-SQ-dFB">
                                     <rect key="frame" x="-100" y="-100" width="122" height="16"/>
@@ -648,7 +646,7 @@
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RGa-3P-hS7">
                                 <rect key="frame" x="104" y="3" width="90" height="32"/>
-                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="F07C2748-A42B-4621-94D8-233838978FE3" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
+                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="CD6A8D3E-47A0-444D-A9B9-80316CD24882" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -880,7 +878,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" viewBased="YES" id="Ugt-Uw-czF">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="202"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -967,7 +965,6 @@ DQ
                                             </connections>
                                         </tableView>
                                     </subviews>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="fJj-z7-fuk">
                                     <rect key="frame" x="1" y="187" width="408" height="16"/>
@@ -1027,7 +1024,7 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="F07C2748-A42B-4621-94D8-233838978FE3" width="1" height="1">
+        <image name="CD6A8D3E-47A0-444D-A9B9-80316CD24882" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

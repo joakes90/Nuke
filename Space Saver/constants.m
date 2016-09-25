@@ -36,6 +36,8 @@
 //label text
 NSString *const kinstalledPackages = @"Installed Packages";
 NSString *const kinstalledApps = @"Installed Apps";
+NSString *const kremoveApps = @"Remove App";
+NSString *const kresetApps = @"Rest App";
 
 //image names
 NSString *const ktrashgrey = @"trashgrey";

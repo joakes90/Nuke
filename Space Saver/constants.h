@@ -45,6 +45,8 @@ extern NSString *const kAppFolder;
 //label text
 extern NSString *const kinstalledPackages;
 extern NSString *const kinstalledApps;
+extern NSString *const kremoveApps;
+extern NSString *const kresetApps;
 
 //image names
 extern NSString *const ktrashgrey;

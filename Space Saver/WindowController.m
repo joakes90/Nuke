@@ -15,7 +15,7 @@
 @interface WindowController ()
 
 @property (strong) IBOutlet NSToolbarItem *packagesButton;
-
+@property (strong, nonatomic) NSString *cleanupMode;
 @end
 
 @implementation WindowController
@@ -24,16 +24,11 @@
     [super windowDidLoad];
     MainViewController *vc = (MainViewController *) self.contentViewController;
     self.delegate = vc;
+    self.cleanupMode = kDeleteMode;
 }
-
-
 
 - (IBAction)removeToolbarItemPressed:(id)sender {
-    [self.delegate removeButtonPushedInMode:kDeleteMode];
-}
-
-- (IBAction)resetToolBarItemPressed:(id)sender {
-    [self.delegate removeButtonPushedInMode:kResetMode];
+    [self.delegate removeButtonPushedInMode:self.cleanupMode];
 }
 
 - (IBAction)installedPackagesItemPressed:(id)sender {
@@ -43,6 +38,20 @@
         [self replaceMainVC];
     }
     
+}
+
+// Handeling modifier keys
+-(void)flagsChanged:(NSEvent *)event {
+    if (event.keyCode == 58 && event.modifierFlags == 0x100) {
+        self.removeButton.label = kremoveApps;
+        self.removeButton.image = self.removeButton.image.name == kresetgrey ? [NSImage imageNamed:ktrashgrey] : [NSImage imageNamed:ktrash];
+        self.cleanupMode = kDeleteMode;
+        
+    }else if (event.keyCode == 58 && event.modifierFlags == 0x80120) {
+        self.removeButton.label = kresetApps;
+        self.removeButton.image = self.removeButton.image.name == ktrashgrey ? [NSImage imageNamed:kresetgrey] : [NSImage imageNamed:kreset];
+        self.cleanupMode = kResetMode;
+    }
 }
 
 - (void) removeMainVC {
