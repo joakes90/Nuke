@@ -451,9 +451,11 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="YFj-R6-C85"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d1q-PT-mTb"/>
+                                <toolbarItem implicitItemIdentifier="15E6E92C-801E-4DA1-A531-FE41D2DDE25D" label="Preference Panes" paletteLabel="Preference Panes" tag="-1" image="prefPain" id="u2S-7s-uVa"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="vMi-di-deP"/>
+                                <toolbarItem reference="u2S-7s-uVa"/>
                                 <toolbarItem reference="d1q-PT-mTb"/>
                                 <toolbarItem reference="OuP-b5-Ngf"/>
                             </defaultToolbarItems>
@@ -640,7 +642,7 @@
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RGa-3P-hS7">
                                 <rect key="frame" x="104" y="3" width="90" height="32"/>
-                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="A0F126F3-8788-4DB0-AE23-E03E0CB383C8" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
+                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="79799E3C-1A17-479C-88DF-47A697678BD7" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1018,7 +1020,7 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="A0F126F3-8788-4DB0-AE23-E03E0CB383C8" width="1" height="1">
+        <image name="79799E3C-1A17-479C-88DF-47A697678BD7" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1073,6 +1075,7 @@ CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
         <image name="NSBonjour" width="32" height="32"/>
         <image name="icon" width="50" height="50"/>
         <image name="packageicon" width="50" height="50"/>
+        <image name="prefPain" width="50" height="65"/>
         <image name="trash" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
