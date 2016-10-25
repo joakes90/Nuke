@@ -81,6 +81,8 @@ NSString *const ksaveStateImage = @"saveState";
         sharedInstance.kContainersPath = [@"~/Library/Containers" stringByExpandingTildeInPath];
         sharedInstance.kSaveStatePath = [@"~/Library/Saved Application State" stringByExpandingTildeInPath];
         sharedInstance.kRootPrefsPath = @"/Library/Preferences";
+        sharedInstance.kUserPrefPanes = [@"~/Library/PreferencePanes" stringByExpandingTildeInPath];
+        sharedInstance.kPrefPanes = @"/Library/PreferencePanes";
     });
     return sharedInstance;
 }

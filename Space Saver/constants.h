@@ -41,6 +41,8 @@ extern NSString *const kAppFolder;
 @property (strong, nonatomic) NSString *kContainersPath;
 @property (strong, nonatomic) NSString *kSaveStatePath;
 @property (strong, nonatomic) NSString *kRootPrefsPath;
+@property (strong, nonatomic) NSString *kUserPrefPanes;
+@property (strong, nonatomic) NSString *kPrefPanes;
 
 //label text
 extern NSString *const kinstalledPackages;

@@ -14,7 +14,8 @@
 @interface WindowController : NSWindowController
 
 @property (strong) IBOutlet NSToolbarItem *removeButton;
-@property (strong) IBOutlet NSToolbarItem *resetButton;
+@property (weak) IBOutlet NSToolbarItem *prefsPaneButton;
+
 
 //add in interface
 @property (strong, nonatomic) id<DetailViewDelegate> delegate;

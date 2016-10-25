@@ -9,6 +9,7 @@
 #import "WindowController.h"
 #import "MainViewController.h"
 #import "PackageViewController.h"
+#import "PreferencePaneController.h"
 #import "constants.h"
 #import <Quartz/Quartz.h>
 
@@ -40,6 +41,10 @@
     
 }
 
+- (IBAction)prePanesItemPressed:(id)sender {
+    [[PreferencePaneController sharedInstance] findAllPrefs];
+}
+
 // Handeling modifier keys
 -(void)flagsChanged:(NSEvent *)event {
     if (event.keyCode == 58 && event.modifierFlags == 0x100) {
@@ -63,15 +68,11 @@
         if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
             self.removeButton.enabled = NO;
             self.removeButton.image = [NSImage imageNamed:ktrashgrey];
-            self.resetButton.enabled = NO;
-            self.resetButton.image = [NSImage imageNamed:kresetgrey];
             self.packagesButton.label = kinstalledApps;
             self.packagesButton.image = [NSImage imageNamed:kappIcon];
         } else {
             self.removeButton.enabled = YES;
             self.removeButton.image = [NSImage imageNamed:ktrash];
-            self.resetButton.enabled = YES;
-            self.resetButton.image = [NSImage imageNamed:kreset];
             self.packagesButton.label = kinstalledPackages;
             self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
             self.delegate = (MainViewController *)self.contentViewController;
@@ -114,15 +115,11 @@
          if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
              self.removeButton.enabled = NO;
              self.removeButton.image = [NSImage imageNamed:ktrashgrey];
-             self.resetButton.enabled = NO;
-             self.resetButton.image = [NSImage imageNamed:kresetgrey];
              self.packagesButton.label = kinstalledApps;
              self.packagesButton.image = [NSImage imageNamed:kappIcon];
          } else {
              self.removeButton.enabled = YES;
              self.removeButton.image = [NSImage imageNamed:ktrash];
-             self.resetButton.enabled = YES;
-             self.resetButton.image = [NSImage imageNamed:kreset];
              self.packagesButton.label = kinstalledPackages;
              self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
              self.delegate = (MainViewController *)self.contentViewController;
@@ -171,15 +168,11 @@
     if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
         self.removeButton.enabled = NO;
         self.removeButton.image = [NSImage imageNamed:ktrashgrey];
-        self.resetButton.enabled = NO;
-        self.resetButton.image = [NSImage imageNamed:kresetgrey];
         self.packagesButton.label = @"Installed Apps";
         self.packagesButton.image = [NSImage imageNamed:kappIcon];
     } else {
         self.removeButton.enabled = YES;
         self.removeButton.image = [NSImage imageNamed:ktrash];
-        self.resetButton.enabled = YES;
-        self.resetButton.image = [NSImage imageNamed:kreset];
         self.packagesButton.label = kinstalledPackages;
         self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
         self.delegate = (MainViewController *)self.contentViewController;
