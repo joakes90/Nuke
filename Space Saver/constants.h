@@ -18,6 +18,7 @@ extern NSString *const kDeleteMode;
 extern NSString *const kResetMode;
 extern NSString *const kpackageMode;
 extern NSString *const kcellIdentString;
+extern NSString *const ksectionHeaderIndentString;
 extern NSString *const kverifyDeletionSegue;
 extern NSString *const kmainStoryBoard;
 extern NSString *const kmainViewController;

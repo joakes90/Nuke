@@ -15,9 +15,12 @@
 
 @property (assign, nonatomic, readonly) BOOL refreshingApps;
 
+@property (assign, nonatomic) BOOL enabled;
+
 + (instancetype) sharedInstance;
 
 - (void) findAllApplications;
+
 - (Application *) appWithBundelID:(NSString *)bundelID;
 
 @end

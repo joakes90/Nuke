@@ -15,9 +15,12 @@
 
 @property (assign, nonatomic, readonly) BOOL refreshingPrefs;
 
+@property (assign, nonatomic) BOOL enabled;
+
 + (instancetype) sharedInstance;
 
 - (void) findAllPrefs;
+
 - (Application *) appWithBundelID:(NSString *)bundelID;
 
 @end

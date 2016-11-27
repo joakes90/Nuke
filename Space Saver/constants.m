@@ -18,6 +18,7 @@
  NSString *const kResetMode = @"reset";
  NSString *const kpackageMode = @"package";
  NSString *const kcellIdentString = @"cell";
+ NSString *const ksectionHeaderIndentString = @"sectionCell";
  NSString *const kverifyDeletionSegue = @"verifyDeletion";
  NSString *const kmainStoryBoard = @"Main";
  NSString *const kmainViewController = @"main";

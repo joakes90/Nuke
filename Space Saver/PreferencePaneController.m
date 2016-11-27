@@ -17,6 +17,8 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[PreferencePaneController alloc] init];
+        // fix later
+        sharedInstance.enabled = YES;
         [sharedInstance findAllPrefs];
     });
     return sharedInstance;
@@ -46,9 +48,24 @@
                 [self.prefs addObject:basicPref];
             }
         }
+        
+        for (NSString *name in userPreferences) {
+            if ([name containsString:@".prefPane"]){
+                NSString *prefPath = [[constants sharedInstance].kUserPrefPanes stringByAppendingString:name];
+                NSString *infoPlistPath = [prefPath stringByAppendingString:@"/Contents/info.plist"];
+                NSDictionary *dictionaryForPlist = [[NSDictionary alloc] initWithContentsOfFile:infoPlistPath];
+                NSString *bundelID = dictionaryForPlist[@"CFBundleIdentifier"];
+                NSString *iconPath = [prefPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"CFBundleIconFile"]]];
+                if (![iconPath containsString:@".icns"]) {
+                    iconPath = [iconPath stringByAppendingString:@".icns"];
+                }
+                NSImage *iconImage = [[NSImage alloc] initWithContentsOfFile:iconPath];
+                Application *basicPref = [Application applicationWithName:name Path:prefPath BundelIdentifier:bundelID Andicon:iconImage];
+                [self.prefs addObject:basicPref];
+            }
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
-            NSLog(@"%@",_prefs);
             _refreshingPrefs = NO;
         });
     });

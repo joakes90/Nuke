@@ -9,7 +9,9 @@
 #import "MainViewController.h"
 #import "DeleteViewController.h"
 #import "ApplicationCell.h"
+#import "SectionLabelCell.h"
 #import "AppsController.h"
+#import "PreferencePaneController.h"
 #import "Application.h"
 #import "constants.h"
 #import "DeleteViewController.h"
@@ -48,30 +50,65 @@
     // Update the view, if already loaded.
 }
 
-//table view delegate methods
+#pragma mark table view delegate methods
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return [[AppsController sharedInstance].apps count];
+    NSInteger count = 0;
+    count += [AppsController sharedInstance].enabled ? [[AppsController sharedInstance].apps count] + 1 : 0;
+    count += [PreferencePaneController sharedInstance].enabled ? [[PreferencePaneController sharedInstance].prefs count] + 1 : 0;
+    
+    return count;
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    if ([tableColumn.identifier isEqualToString:kcellIdentString] && [[AppsController sharedInstance].apps count] > row) {
-        ApplicationCell *cell = [tableView makeViewWithIdentifier:kcellIdentString owner:self];
-        cell.nameLabel.stringValue = [[AppsController sharedInstance].apps[row].name stringByReplacingOccurrencesOfString:@".app" withString:@""];
-        cell.appIcon.image = [AppsController sharedInstance].apps[row].icon;
-        if (row == [[AppsController sharedInstance].apps count] - 1) {
-            [self.populationView setHidden:YES];
-        }
-        return cell;
+    AppsController *apps = [AppsController sharedInstance];
+    PreferencePaneController *prefs = [PreferencePaneController sharedInstance];
+    
+    
+    if ([tableColumn.identifier isEqualToString:kcellIdentString] && apps.enabled && row >= 0 && row <= [apps.apps count]) {
+        if (row == 0) {
+            SectionLabelCell *cell = [tableView makeViewWithIdentifier:ksectionHeaderIndentString owner:self];
+            cell.HeaderLabel.stringValue = @"Applications";
+
+            return cell;
+        } else {
+            ApplicationCell *cell = [tableView makeViewWithIdentifier:kcellIdentString owner:self];
+            cell.nameLabel.stringValue = [apps.apps[row - 1].name stringByReplacingOccurrencesOfString:@".app" withString:@""];
+            cell.appIcon.image = apps.apps[row - 1].icon;
+            if (row == [apps.apps count] - 1) {
+                [self.populationView setHidden:YES];
+            }
+            return cell;
     }
-        return nil;
+    }
+    
+    if ([tableColumn.identifier isEqualToString:kcellIdentString] && prefs.enabled && row >= [apps.apps count] && row <= [apps.apps count] + [prefs.prefs count]) {
+        if (row == [apps.apps count] + 1) {
+            SectionLabelCell *cell = [tableView makeViewWithIdentifier:ksectionHeaderIndentString owner:self];
+            cell.HeaderLabel.stringValue = @"Preference Panes";
+            return cell;
+        } else {
+            NSInteger index = (row - [apps.apps count]) - 2;
+            ApplicationCell *cell = [tableView makeViewWithIdentifier:kcellIdentString owner:self];
+            cell.nameLabel.stringValue = [prefs.prefs[index].name stringByReplacingOccurrencesOfString:@".prefPane" withString:@""];
+            cell.appIcon.image = prefs.prefs[index].icon;
+            
+            return cell;
+        }
+        
+    }
+    return nil;
 }
 
 -(void)tableViewSelectionIsChanging:(NSNotification *)notification {
 }
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    return 80;
+    if (row == 0 || row == [[AppsController sharedInstance].apps count] + 1) {
+        return 20;
+    } else {
+        return 80;
+    }
 }
 
 - (void) updateTable {
@@ -79,7 +116,7 @@
     [self.populationView removeFromSuperview];
 }
 
-// detail view delegate methods
+#pragma mark detail view delegate methods
 -(void)removeButtonPushedInMode:(NSString *)mode{
         long selectedRow = self.tableView.selectedRow;
         if ( selectedRow >= 0) {

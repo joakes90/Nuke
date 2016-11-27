@@ -27,6 +27,8 @@ static NSString *const kApplicationPath = @"/Applications/";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[AppsController alloc] init];
+        // fix later
+        sharedInstance.enabled = YES;
         [sharedInstance findAllApplications];
     });
     return sharedInstance;
