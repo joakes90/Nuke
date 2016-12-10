@@ -18,10 +18,6 @@
 
 @interface MainViewController() <NSTableViewDataSource, NSTableViewDelegate>
 
-
-@property (strong) IBOutlet NSProgressIndicator *spinner;
-
-
 @property (strong, nonatomic) NSString *mode;
 
 @end
@@ -35,8 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.spinner startAnimation:nil];
     self.mode = [[NSString alloc] init];
     }
 
@@ -82,7 +76,7 @@
     }
     }
     
-    if ([tableColumn.identifier isEqualToString:kcellIdentString] && prefs.enabled && row >= [apps.apps count] && row <= [apps.apps count] + [prefs.prefs count]) {
+    if ([tableColumn.identifier isEqualToString:kcellIdentString] && prefs.enabled && row >= [apps.apps count] && row <= [apps.apps count] + [prefs.prefs count] + 1) {
         if (row == [apps.apps count] + 1) {
             SectionLabelCell *cell = [tableView makeViewWithIdentifier:ksectionHeaderIndentString owner:self];
             cell.HeaderLabel.stringValue = @"Preference Panes";
@@ -100,14 +94,19 @@
     return nil;
 }
 
--(void)tableViewSelectionIsChanging:(NSNotification *)notification {
-}
-
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
     if (row == 0 || row == [[AppsController sharedInstance].apps count] + 1) {
         return 20;
     } else {
         return 80;
+    }
+}
+
+-(void)tableViewSelectionDidChange:(NSNotification *)notification {
+    NSInteger selectedRowIndex = [self.tableView selectedRow];
+    NSTableRowView *selectedRow = [self.tableView rowViewAtRow:selectedRowIndex makeIfNecessary:NO];
+    if ([selectedRow.subviews[1] class] == [SectionLabelCell class]) {
+        [selectedRow setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
     }
 }
 
@@ -119,7 +118,7 @@
 #pragma mark detail view delegate methods
 -(void)removeButtonPushedInMode:(NSString *)mode{
         long selectedRow = self.tableView.selectedRow;
-        if ( selectedRow >= 0) {
+        if (selectedRow > 0 || selectedRow != [[AppsController sharedInstance].apps count] + 1) {
             [self setMode:mode];
             [self performSegueWithIdentifier:kverifyDeletionSegue sender:self];
         }
@@ -131,13 +130,23 @@
 
 -(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kverifyDeletionSegue]) {
-        Application *app = [AppsController sharedInstance].apps[[self.tableView selectedRow]];
-        [app setComponetsForApplication];
-        DeleteViewController *vc = segue.destinationController;
-        vc.App = app;
-        vc.mode = self.mode;
+        NSInteger index = [self.tableView selectedRow] - 1;
+        if (index < [[AppsController sharedInstance].apps count]) {
+            // yes this is a stupid line but this entire methid is going to be reworked when more data type and search is added later
+            Application *app = [AppsController sharedInstance].apps[index];
+            [app setComponetsForApplication];
+            DeleteViewController *vc = segue.destinationController;
+            vc.App = app;
+            vc.mode = self.mode;
+        } else {
+            index = index - ([[AppsController sharedInstance].apps count] + 1);
+            Application *app = [PreferencePaneController sharedInstance].prefs[index];
+            [app setComponetsForApplication];
+            DeleteViewController *vc = segue.destinationController;
+            vc.App = app;
+            vc.mode = self.mode;
+        }
     }
 }
-
 
 @end

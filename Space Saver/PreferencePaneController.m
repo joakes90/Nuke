@@ -35,11 +35,11 @@
         
         for (NSString *name in sysPreferences) {
             if ([name containsString:@".prefPane"]){
-                NSString *prefPath = [[constants sharedInstance].kUserPrefPanes stringByAppendingString:name];
+                NSString *prefPath = [[constants sharedInstance].kPrefPanes stringByAppendingString:name];
                 NSString *infoPlistPath = [prefPath stringByAppendingString:@"/Contents/info.plist"];
                 NSDictionary *dictionaryForPlist = [[NSDictionary alloc] initWithContentsOfFile:infoPlistPath];
                 NSString *bundelID = dictionaryForPlist[@"CFBundleIdentifier"];
-                NSString *iconPath = [prefPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"CFBundleIconFile"]]];
+                NSString *iconPath = [prefPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"NSPrefPaneIconFile"]]];
                 if (![iconPath containsString:@".icns"]) {
                     iconPath = [iconPath stringByAppendingString:@".icns"];
                 }
@@ -55,7 +55,7 @@
                 NSString *infoPlistPath = [prefPath stringByAppendingString:@"/Contents/info.plist"];
                 NSDictionary *dictionaryForPlist = [[NSDictionary alloc] initWithContentsOfFile:infoPlistPath];
                 NSString *bundelID = dictionaryForPlist[@"CFBundleIdentifier"];
-                NSString *iconPath = [prefPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"CFBundleIconFile"]]];
+                NSString *iconPath = [prefPath stringByAppendingString:[NSString stringWithFormat:@"/Contents/Resources/%@", dictionaryForPlist[@"NSPrefPaneIconFile"]]];
                 if (![iconPath containsString:@".icns"]) {
                     iconPath = [iconPath stringByAppendingString:@".icns"];
                 }

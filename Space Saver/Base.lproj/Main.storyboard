@@ -503,8 +503,29 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
+                                                        <tableCellView identifier="sectionCell" id="Lsf-lv-h1j" customClass="SectionLabelCell">
+                                                            <rect key="frame" x="1" y="1" width="690" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qL8-4A-UZX">
+                                                                    <rect key="frame" x="6" y="-1" width="79" height="17"/>
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Applications" id="Yvz-Rb-zhZ">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="qL8-4A-UZX" firstAttribute="leading" secondItem="Lsf-lv-h1j" secondAttribute="leading" constant="8" id="lVg-dP-6Yr"/>
+                                                                <constraint firstItem="qL8-4A-UZX" firstAttribute="centerY" secondItem="Lsf-lv-h1j" secondAttribute="centerY" id="nPr-ay-R9y"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="HeaderLabel" destination="qL8-4A-UZX" id="uaL-3U-sgf"/>
+                                                            </connections>
+                                                        </tableCellView>
                                                         <tableCellView id="A7z-Tf-fD2" customClass="ApplicationCell">
-                                                            <rect key="frame" x="1" y="1" width="690" height="80"/>
+                                                            <rect key="frame" x="1" y="18" width="690" height="80"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fsZ-wV-ekd">
@@ -536,27 +557,6 @@
                                                             <connections>
                                                                 <outlet property="appIcon" destination="0eQ-rH-N1K" id="lVk-51-syf"/>
                                                                 <outlet property="nameLabel" destination="fsZ-wV-ekd" id="YgG-gC-wqY"/>
-                                                            </connections>
-                                                        </tableCellView>
-                                                        <tableCellView identifier="sectionCell" id="Lsf-lv-h1j" customClass="SectionLabelCell">
-                                                            <rect key="frame" x="1" y="83" width="690" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qL8-4A-UZX">
-                                                                    <rect key="frame" x="6" y="-1" width="79" height="17"/>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Applications" id="Yvz-Rb-zhZ">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="qL8-4A-UZX" firstAttribute="leading" secondItem="Lsf-lv-h1j" secondAttribute="leading" constant="8" id="lVg-dP-6Yr"/>
-                                                                <constraint firstItem="qL8-4A-UZX" firstAttribute="centerY" secondItem="Lsf-lv-h1j" secondAttribute="centerY" id="nPr-ay-R9y"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="HeaderLabel" destination="qL8-4A-UZX" id="uaL-3U-sgf"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -661,7 +661,7 @@
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RGa-3P-hS7">
                                 <rect key="frame" x="104" y="3" width="90" height="32"/>
-                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="0BCCF61C-35A5-4C17-9724-E8E6D0FCCBC1" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
+                                <buttonCell key="cell" type="push" title="Try It" bezelStyle="rounded" image="0F2111B3-E878-46EE-AFF6-5934E12FBF01" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfW-UR-ogd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1039,7 +1039,7 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="0BCCF61C-35A5-4C17-9724-E8E6D0FCCBC1" width="1" height="1">
+        <image name="0F2111B3-E878-46EE-AFF6-5934E12FBF01" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1092,9 +1092,9 @@ CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
         </image>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSBonjour" width="32" height="32"/>
-        <image name="icon" width="100" height="100"/>
-        <image name="packageicon" width="100" height="100"/>
-        <image name="trash" width="100" height="100"/>
+        <image name="icon" width="50" height="50"/>
+        <image name="packageicon" width="50" height="50"/>
+        <image name="trash" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eem-o8-dom"/>

@@ -13,6 +13,7 @@
 #import <Quartz/Quartz.h>
 #import "AppRunningViewController.h"
 #import "AppsController.h"
+#import "PreferencePaneController.h"
 #import "ScriptBuilder.h"
 
 @interface DeleteViewController () <NSTableViewDataSource, NSTableViewDelegate>
@@ -82,6 +83,7 @@
                 [self.deleter removeRootItems];
             }
             [self dismissViewController:self];
+            [[PreferencePaneController sharedInstance] findAllPrefs];
             [[AppsController sharedInstance] findAllApplications];
         });
     }
