@@ -20,7 +20,7 @@
 + (instancetype) sharedInstance;
 
 - (void) findAllPrefs;
-
-- (Application *) appWithBundelID:(NSString *)bundelID;
+//not using now may need to implement later
+//- (Application *) appWithBundelID:(NSString *)bundelID;
 
 @end

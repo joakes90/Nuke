@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- PEALISTv1: TextSize:0| -->
 <plist version="1.0">
 <dict>
 	<key>Android Studio.app</key>
@@ -154,6 +155,45 @@
 		<string>/Library/Application Support/Adobe/Elements Organizer/</string>
 		<string>/Library/Preferences/com.Adobe.Premiere Elements.14.0.plist</string>
 		<string>/Caches/com.adobe.Adobe Premiere Elements-14.0/</string>
+	</array>
+	<key>JavaControlPanel.prefPane</key>
+	<array>
+		<string>/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java</string>
+		<string>~/Library/Application Support/Java/</string>
+		<string>/Library/Internet Plug-Ins/JavaAppletPlugin.plugin</string>
+		<string>~/Library/Application Support/JREInstaller/</string>
+		<string>~/Library/Application Support/Oracle/Java/</string>
+		<string>~/Library/Caches/com.oracle.java.Java-Updater/</string>
+		<string>~/Library/Caches/net.java.openjdk.cmd/</string>
+		<string>~/Library/Preferences/com.oracle.java.Java-Updater.plist</string>
+		<string>~/Library/Preferences/com.oracle.java.JavaAppletPlugin.plist</string>
+		<string>~/Library/Preferences/com.oracle.javadeployment.plist</string>
+		<string>/Library/Application Support/Oracle/Java/</string>
+		<string>/Library/Java/</string>
+		<string>/Library/LaunchAgents/com.oracle.java.Java-Updater.plist</string>
+		<string>/Library/LaunchDaemons/com.oracle.java.Helper-Tool.plist</string>
+		<string>/Library/Preferences/com.oracle.java.Helper-Tool.plist</string>
+	</array>
+	<key>Logi Options Launcher.prefPane</key>
+	<array>
+		<string>/Applications/Logitech Options.app</string>
+		<string>/Library/LaunchAgents/com.logitech.manager.daemon.plist</string>
+		<string>/Applications/Utilities/LogiMgr Uninstaller.app</string>
+	</array>
+	<key>BackblazeBackup.prefPane</key>
+	<array>
+		<string>/Applications/Backblaze.app</string>
+		<string>~/Library/LaunchAgents/com.backblaze.bzbmenu.plist</string>
+		<string>/Library/Backblaze.bzpkg</string>
+		<string>/Library/LaunchDaemons/com.backblaze.bzserv.plist</string>
+	</array>
+	<key>Flash Player.prefPane</key>
+	<array>
+		<string>/Library/Application Support/Adobe/Flash Player Install Manager/</string>
+		<string>/Library/Application Support/Macromedia/</string>
+		<string>~/Library/Preferences/Macromedia/</string>
+		<string>/Library/Internet Plug-Ins/Flash Player.plugin</string>
+		<string>/Library/Internet Plug-Ins/flashplayer.xpt</string>
 	</array>
 </dict>
 </plist>
