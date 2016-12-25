@@ -23,4 +23,6 @@
 
 - (Application *) appWithBundelID:(NSString *)bundelID;
 
+- (NSArray *)applicationsWithTerm:(NSString *)term;
+
 @end

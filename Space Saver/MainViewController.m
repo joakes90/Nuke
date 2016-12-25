@@ -124,6 +124,12 @@
         }
 }
 
+-(void)serchTermWillUpdate:(NSString *)term {
+    NSArray *matchingApps = [[AppsController sharedInstance] applicationsWithTerm:term];
+    NSArray *matchingPrefs = [[PreferencePaneController sharedInstance] prefsWithTerm:term];
+    NSLog(@"%@", matchingPrefs);
+}
+
 - (void)changeModeTo:(NSString *)mode {
     self.mode = mode;
 }

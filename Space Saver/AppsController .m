@@ -105,4 +105,18 @@ static NSString *const kApplicationPath = @"/Applications/";
     return nil;
 }
 
+- (NSArray *)applicationsWithTerm:(NSString *)term {
+    if (! _refreshingApps) {
+        NSMutableArray *matchingApps = [[NSMutableArray alloc] init];
+        for (Application *app in self.apps) {
+            if ([app.name containsString:term]) {
+                [matchingApps addObject:app];
+            }
+        }
+        return matchingApps;
+    } else {
+        return [[NSArray alloc] init];
+    }
+}
+
 @end

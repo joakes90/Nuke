@@ -54,4 +54,19 @@
     });
 }
 
+- (NSArray *)prefsWithTerm:(NSString *)term {
+    if (! _refreshingPrefs) {
+        NSMutableArray *matchingPrefs = [[NSMutableArray alloc] init];
+        for (Application *pref in self.prefs) {
+            if ([pref.name containsString:term]) {
+                [matchingPrefs addObject:pref];
+            }
+        }
+        return matchingPrefs;
+    } else {
+        return [[NSArray alloc] init];
+    }
+}
+
+
 @end
