@@ -181,14 +181,9 @@
 }
 
 #pragma mark seach delegate methods
--(BOOL)textField:(NSTextField *)textField textView:(NSTextView *)textView shouldSelectCandidateAtIndex:(NSUInteger)index {
-    NSLog(@"YES!");
-    return YES;
-}
-
--(BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor {
-    NSLog(@"%@", fieldEditor.string);
-    return YES;
+-(void)controlTextDidChange:(NSNotification *)obj {
+    NSString *searchTerm = self.searchField.stringValue;
+    
 }
 
 @end
