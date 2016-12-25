@@ -13,7 +13,7 @@
 #import "constants.h"
 #import <Quartz/Quartz.h>
 
-@interface WindowController ()
+@interface WindowController () <NSSearchFieldDelegate>
 
 @property (strong) IBOutlet NSToolbarItem *packagesButton;
 @property (strong, nonatomic) NSString *cleanupMode;
@@ -26,6 +26,7 @@
     MainViewController *vc = (MainViewController *) self.contentViewController;
     self.delegate = vc;
     self.cleanupMode = kDeleteMode;
+    self.searchField.delegate = self;
 }
 
 - (IBAction)removeToolbarItemPressed:(id)sender {
@@ -178,4 +179,16 @@
         self.delegate = (MainViewController *)self.contentViewController;
     }
 }
+
+#pragma mark seach delegate methods
+-(BOOL)textField:(NSTextField *)textField textView:(NSTextView *)textView shouldSelectCandidateAtIndex:(NSUInteger)index {
+    NSLog(@"YES!");
+    return YES;
+}
+
+-(BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor {
+    NSLog(@"%@", fieldEditor.string);
+    return YES;
+}
+
 @end

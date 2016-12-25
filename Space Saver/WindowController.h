@@ -15,6 +15,8 @@
 
 @property (strong) IBOutlet NSToolbarItem *removeButton;
 @property (weak) IBOutlet NSToolbarItem *prefsPaneButton;
+@property (weak) IBOutlet NSSearchField *searchField;
+
 
 
 //add in interface
