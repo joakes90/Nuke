@@ -189,7 +189,7 @@
 #pragma mark seach delegate methods
 -(void)controlTextDidChange:(NSNotification *)obj {
     NSString *searchTerm = self.searchField.stringValue;
-    [_delegate serchTermWillUpdate:searchTerm]; 
+    [_delegate searchTermWillUpdate:searchTerm];
 }
 
 @end

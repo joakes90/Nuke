@@ -20,6 +20,9 @@
 
 @property (strong, nonatomic) NSString *mode;
 
+@property (strong, nonatomic) NSArray <Application *> *availableApps;
+@property (strong, nonatomic) NSArray <Application *> *availablePrefs;
+
 @end
 
 @implementation MainViewController
@@ -27,12 +30,15 @@
 -(void)viewWillAppear {
     self.view.wantsLayer = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kUpdatedAppsArrayNotification object:nil];
+    _availablePrefs = [[NSArray alloc] init];
+    _availableApps = [[NSArray alloc] init];
+    [self searchTermWillUpdate:@""];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mode = [[NSString alloc] init];
-    }
+}
 
 -(void)viewWillDisappear {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -48,8 +54,8 @@
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     NSInteger count = 0;
-    count += [AppsController sharedInstance].enabled ? [[AppsController sharedInstance].apps count] + 1 : 0;
-    count += [PreferencePaneController sharedInstance].enabled ? [[PreferencePaneController sharedInstance].prefs count] + 1 : 0;
+    count += [AppsController sharedInstance].enabled ? [_availableApps count] + 1 : 0;
+    count += [PreferencePaneController sharedInstance].enabled ? [_availablePrefs count] + 1 : 0;
     
     return count;
 }
@@ -59,7 +65,7 @@
     PreferencePaneController *prefs = [PreferencePaneController sharedInstance];
     
     
-    if ([tableColumn.identifier isEqualToString:kcellIdentString] && apps.enabled && row >= 0 && row <= [apps.apps count]) {
+    if ([tableColumn.identifier isEqualToString:kcellIdentString] && apps.enabled && row >= 0 && row <= [_availableApps count]) {
         if (row == 0) {
             SectionLabelCell *cell = [tableView makeViewWithIdentifier:ksectionHeaderIndentString owner:self];
             cell.HeaderLabel.stringValue = @"Applications";
@@ -67,25 +73,25 @@
             return cell;
         } else {
             ApplicationCell *cell = [tableView makeViewWithIdentifier:kcellIdentString owner:self];
-            cell.nameLabel.stringValue = [apps.apps[row - 1].name stringByReplacingOccurrencesOfString:@".app" withString:@""];
-            cell.appIcon.image = apps.apps[row - 1].icon;
-            if (row == [apps.apps count] - 1) {
+            cell.nameLabel.stringValue = [_availableApps[row - 1].name stringByReplacingOccurrencesOfString:@".app" withString:@""];
+            cell.appIcon.image = _availableApps[row - 1].icon;
+            if (row == [_availableApps count] - 1) {
                 [self.populationView setHidden:YES];
             }
             return cell;
     }
     }
     
-    if ([tableColumn.identifier isEqualToString:kcellIdentString] && prefs.enabled && row >= [apps.apps count] && row <= [apps.apps count] + [prefs.prefs count] + 1) {
-        if (row == [apps.apps count] + 1) {
+    if ([tableColumn.identifier isEqualToString:kcellIdentString] && prefs.enabled && row >= [_availableApps count] && row <= [_availableApps count] + [_availablePrefs count] + 1) {
+        if (row == [_availableApps count] + 1) {
             SectionLabelCell *cell = [tableView makeViewWithIdentifier:ksectionHeaderIndentString owner:self];
             cell.HeaderLabel.stringValue = @"Preference Panes";
             return cell;
         } else {
-            NSInteger index = (row - [apps.apps count]) - 2;
+            NSInteger index = (row - [_availableApps count]) - 2;
             ApplicationCell *cell = [tableView makeViewWithIdentifier:kcellIdentString owner:self];
-            cell.nameLabel.stringValue = [prefs.prefs[index].name stringByReplacingOccurrencesOfString:@".prefPane" withString:@""];
-            cell.appIcon.image = prefs.prefs[index].icon;
+            cell.nameLabel.stringValue = [_availablePrefs[index].name stringByReplacingOccurrencesOfString:@".prefPane" withString:@""];
+            cell.appIcon.image = _availablePrefs[index].icon;
             
             return cell;
         }
@@ -124,10 +130,15 @@
         }
 }
 
--(void)serchTermWillUpdate:(NSString *)term {
-    NSArray *matchingApps = [[AppsController sharedInstance] applicationsWithTerm:term];
-    NSArray *matchingPrefs = [[PreferencePaneController sharedInstance] prefsWithTerm:term];
-    NSLog(@"%@", matchingApps);
+-(void)searchTermWillUpdate:(NSString *)term {
+    if (term && ![term isEqualToString:@""]) {
+        _availableApps = [[AppsController sharedInstance] applicationsWithTerm:term];
+        _availablePrefs = [[PreferencePaneController sharedInstance] prefsWithTerm:term];
+    } else {
+        _availableApps = [AppsController sharedInstance].apps;
+        _availablePrefs = [PreferencePaneController sharedInstance].prefs;
+    }
+    [self updateTable];
 }
 
 - (void)changeModeTo:(NSString *)mode {

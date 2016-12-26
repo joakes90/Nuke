@@ -30,6 +30,6 @@
 //add delegate methods
 -(void)removeButtonPushedInMode:(NSString *)mode;
 
--(void)serchTermWillUpdate:(NSString *)term;
+-(void)searchTermWillUpdate:(NSString *)term;
 
 @end
