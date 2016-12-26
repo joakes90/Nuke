@@ -68,11 +68,13 @@
         
         if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
             self.removeButton.enabled = NO;
+            self.searchField.enabled = NO;
             self.removeButton.image = [NSImage imageNamed:ktrashgrey];
             self.packagesButton.label = kinstalledApps;
             self.packagesButton.image = [NSImage imageNamed:kappIcon];
         } else {
             self.removeButton.enabled = YES;
+            self.searchField.enabled = YES;
             self.removeButton.image = [NSImage imageNamed:ktrash];
             self.packagesButton.label = kinstalledPackages;
             self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
@@ -116,11 +118,13 @@
          if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
              self.removeButton.enabled = NO;
              self.removeButton.image = [NSImage imageNamed:ktrashgrey];
+             self.searchField.enabled = NO;
              self.packagesButton.label = kinstalledApps;
              self.packagesButton.image = [NSImage imageNamed:kappIcon];
          } else {
              self.removeButton.enabled = YES;
              self.removeButton.image = [NSImage imageNamed:ktrash];
+             self.searchField.enabled = YES;
              self.packagesButton.label = kinstalledPackages;
              self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
              self.delegate = (MainViewController *)self.contentViewController;
@@ -169,11 +173,13 @@
     if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
         self.removeButton.enabled = NO;
         self.removeButton.image = [NSImage imageNamed:ktrashgrey];
+        self.searchField.enabled = NO;
         self.packagesButton.label = @"Installed Apps";
         self.packagesButton.image = [NSImage imageNamed:kappIcon];
     } else {
         self.removeButton.enabled = YES;
         self.removeButton.image = [NSImage imageNamed:ktrash];
+        self.searchField.enabled = YES;
         self.packagesButton.label = kinstalledPackages;
         self.packagesButton.image = [NSImage imageNamed:kpackageIcon];
         self.delegate = (MainViewController *)self.contentViewController;

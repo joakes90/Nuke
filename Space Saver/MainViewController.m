@@ -127,7 +127,7 @@
 -(void)serchTermWillUpdate:(NSString *)term {
     NSArray *matchingApps = [[AppsController sharedInstance] applicationsWithTerm:term];
     NSArray *matchingPrefs = [[PreferencePaneController sharedInstance] prefsWithTerm:term];
-    NSLog(@"%@", matchingPrefs);
+    NSLog(@"%@", matchingApps);
 }
 
 - (void)changeModeTo:(NSString *)mode {

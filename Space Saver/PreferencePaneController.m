@@ -58,7 +58,7 @@
     if (! _refreshingPrefs) {
         NSMutableArray *matchingPrefs = [[NSMutableArray alloc] init];
         for (Application *pref in self.prefs) {
-            if ([pref.name containsString:term]) {
+            if ([[pref.name lowercaseString] containsString:[term lowercaseString]]) {
                 [matchingPrefs addObject:pref];
             }
         }

@@ -109,7 +109,7 @@ static NSString *const kApplicationPath = @"/Applications/";
     if (! _refreshingApps) {
         NSMutableArray *matchingApps = [[NSMutableArray alloc] init];
         for (Application *app in self.apps) {
-            if ([app.name containsString:term]) {
+            if ([[app.name lowercaseString] containsString:[term lowercaseString]]) {
                 [matchingApps addObject:app];
             }
         }
