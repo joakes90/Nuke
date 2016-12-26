@@ -68,6 +68,7 @@
         
         if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
             self.removeButton.enabled = NO;
+            self.searchField.stringValue = @"";
             self.searchField.enabled = NO;
             self.removeButton.image = [NSImage imageNamed:ktrashgrey];
             self.packagesButton.label = kinstalledApps;
@@ -118,6 +119,7 @@
          if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
              self.removeButton.enabled = NO;
              self.removeButton.image = [NSImage imageNamed:ktrashgrey];
+             self.searchField.stringValue = @"";
              self.searchField.enabled = NO;
              self.packagesButton.label = kinstalledApps;
              self.packagesButton.image = [NSImage imageNamed:kappIcon];
@@ -173,6 +175,7 @@
     if ([self.packagesButton.label isEqualToString:kinstalledPackages]) {
         self.removeButton.enabled = NO;
         self.removeButton.image = [NSImage imageNamed:ktrashgrey];
+        self.searchField.stringValue = @"";
         self.searchField.enabled = NO;
         self.packagesButton.label = @"Installed Apps";
         self.packagesButton.image = [NSImage imageNamed:kappIcon];
