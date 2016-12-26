@@ -69,6 +69,8 @@
         if (row == 0) {
             SectionLabelCell *cell = [tableView makeViewWithIdentifier:ksectionHeaderIndentString owner:self];
             cell.HeaderLabel.stringValue = @"Applications";
+            NSTableRowView *appRow = [tableView rowViewAtRow:row makeIfNecessary:NO];
+            [appRow setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
 
             return cell;
         } else {
@@ -86,6 +88,8 @@
         if (row == [_availableApps count] + 1) {
             SectionLabelCell *cell = [tableView makeViewWithIdentifier:ksectionHeaderIndentString owner:self];
             cell.HeaderLabel.stringValue = @"Preference Panes";
+            NSTableRowView *prefRow = [tableView rowViewAtRow:row makeIfNecessary:NO];
+            [prefRow setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
             return cell;
         } else {
             NSInteger index = (row - [_availableApps count]) - 2;
@@ -108,13 +112,6 @@
     }
 }
 
--(void)tableViewSelectionDidChange:(NSNotification *)notification {
-    NSInteger selectedRowIndex = [self.tableView selectedRow];
-    NSTableRowView *selectedRow = [self.tableView rowViewAtRow:selectedRowIndex makeIfNecessary:NO];
-    if ([selectedRow.subviews[1] class] == [SectionLabelCell class]) {
-        [selectedRow setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
-    }
-}
 
 - (void) updateTable {
     [self.tableView reloadData];
@@ -124,7 +121,7 @@
 #pragma mark detail view delegate methods
 -(void)removeButtonPushedInMode:(NSString *)mode{
         long selectedRow = self.tableView.selectedRow;
-        if (selectedRow > 0 || selectedRow != [[AppsController sharedInstance].apps count] + 1) {
+        if (selectedRow > 0 || selectedRow != [_availableApps count] + 1) {
             [self setMode:mode];
             [self performSegueWithIdentifier:kverifyDeletionSegue sender:self];
         }
