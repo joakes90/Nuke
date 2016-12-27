@@ -19,6 +19,7 @@
 @interface MainViewController() <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong, nonatomic) NSString *mode;
+@property (strong, nonatomic) NSString *previousTerm;
 
 @property (strong, nonatomic) NSArray <Application *> *availableApps;
 @property (strong, nonatomic) NSArray <Application *> *availablePrefs;
@@ -32,7 +33,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kUpdatedAppsArrayNotification object:nil];
     _availablePrefs = [[NSArray alloc] init];
     _availableApps = [[NSArray alloc] init];
-    [self searchTermWillUpdate:@""];
+    _previousTerm = @"";
+    [self searchTermWillUpdate:_previousTerm];
 }
 
 - (void)viewDidLoad {
@@ -114,7 +116,7 @@
 
 
 - (void) updateTable {
-    [self.tableView reloadData];
+    [self searchTermWillUpdate:_previousTerm];
     [self.populationView removeFromSuperview];
 }
 
@@ -128,6 +130,7 @@
 }
 
 -(void)searchTermWillUpdate:(NSString *)term {
+    _previousTerm = term;
     if (term && ![term isEqualToString:@""]) {
         _availableApps = [[AppsController sharedInstance] applicationsWithTerm:term];
         _availablePrefs = [[PreferencePaneController sharedInstance] prefsWithTerm:term];
@@ -135,7 +138,8 @@
         _availableApps = [AppsController sharedInstance].apps;
         _availablePrefs = [PreferencePaneController sharedInstance].prefs;
     }
-    [self updateTable];
+    [self.tableView reloadData];
+    
 }
 
 - (void)changeModeTo:(NSString *)mode {
@@ -145,16 +149,16 @@
 -(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kverifyDeletionSegue]) {
         NSInteger index = [self.tableView selectedRow] - 1;
-        if (index < [[AppsController sharedInstance].apps count]) {
+        if (index < [_availableApps count]) {
             // yes this is a stupid line but this entire methid is going to be reworked when more data type and search is added later
-            Application *app = [AppsController sharedInstance].apps[index];
+            Application *app = _availableApps[index];
             [app setComponetsForApplication];
             DeleteViewController *vc = segue.destinationController;
             vc.App = app;
             vc.mode = self.mode;
         } else {
-            index = index - ([[AppsController sharedInstance].apps count] + 1);
-            Application *app = [PreferencePaneController sharedInstance].prefs[index];
+            index = index - ([_availableApps count] + 1);
+            Application *app = _availablePrefs[index];
             [app setComponetsForApplication];
             DeleteViewController *vc = segue.destinationController;
             vc.App = app;

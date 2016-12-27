@@ -48,8 +48,8 @@
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
             _refreshingPrefs = NO;
+            [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
         });
     });
 }
