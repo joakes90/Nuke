@@ -34,6 +34,12 @@
  NSString *const kRootPrefs = @"rootPrefs";
  NSString *const kAppFolder = @"appFolder";
 
+//segue
+ NSString *const kAskForPWSegue = @"askForPWSegue";
+
+//user defaults
+ NSString *const kAskedForPassword = @"askedForPassword";
+
 //label text
 NSString *const kinstalledPackages = @"Installed Packages";
 NSString *const kinstalledApps = @"Installed Apps";

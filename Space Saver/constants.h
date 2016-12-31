@@ -33,6 +33,12 @@ extern NSString *const kSaveState;
 extern NSString *const kRootPrefs;
 extern NSString *const kAppFolder;
 
+//segue
+extern NSString *const kAskForPWSegue;
+
+//user defaults
+extern NSString *const kAskedForPassword;
+
 //paths
 @property (strong, nonatomic) NSString *kUserPrefsPath;
 @property (strong, nonatomic) NSString *kUserCachesPath;

@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "PackageViewController.h"
 #import "PreferencePaneController.h"
+#import "AppDelegate.h"
 #import "constants.h"
 #import <Quartz/Quartz.h>
 
@@ -30,7 +31,13 @@
 }
 
 - (IBAction)removeToolbarItemPressed:(id)sender {
-    [self.delegate removeButtonPushedInMode:self.cleanupMode];
+    AppDelegate *delegate = [NSApplication sharedApplication].delegate;
+    if (!delegate.askedForPassword) {
+        MainViewController *vc = (MainViewController *) self.contentViewController;
+        [vc performSegueWithIdentifier:kAskForPWSegue sender:self];
+    } else {
+        [self.delegate removeButtonPushedInMode:self.cleanupMode];
+    }
 }
 
 - (IBAction)installedPackagesItemPressed:(id)sender {
@@ -40,10 +47,6 @@
         [self replaceMainVC];
     }
     
-}
-
-- (IBAction)prePanesItemPressed:(id)sender {
-    [[PreferencePaneController sharedInstance] findAllPrefs];
 }
 
 // Handeling modifier keys

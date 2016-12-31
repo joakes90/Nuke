@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "AppsController.h"
+#import "PreferencePaneController.h"
 #import "MainViewController.h"
+#import "constants.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +21,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [AppsController sharedInstance];
+    [PreferencePaneController sharedInstance];
 }
 
 -(void)applicationDidBecomeActive:(NSNotification *)notification {
+    self.askedForPassword = [[NSUserDefaults standardUserDefaults] boolForKey:kAskedForPassword];
     self.authController = [[AutherizationController alloc] init];
     
     if ([self.authController appIsRegistered]) {
@@ -34,6 +38,7 @@
 
 - (IBAction)refreshApps:(id)sender {
     [[AppsController sharedInstance] findAllApplications];
+    [[PreferencePaneController sharedInstance] findAllPrefs];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
