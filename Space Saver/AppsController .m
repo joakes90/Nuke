@@ -78,6 +78,9 @@ static NSString *const kApplicationPath = @"/Applications/";
                 }
             }
         }
+        NSSortDescriptor *sortDescripter = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+        [self.apps sortUsingDescriptors:@[sortDescripter]];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             _refreshingApps = NO;
             [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
