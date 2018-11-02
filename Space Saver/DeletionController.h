@@ -12,6 +12,8 @@
 
 @interface DeletionController : NSObject
 
+@property  (nonatomic, strong) NSString *helperPath;
+
 - (BOOL)rootItemsPresent;
 
 - (BOOL)appIsRunning:(NSString *)bundelID;

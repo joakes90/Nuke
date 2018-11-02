@@ -34,7 +34,6 @@ extern NSString *const kRootPrefs;
 extern NSString *const kAppFolder;
 
 //segue
-extern NSString *const kAskForPWSegue;
 
 //user defaults
 extern NSString *const kAskedForPassword;

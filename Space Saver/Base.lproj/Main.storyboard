@@ -610,7 +610,6 @@
                         <outlet property="tableView" destination="Rug-wt-hVY" id="xOk-mV-5B9"/>
                         <segue destination="RCA-A9-x6e" kind="sheet" identifier="verifyDeletion" id="EmN-sJ-5h2"/>
                         <segue destination="pYO-oO-H3u" kind="modal" identifier="register" id="gfd-p2-Ugc"/>
-                        <segue destination="eMz-cg-m2G" kind="modal" identifier="askForPWSegue" id="4CH-iX-1Zq"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -892,27 +891,6 @@ DQ
                 <customObject id="1tU-yo-whm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1257.5" y="1330"/>
-        </scene>
-        <!--Window Controller-->
-        <scene sceneID="Pf8-fC-l5W">
-            <objects>
-                <windowController showSeguePresentationStyle="single" id="eMz-cg-m2G" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ad5-bR-FAm">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
-                        <connections>
-                            <outlet property="delegate" destination="eMz-cg-m2G" id="ao0-2l-g5O"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="6Eq-zZ-QHO" kind="relationship" relationship="window.shadowedContentViewController" id="fRq-L8-zIG"/>
-                    </connections>
-                </windowController>
-                <customObject id="KcC-An-QIK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1272" y="329"/>
         </scene>
         <!--Password-->
         <scene sceneID="gC0-Sc-EpL">

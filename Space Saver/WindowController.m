@@ -31,13 +31,7 @@
 }
 
 - (IBAction)removeToolbarItemPressed:(id)sender {
-    AppDelegate *delegate = [NSApplication sharedApplication].delegate;
-    if (!delegate.askedForPassword) {
-        MainViewController *vc = (MainViewController *) self.contentViewController;
-        [vc performSegueWithIdentifier:kAskForPWSegue sender:self];
-    } else {
-        [self.delegate removeButtonPushedInMode:self.cleanupMode];
-    }
+    [self.delegate removeButtonPushedInMode:self.cleanupMode];
 }
 
 - (IBAction)installedPackagesItemPressed:(id)sender {

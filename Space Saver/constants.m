@@ -35,7 +35,6 @@
  NSString *const kAppFolder = @"appFolder";
 
 //segue
- NSString *const kAskForPWSegue = @"askForPWSegue";
 
 //user defaults
  NSString *const kAskedForPassword = @"askedForPassword";

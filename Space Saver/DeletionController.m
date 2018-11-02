@@ -22,6 +22,7 @@
     self = [super init];
     if (self) {
         self.rootPaths = [[NSMutableArray alloc] init];
+        self.helperPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/NukeHelper"];
     }
     return self;
 }
@@ -49,37 +50,39 @@
 }
 
 - (void) appIsStartupItem:(NSString *)app {
-    NSAppleScript *getLoginItems = [[NSAppleScript alloc] initWithSource:@"tell application \"System Events\" to get the name of every login item"];
-    NSAppleEventDescriptor *allLoginItemsDescriptor = [getLoginItems executeAndReturnError:nil];
-    NSMutableArray *allLoginItems = [NSMutableArray array];
-    for (NSInteger i=1; i <= allLoginItemsDescriptor.numberOfItems; i++) {
-        NSString *stringValue = [[allLoginItemsDescriptor descriptorAtIndex:i] stringValue];
-        [allLoginItems addObject:stringValue];
-    }
-    
-    for (NSString *startupItem in allLoginItems) {
-        if ([startupItem containsString:app]) {
-            NSString *appleScriptString = [NSString stringWithFormat:@"tell application \"System Events\" to delete login item \"%@\"", startupItem];
-            NSAppleScript *removeFromStartupScript = [[NSAppleScript alloc] initWithSource:appleScriptString];
-            [removeFromStartupScript executeAndReturnError:nil];
-        }
-    }
+    // TODO: Move to helper tool
+//    NSAppleScript *getLoginItems = [[NSAppleScript alloc] initWithSource:@"tell application \"System Events\" to get the name of every login item"];
+//    NSAppleEventDescriptor *allLoginItemsDescriptor = [getLoginItems executeAndReturnError:nil];
+//    NSMutableArray *allLoginItems = [NSMutableArray array];
+//    for (NSInteger i=1; i <= allLoginItemsDescriptor.numberOfItems; i++) {
+//        NSString *stringValue = [[allLoginItemsDescriptor descriptorAtIndex:i] stringValue];
+//        [allLoginItems addObject:stringValue];
+//    }
+//
+//    for (NSString *startupItem in allLoginItems) {
+//        if ([startupItem containsString:app]) {
+//            NSString *appleScriptString = [NSString stringWithFormat:@"tell application \"System Events\" to delete login item \"%@\"", startupItem];
+//            NSAppleScript *removeFromStartupScript = [[NSAppleScript alloc] initWithSource:appleScriptString];
+//            [removeFromStartupScript executeAndReturnError:nil];
+//        }
+//    }
 }
 
 - (void) removeFromDockApplicationWithBundelIdentifier:(NSString *)ident {
-    NSMutableDictionary *dockDict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.dock"]];
-    NSMutableArray *dockArray = dockDict[@"persistent-apps"];
-    NSMutableArray *newArray = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < dockArray.count; i++) {
-        if (![dockArray[i][@"tile-data"][@"bundle-identifier"] isEqualToString:ident]) {
-            [newArray addObject:dockArray[i]];
-        }
-    }
-    dockDict[@"persistent-apps"] = newArray;
-    [[NSUserDefaults standardUserDefaults] setPersistentDomain:dockDict forName:@"com.apple.dock"];
-    [NSUserDefaults resetStandardUserDefaults];
-    NSAppleScript *restartDock = [[NSAppleScript alloc] initWithSource:@"tell application \"Dock\" to quit"];
-    [restartDock executeAndReturnError:nil];
+    // TODO: Move to helper tool
+//    NSMutableDictionary *dockDict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.dock"]];
+//    NSMutableArray *dockArray = dockDict[@"persistent-apps"];
+//    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i < dockArray.count; i++) {
+//        if (![dockArray[i][@"tile-data"][@"bundle-identifier"] isEqualToString:ident]) {
+//            [newArray addObject:dockArray[i]];
+//        }
+//    }
+//    dockDict[@"persistent-apps"] = newArray;
+//    [[NSUserDefaults standardUserDefaults] setPersistentDomain:dockDict forName:@"com.apple.dock"];
+//    [NSUserDefaults resetStandardUserDefaults];
+//    NSAppleScript *restartDock = [[NSAppleScript alloc] initWithSource:@"tell application \"Dock\" to quit"];
+//    [restartDock executeAndReturnError:nil];
 }
 
 - (void) removeComponetFromMac:(NSDictionary *)componets {
@@ -117,7 +120,7 @@
     }
     if (path) {
         if ([self isOwnedByUser:path]) {
-            [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path] resultingItemURL:nil error:nil];
+//            [[NSFileManager defaultManager] trashItemAtURL:[[NSURL alloc] initFileURLWithPath:path] resultingItemURL:nil error:nil];
         } else {
             [self.rootPaths addObject:path];
         }
@@ -125,9 +128,12 @@
 }
 
 -(void) removeRootItems {
-    NSString *bashScript = [ScriptBuilder bashScriptToDeleteArrayOfFile:self.rootPaths];
-    [ScriptBuilder executeScript:bashScript];
-    self.rootPaths = [[NSMutableArray alloc] init];
+    // TODO: Move to helper tool
+    NSArray *args = @[self.helperPath, @"test"];
+    [NSTask launchedTaskWithLaunchPath:self.helperPath arguments:args];
+//    NSString *bashScript = [ScriptBuilder bashScriptToDeleteArrayOfFile:self.rootPaths];
+//    [ScriptBuilder executeScript:bashScript];
+//    self.rootPaths = [[NSMutableArray alloc] init];
 }
 - (void) removeApplicationFromMac:(Application *)app; {
     if ([self isOwnedByUser:app.path]) {
