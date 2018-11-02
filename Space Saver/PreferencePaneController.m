@@ -47,6 +47,9 @@
                 [self.prefs addObject:basicPref];
             }
         }
+        NSSortDescriptor *sortDescripter = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+        [self.prefs sortUsingDescriptors:@[sortDescripter]];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             _refreshingPrefs = NO;
             [[NSNotificationCenter defaultCenter] postNotificationName:kUpdatedAppsArrayNotification object:nil];
