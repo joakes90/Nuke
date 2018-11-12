@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NukeHelperProtocol.h"
+#import "NukeHelper.h"
 #import "AppsController.h"
 #import "PreferencePaneController.h"
 #import "MainViewController.h"
@@ -25,7 +27,13 @@
 }
 
 -(void)applicationDidBecomeActive:(NSNotification *)notification {
-    self.askedForPassword = [[NSUserDefaults standardUserDefaults] boolForKey:kAskedForPassword];
+    self.xpcConnection = [[NSXPCConnection alloc] initWithServiceName:@"com.justin.NukeHelper"];
+    self.xpcConnection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(NukeHelperProtocol)];
+    [self.xpcConnection resume];
+    [[self.xpcConnection remoteObjectProxy] trashFile:nil withReply:^(NSString *reply) {
+        NSLog(@"Hello, %@", reply);
+    }];
+
 //    self.authController = [[AutherizationController alloc] init];
 
 //    if ([self.authController appIsRegistered]) {

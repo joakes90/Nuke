@@ -13,8 +13,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property WindowController *windowController;
-//@property (strong, nonatomic) AutherizationController *authController;
-@property (assign, nonatomic) BOOL askedForPassword;
+@property (strong, nonatomic) NSXPCConnection *xpcConnection;
 
 @end
 
