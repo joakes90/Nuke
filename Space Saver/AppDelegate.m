@@ -26,14 +26,14 @@
 
 -(void)applicationDidBecomeActive:(NSNotification *)notification {
     self.askedForPassword = [[NSUserDefaults standardUserDefaults] boolForKey:kAskedForPassword];
-    self.authController = [[AutherizationController alloc] init];
-    
-    if ([self.authController appIsRegistered]) {
-        //actions to perform when serial is found valid
-    } else {
+//    self.authController = [[AutherizationController alloc] init];
+
+//    if ([self.authController appIsRegistered]) {
+//        //actions to perform when serial is found valid
+//    } else {
         MainViewController *mainView = (MainViewController *)[[[NSApplication sharedApplication] mainWindow] contentViewController];
         [mainView performSegueWithIdentifier:@"register" sender:self.windowController];
-    }
+//    }
 }
 
 - (IBAction)refreshApps:(id)sender {
@@ -52,9 +52,9 @@
         NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
         windowController = [sb instantiateControllerWithIdentifier:@"window"];
         [windowController showWindow:self];
-        if (![self.authController appIsRegistered]) {
+//        if (![self.authController appIsRegistered]) {
             [windowController.contentViewController performSegueWithIdentifier:@"register" sender:self.windowController];
-        }
+//        }
         return YES;
     }
 }

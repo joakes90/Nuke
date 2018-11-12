@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import "DeleteViewController.h"
 #import "ApplicationCell.h"
-#import "SectionLabelCell.h"
+#import "SelectionLabelCell.h"
 #import "AppsController.h"
 #import "PreferencePaneController.h"
 #import "Application.h"

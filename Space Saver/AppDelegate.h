@@ -13,7 +13,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property WindowController *windowController;
-@property (strong, nonatomic) AutherizationController *authController;
+//@property (strong, nonatomic) AutherizationController *authController;
 @property (assign, nonatomic) BOOL askedForPassword;
 
 @end
