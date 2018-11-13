@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Space Saver/AppDelegate.m"
-            timestampString = "563815142.0752161"
+            timestampString = "563835369.598156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-applicationDidBecomeActive:"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-blessHelperWithLabel:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

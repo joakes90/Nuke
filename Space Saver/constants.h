@@ -32,6 +32,7 @@ extern NSString *const kContainers;
 extern NSString *const kSaveState;
 extern NSString *const kRootPrefs;
 extern NSString *const kAppFolder;
+extern NSString *const kJobBlessLabel;
 
 //segue
 

@@ -33,6 +33,7 @@
  NSString *const kSaveState = @"saveStates";
  NSString *const kRootPrefs = @"rootPrefs";
  NSString *const kAppFolder = @"appFolder";
+ NSString *const kJobBlessLabel = @"com.justin.Nuke.NukeHelperTool";
 
 //segue
 
